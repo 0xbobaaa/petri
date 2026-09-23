@@ -1,0 +1,16 @@
+{
+  "checked": "2026-09-23",
+  "source": "https://openrouter.ai/api/v1/models",
+  "note": "Prices are USD per million tokens, copied from OpenRouter on the checked date. Reasoning is switched off or set to the lowest effort each model supports, so the 400-token cap is spent on the reply.",
+  "temperature": 0.9,
+  "max_tokens": 400,
+  "players": [
+    {"name": "Claude",   "model": "anthropic/claude-haiku-4.5",     "usd_in_per_m": 1.00,     "usd_out_per_m": 5.00,     "reasoning": {"enabled": false}},
+    {"name": "GPT",      "model": "openai/gpt-6-luna",              "usd_in_per_m": 0.10,     "usd_out_per_m": 0.50,     "reasoning": {"effort": "none"}},
+    {"name": "Gemini",   "model": "google/gemini-3.1-flash-lite",   "usd_in_per_m": 0.25,     "usd_out_per_m": 1.50,     "reasoning": {"effort": "minimal"}},
+    {"name": "Grok",     "model": "x-ai/grok-4.3",                  "usd_in_per_m": 1.25,     "usd_out_per_m": 2.50,     "reasoning": {"effort": "none"}},
+    {"name": "DeepSeek", "model": "deepseek/deepseek-v4-flash",     "usd_in_per_m": 0.088606, "usd_out_per_m": 0.177212, "reasoning": {"enabled": false}},
+    {"name": "Qwen",     "model": "qwen/qwen3.7-flash",             "usd_in_per_m": 0.03,     "usd_out_per_m": 0.13,     "reasoning": {"enabled": false}},
+    {"name": "Mistral",  "model": "mistralai/mistral-small-2603",   "usd_in_per_m": 0.15,     "usd_out_per_m": 0.60,     "reasoning": {"enabled": false}}
+  ]
+}

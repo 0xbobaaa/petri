@@ -1,0 +1,56 @@
+name: season
+
+# One season a day. Running more often multiplies spend: change PETRI_MAX_USD
+# (and your OpenRouter limit) before touching this schedule.
+on:
+  schedule:
+    - cron: "0 18 * * *"  # 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: petri-season
+  cancel-in-progress: false
+
+jobs:
+  season:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Require the API key
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "::error::repo secret OPENROUTER_API_KEY is not set; no season was played"
+            exit 1
+          fi
+
+      - name: Play a season
+        id: play
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          PETRI_MAX_USD: ${{ vars.PETRI_MAX_USD || '3.00' }}
+          PETRI_MAX_CALLS: ${{ vars.PETRI_MAX_CALLS || '200' }}
+        run: python -m petri run
+
+      - name: Commit the season
+        env:
+          MESSAGE: ${{ steps.play.outputs.message }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add docs/seasons
+          git commit -m "$MESSAGE"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1

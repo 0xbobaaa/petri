@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Tests (no key, no network)
+        run: python -m unittest discover -s tests -q
+
+      - name: Dry run twice, same seed, byte-identical logs
+        run: |
+          python -m petri run --dry-run --seed 42 --out "$RUNNER_TEMP/a"
+          python -m petri run --dry-run --seed 42 --out "$RUNNER_TEMP/b"
+          cmp "$RUNNER_TEMP/a/demo-42/log.jsonl" "$RUNNER_TEMP/b/demo-42/log.jsonl"
+          python -m petri replay demo-42 --out "$RUNNER_TEMP/a" | tail -n 3
+
+      - name: Committed demo season matches the code
+        run: cmp docs/seasons/demo-42/log.jsonl "$RUNNER_TEMP/a/demo-42/log.jsonl"
+
+      - name: No key name in the published site
+        run: |
+          if grep -r "OPENROUTER_API_KEY" docs/; then
+            echo "::error::docs/ mentions OPENROUTER_API_KEY"
+            exit 1
+          fi
