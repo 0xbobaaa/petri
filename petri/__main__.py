@@ -4,6 +4,7 @@
     python -m petri run --dry-run       mock season, no key, no network
     python -m petri run --seed 42       fix the seed
     python -m petri replay <season-id>  print a season to the terminal
+    python -m petri stats               rebuild docs/seasons/stats.json
 """
 
 from __future__ import annotations
@@ -17,7 +18,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import game
+from . import game, stats
 from .budget import Budget
 from .log import read_log, season_dir, update_index
 from .players import MockPlayer, OpenRouterPlayer
@@ -89,6 +90,7 @@ def cmd_run(args: argparse.Namespace) -> int:
         "calls": summary["calls"],
         "rounds": summary["rounds"],
     })
+    stats.build(out)
 
     if summary["status"] == "complete":
         message = f"season {season_id}: {summary['winner']} wins"
@@ -172,7 +174,13 @@ def main(argv: list[str] | None = None) -> int:
     rep = sub.add_parser("replay", help="print a season to the terminal")
     rep.add_argument("season_id")
     rep.add_argument("--out", default=str(SEASONS), help="seasons directory (default docs/seasons)")
+    st = sub.add_parser("stats", help="rebuild the leaderboard and moments from all season logs")
+    st.add_argument("--out", default=str(SEASONS), help="seasons directory (default docs/seasons)")
     args = ap.parse_args(argv)
+    if args.cmd == "stats":
+        stats.build(Path(args.out))
+        print(Path(args.out) / "stats.json")
+        return 0
     return cmd_run(args) if args.cmd == "run" else cmd_replay(args)
 
 

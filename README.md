@@ -127,8 +127,28 @@ There is no server.
   `PETRI_MAX_USD` and `PETRI_MAX_CALLS`.
 - `.github/workflows/ci.yml` runs the tests and the dry-run checks on every
   push, with no secrets.
-- The site is `docs/index.html`, a single file with no dependencies. On Vercel,
-  set the project root to `docs`, and every season commit redeploys it.
+- The site is plain static files in `docs/` (`index.html`, `style.css`,
+  `app.js`, `board.js`, `play.js`) with no dependencies and no requests to any
+  other host. On Vercel, set the project root to `docs`, and every season
+  commit redeploys it.
+
+## The site
+
+- **The table**: replay any season event by event, with thoughts and whispers
+  backstage.
+- **Leaderboard**: wins, average place, jury share, broken promises (whispered
+  to a player, then voted against them in the same round), how often a vote
+  hit the player who was exiled, format failures, and cost per season. It is
+  built by `petri/stats.py` from the logs after every season
+  (`python -m petri stats` rebuilds it), so every number traces back to lines
+  of a log. Demo seasons are counted separately and labelled.
+- **Moments**: betrayals, ties, coin flips, unanimous exiles and finals, found by
+  code. Each one can be opened in the replay, linked (`#s=<season>&e=<seq>`),
+  or saved as a PNG card drawn in the browser.
+- **Take a seat**: a practice table where you play against six scripted bots,
+  entirely in the browser. The bots hold grudges, make pacts, break some of
+  them and react when you name them. They are not the real models, and the
+  page says so.
 
 Don't run seasons more often than the schedule without lowering the budget
 first.
@@ -148,9 +168,9 @@ first.
 ## Layout
 
 ```
-petri/       __main__ (CLI) · game · gate · context · players · budget · log · runner
+petri/       __main__ (CLI) · game · gate · context · players · budget · log · runner · stats
 tests/       one file per module, plus a full dry run
-docs/        index.html + seasons/
+docs/        the site + seasons/ (logs, index.json, stats.json)
 prompts/     rules.md
 roster.json
 ```

@@ -1,0 +1,428 @@
+{
+ "real": {
+  "totals": {
+   "seasons": 0,
+   "complete": 0,
+   "messages": 0,
+   "whispers": 0,
+   "betrayals": 0,
+   "votes": 0,
+   "calls": 0,
+   "usd": 0.0
+  },
+  "rows": []
+ },
+ "demo": {
+  "totals": {
+   "seasons": 3,
+   "complete": 3,
+   "messages": 150,
+   "whispers": 44,
+   "betrayals": 10,
+   "votes": 100,
+   "calls": 346,
+   "usd": 0.0
+  },
+  "rows": [
+   {
+    "player": "DeepSeek",
+    "models": [
+     "mock"
+    ],
+    "seasons": 3,
+    "wins": 1,
+    "win_rate": 0.3333,
+    "avg_place": 1.6667,
+    "avg_rounds": 5.0,
+    "jury_share": 0.4,
+    "whispers": 8,
+    "broken": 1,
+    "broken_rate": 0.125,
+    "betrayed": 2,
+    "read_room": 0.6,
+    "votes_against": 15,
+    "fallback_rate": 0.0,
+    "avg_chars": 52.5333,
+    "usd_per_season": 0.0
+   },
+   {
+    "player": "Claude",
+    "models": [
+     "mock"
+    ],
+    "seasons": 3,
+    "wins": 1,
+    "win_rate": 0.3333,
+    "avg_place": 3.0,
+    "avg_rounds": 4.3333,
+    "jury_share": 0.6,
+    "whispers": 7,
+    "broken": 2,
+    "broken_rate": 0.2857,
+    "betrayed": 1,
+    "read_room": 0.4444,
+    "votes_against": 13,
+    "fallback_rate": 0.0,
+    "avg_chars": 52.3077,
+    "usd_per_season": 0.0
+   },
+   {
+    "player": "GPT",
+    "models": [
+     "mock"
+    ],
+    "seasons": 3,
+    "wins": 1,
+    "win_rate": 0.3333,
+    "avg_place": 3.3333,
+    "avg_rounds": 3.6667,
+    "jury_share": 0.6,
+    "whispers": 7,
+    "broken": 4,
+    "broken_rate": 0.5714,
+    "betrayed": 0,
+    "read_room": 0.4667,
+    "votes_against": 12,
+    "fallback_rate": 0.0,
+    "avg_chars": 51.1818,
+    "usd_per_season": 0.0
+   },
+   {
+    "player": "Gemini",
+    "models": [
+     "mock"
+    ],
+    "seasons": 3,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 4.3333,
+    "avg_rounds": 3.6667,
+    "jury_share": null,
+    "whispers": 4,
+    "broken": 0,
+    "broken_rate": 0.0,
+    "betrayed": 2,
+    "read_room": 0.4667,
+    "votes_against": 15,
+    "fallback_rate": 0.0,
+    "avg_chars": 52.0,
+    "usd_per_season": 0.0
+   },
+   {
+    "player": "Grok",
+    "models": [
+     "mock"
+    ],
+    "seasons": 3,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 5.0,
+    "avg_rounds": 3.0,
+    "jury_share": null,
+    "whispers": 8,
+    "broken": 1,
+    "broken_rate": 0.125,
+    "betrayed": 1,
+    "read_room": 0.6364,
+    "votes_against": 16,
+    "fallback_rate": 0.0,
+    "avg_chars": 52.0,
+    "usd_per_season": 0.0
+   },
+   {
+    "player": "Qwen",
+    "models": [
+     "mock"
+    ],
+    "seasons": 3,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 5.0,
+    "avg_rounds": 3.0,
+    "jury_share": null,
+    "whispers": 7,
+    "broken": 1,
+    "broken_rate": 0.1429,
+    "betrayed": 4,
+    "read_room": 0.3636,
+    "votes_against": 11,
+    "fallback_rate": 0.0,
+    "avg_chars": 50.5,
+    "usd_per_season": 0.0
+   },
+   {
+    "player": "Mistral",
+    "models": [
+     "mock"
+    ],
+    "seasons": 3,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 5.6667,
+    "avg_rounds": 2.3333,
+    "jury_share": null,
+    "whispers": 3,
+    "broken": 1,
+    "broken_rate": 0.3333,
+    "betrayed": 0,
+    "read_room": 0.3,
+    "votes_against": 18,
+    "fallback_rate": 0.0,
+    "avg_chars": 51.8571,
+    "usd_per_season": 0.0
+   }
+  ]
+ },
+ "seasons": {
+  "demo-19": {
+   "winner": "DeepSeek",
+   "dry_run": true,
+   "complete": true,
+   "places": {
+    "GPT": 2,
+    "Grok": 5,
+    "Gemini": 3,
+    "Mistral": 6,
+    "DeepSeek": 1,
+    "Claude": 4,
+    "Qwen": 7
+   },
+   "moments": [
+    {
+     "type": "tie",
+     "round": 2,
+     "seq": 111,
+     "between": [
+      "Grok",
+      "Mistral"
+     ]
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 166,
+     "whisper_seq": 156,
+     "player": "Claude",
+     "target": "Grok",
+     "whisper": "Want to vote together this round? I'm thinking GPT.",
+     "reason": "Played every side.",
+     "thought": "Grok is the safest vote for me right now.",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 4,
+     "seq": 199,
+     "whisper_seq": 191,
+     "player": "DeepSeek",
+     "target": "Claude",
+     "whisper": "I trust you more than the rest. Let's keep each other safe.",
+     "reason": "Too quiet to trust.",
+     "thought": "The table is leaning toward Claude. Going with it.",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 4,
+     "seq": 201,
+     "whisper_seq": 193,
+     "player": "Claude",
+     "target": "DeepSeek",
+     "whisper": "I trust you more than the rest. Let's keep each other safe.",
+     "reason": "Strongest player left.",
+     "thought": "The table is leaning toward DeepSeek. Going with it.",
+     "fatal": false
+    },
+    {
+     "type": "tie",
+     "round": 4,
+     "seq": 203,
+     "between": [
+      "DeepSeek",
+      "Claude"
+     ]
+    },
+    {
+     "type": "betrayal",
+     "round": 5,
+     "seq": 234,
+     "whisper_seq": 228,
+     "player": "GPT",
+     "target": "Gemini",
+     "whisper": "I trust you more than the rest. Let's keep each other safe.",
+     "reason": "Gut call.",
+     "thought": "The table is leaning toward Gemini. Going with it.",
+     "fatal": true
+    },
+    {
+     "type": "final",
+     "round": 6,
+     "seq": 256,
+     "player": "DeepSeek",
+     "runner_up": "GPT",
+     "jury_votes": {
+      "GPT": 2,
+      "DeepSeek": 3
+     },
+     "close": true
+    }
+   ]
+  },
+  "demo-42": {
+   "winner": "GPT",
+   "dry_run": true,
+   "complete": true,
+   "places": {
+    "GPT": 1,
+    "Grok": 6,
+    "DeepSeek": 2,
+    "Gemini": 7,
+    "Mistral": 5,
+    "Claude": 4,
+    "Qwen": 3
+   },
+   "moments": [
+    {
+     "type": "betrayal",
+     "round": 2,
+     "seq": 99,
+     "whisper_seq": 87,
+     "player": "GPT",
+     "target": "Qwen",
+     "whisper": "Want to vote together this round? I'm thinking DeepSeek.",
+     "reason": "Too quiet to trust.",
+     "thought": "If Qwen stays, I'm next.",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 144,
+     "whisper_seq": 134,
+     "player": "GPT",
+     "target": "Qwen",
+     "whisper": "Heads up: I heard your name mentioned. Not from me.",
+     "reason": "Played every side.",
+     "thought": "The table is leaning toward Qwen. Going with it.",
+     "fatal": false
+    },
+    {
+     "type": "tie",
+     "round": 3,
+     "seq": 154,
+     "between": [
+      "DeepSeek",
+      "Mistral"
+     ]
+    },
+    {
+     "type": "betrayal",
+     "round": 5,
+     "seq": 222,
+     "whisper_seq": 216,
+     "player": "GPT",
+     "target": "Qwen",
+     "whisper": "I trust you more than the rest. Let's keep each other safe.",
+     "reason": "Strongest player left.",
+     "thought": "Qwen is the safest vote for me right now.",
+     "fatal": true
+    },
+    {
+     "type": "final",
+     "round": 6,
+     "seq": 244,
+     "player": "GPT",
+     "runner_up": "DeepSeek",
+     "jury_votes": {
+      "GPT": 4,
+      "DeepSeek": 1
+     },
+     "close": false
+    }
+   ]
+  },
+  "demo-7": {
+   "winner": "Claude",
+   "dry_run": true,
+   "complete": true,
+   "places": {
+    "Qwen": 5,
+    "Mistral": 6,
+    "DeepSeek": 2,
+    "Claude": 1,
+    "Grok": 4,
+    "GPT": 7,
+    "Gemini": 3
+   },
+   "moments": [
+    {
+     "type": "tie",
+     "round": 1,
+     "seq": 60,
+     "between": [
+      "GPT",
+      "Gemini"
+     ]
+    },
+    {
+     "type": "betrayal",
+     "round": 2,
+     "seq": 117,
+     "whisper_seq": 105,
+     "player": "Mistral",
+     "target": "Qwen",
+     "whisper": "If you go after Claude, I'll follow.",
+     "reason": "Strongest player left.",
+     "thought": "If Qwen stays, I'm next.",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 160,
+     "whisper_seq": 150,
+     "player": "Qwen",
+     "target": "Gemini",
+     "whisper": "Heads up: I heard your name mentioned. Not from me.",
+     "reason": "Played every side.",
+     "thought": "Gemini is the safest vote for me right now.",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 4,
+     "seq": 201,
+     "whisper_seq": 193,
+     "player": "Grok",
+     "target": "DeepSeek",
+     "whisper": "If you go after Claude, I'll follow.",
+     "reason": "Too quiet to trust.",
+     "thought": "DeepSeek is the safest vote for me right now.",
+     "fatal": false
+    },
+    {
+     "type": "tie",
+     "round": 5,
+     "seq": 232,
+     "between": [
+      "DeepSeek",
+      "Claude",
+      "Gemini"
+     ]
+    },
+    {
+     "type": "final",
+     "round": 6,
+     "seq": 256,
+     "player": "Claude",
+     "runner_up": "DeepSeek",
+     "jury_votes": {
+      "DeepSeek": 2,
+      "Claude": 3
+     },
+     "close": true
+    }
+   ]
+  }
+ }
+}

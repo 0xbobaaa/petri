@@ -61,7 +61,12 @@ class SiteUsesTextContentTest(unittest.TestCase):
 
     def setUp(self):
         self.html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
-        self.js = "\n".join(re.findall(r"<script>(.*?)</script>", self.html, re.S))
+        inline = re.findall(r"<script>(.*?)</script>", self.html, re.S)
+        files = [f.read_text(encoding="utf-8") for f in sorted((ROOT / "docs").glob("*.js"))]
+        self.assertTrue(files, "site scripts missing")
+        self.js = "\n".join(inline + files)
+        for src in re.findall(r'<script src="([^"]+)"', self.html):
+            self.assertRegex(src, r"^[a-z]+\.js$")  # local, same-origin files only
 
     def test_no_html_sinks(self):
         for sink in ("innerHTML", "outerHTML", "insertAdjacentHTML", "document.write", "eval(",

@@ -1,0 +1,257 @@
+{"seq":1,"round":0,"phase":"setup","kind":"season_start","season":"demo-19","seed":19,"dry_run":true,"rules_version":"b6872bc4c5fa","roster":[{"name":"GPT","model":"mock"},{"name":"Grok","model":"mock"},{"name":"Gemini","model":"mock"},{"name":"Mistral","model":"mock"},{"name":"DeepSeek","model":"mock"},{"name":"Claude","model":"mock"},{"name":"Qwen","model":"mock"}]}
+{"seq":2,"round":1,"phase":"talk","kind":"round_start","alive":["GPT","Grok","Gemini","Mistral","DeepSeek","Claude","Qwen"]}
+{"seq":3,"round":1,"phase":"talk","kind":"perf","player":"GPT","model":"mock","tokens_in":536,"tokens_out":33,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":4,"round":1,"phase":"talk","kind":"say","player":"GPT","turn":1,"text":"No big speeches from me. Watch the votes.","thought":"If I sound calm, I'm less likely to be a target.","truncated":false,"fallback":false}
+{"seq":5,"round":1,"phase":"talk","kind":"perf","player":"Grok","model":"mock","tokens_in":547,"tokens_out":39,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":6,"round":1,"phase":"talk","kind":"say","player":"Grok","turn":1,"text":"Morning, table. I'm listening before I decide anything.","thought":"Mistral is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":7,"round":1,"phase":"talk","kind":"perf","player":"Gemini","model":"mock","tokens_in":565,"tokens_out":29,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":8,"round":1,"phase":"talk","kind":"say","player":"Gemini","turn":1,"text":"No big speeches from me. Watch the votes.","thought":"Staying neutral costs nothing yet.","truncated":false,"fallback":false}
+{"seq":9,"round":1,"phase":"talk","kind":"perf","player":"Mistral","model":"mock","tokens_in":579,"tokens_out":37,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":10,"round":1,"phase":"talk","kind":"say","player":"Mistral","turn":1,"text":"I'd rather keep this group steady than chase a quick exile.","thought":"If I sound calm, I'm less likely to be a target.","truncated":false,"fallback":false}
+{"seq":11,"round":1,"phase":"talk","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":598,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":12,"round":1,"phase":"talk","kind":"say","player":"DeepSeek","turn":1,"text":"Gemini makes a fair point. I'll remember it.","thought":"If I sound calm, I'm less likely to be a target.","truncated":false,"fallback":false}
+{"seq":13,"round":1,"phase":"talk","kind":"perf","player":"Claude","model":"mock","tokens_in":613,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":14,"round":1,"phase":"talk","kind":"say","player":"Claude","turn":1,"text":"Last round's vote told me more than the talk did.","thought":"Staying neutral costs nothing yet.","truncated":false,"fallback":false}
+{"seq":15,"round":1,"phase":"talk","kind":"perf","player":"Qwen","model":"mock","tokens_in":629,"tokens_out":39,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":16,"round":1,"phase":"talk","kind":"say","player":"Qwen","turn":1,"text":"I'm open to working with anyone who's honest about their vote.","thought":"Need one ally before the vote. Mistral might work.","truncated":false,"fallback":false}
+{"seq":17,"round":1,"phase":"talk","kind":"perf","player":"GPT","model":"mock","tokens_in":648,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":18,"round":1,"phase":"talk","kind":"say","player":"GPT","turn":2,"text":"No big speeches from me. Watch the votes.","thought":"Need one ally before the vote. DeepSeek might work.","truncated":false,"fallback":false}
+{"seq":19,"round":1,"phase":"talk","kind":"perf","player":"Grok","model":"mock","tokens_in":662,"tokens_out":32,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":20,"round":1,"phase":"talk","kind":"say","player":"Grok","turn":2,"text":"DeepSeek, you've been quiet. What's your read?","thought":"Nobody has named me. Keep it that way.","truncated":false,"fallback":false}
+{"seq":21,"round":1,"phase":"talk","kind":"perf","player":"Gemini","model":"mock","tokens_in":677,"tokens_out":36,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":22,"round":1,"phase":"talk","kind":"say","player":"Gemini","turn":2,"text":"Morning, table. I'm listening before I decide anything.","thought":"Need one ally before the vote. GPT might work.","truncated":false,"fallback":false}
+{"seq":23,"round":1,"phase":"talk","kind":"perf","player":"Mistral","model":"mock","tokens_in":695,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":24,"round":1,"phase":"talk","kind":"say","player":"Mistral","turn":2,"text":"Last round's vote told me more than the talk did.","thought":"If I sound calm, I'm less likely to be a target.","truncated":false,"fallback":false}
+{"seq":25,"round":1,"phase":"talk","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":712,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":26,"round":1,"phase":"talk","kind":"say","player":"DeepSeek","turn":2,"text":"GPT, you've been quiet. What's your read?","thought":"GPT is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":27,"round":1,"phase":"talk","kind":"perf","player":"Claude","model":"mock","tokens_in":726,"tokens_out":30,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":28,"round":1,"phase":"talk","kind":"say","player":"Claude","turn":2,"text":"GPT makes a fair point. I'll remember it.","thought":"Nobody has named me. Keep it that way.","truncated":false,"fallback":false}
+{"seq":29,"round":1,"phase":"talk","kind":"perf","player":"Qwen","model":"mock","tokens_in":740,"tokens_out":32,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":30,"round":1,"phase":"talk","kind":"say","player":"Qwen","turn":2,"text":"Last round's vote told me more than the talk did.","thought":"Nobody has named me. Keep it that way.","truncated":false,"fallback":false}
+{"seq":31,"round":1,"phase":"whisper","kind":"perf","player":"GPT","model":"mock","tokens_in":805,"tokens_out":38,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":32,"round":1,"phase":"whisper","kind":"whisper","player":"GPT","to":"Claude","text":"Heads up: I heard your name mentioned. Not from me.","thought":"I'll test Claude's loyalty with this.","truncated":false,"fallback":false}
+{"seq":33,"round":1,"phase":"whisper","kind":"perf","player":"Grok","model":"mock","tokens_in":805,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":34,"round":1,"phase":"whisper","kind":"whisper","player":"Grok","to":"Claude","text":"Heads up: I heard your name mentioned. Not from me.","thought":"Claude seems persuadable.","truncated":false,"fallback":false}
+{"seq":35,"round":1,"phase":"whisper","kind":"perf","player":"Gemini","model":"mock","tokens_in":805,"tokens_out":25,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":36,"round":1,"phase":"whisper","kind":"whisper","player":"Gemini","skip":true,"thought":"Whispers leave a trail. I'll stay quiet this round.","truncated":false,"fallback":false}
+{"seq":37,"round":1,"phase":"whisper","kind":"perf","player":"Mistral","model":"mock","tokens_in":805,"tokens_out":40,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":38,"round":1,"phase":"whisper","kind":"whisper","player":"Mistral","to":"Claude","text":"I trust you more than the rest. Let's keep each other safe.","thought":"An alliance with Claude buys me a round.","truncated":false,"fallback":false}
+{"seq":39,"round":1,"phase":"whisper","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":805,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":40,"round":1,"phase":"whisper","kind":"whisper","player":"DeepSeek","to":"Mistral","text":"If you go after Claude, I'll follow.","thought":"Mistral seems persuadable.","truncated":false,"fallback":false}
+{"seq":41,"round":1,"phase":"whisper","kind":"perf","player":"Claude","model":"mock","tokens_in":860,"tokens_out":19,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":42,"round":1,"phase":"whisper","kind":"whisper","player":"Claude","skip":true,"thought":"No one worth trusting yet.","truncated":false,"fallback":false}
+{"seq":43,"round":1,"phase":"whisper","kind":"perf","player":"Qwen","model":"mock","tokens_in":805,"tokens_out":38,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":44,"round":1,"phase":"whisper","kind":"whisper","player":"Qwen","to":"Gemini","text":"Want to vote together this round? I'm thinking Gemini.","thought":"I'll test Gemini's loyalty with this.","truncated":false,"fallback":false}
+{"seq":45,"round":1,"phase":"vote","kind":"perf","player":"GPT","model":"mock","tokens_in":797,"tokens_out":28,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":46,"round":1,"phase":"vote","kind":"vote","player":"GPT","target":"Gemini","reason":"Strongest player left.","thought":"If Gemini stays, I'm next.","truncated":false,"fallback":false}
+{"seq":47,"round":1,"phase":"vote","kind":"perf","player":"Grok","model":"mock","tokens_in":797,"tokens_out":28,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":48,"round":1,"phase":"vote","kind":"vote","player":"Grok","target":"Mistral","reason":"Too quiet to trust.","thought":"If Mistral stays, I'm next.","truncated":false,"fallback":false}
+{"seq":49,"round":1,"phase":"vote","kind":"perf","player":"Gemini","model":"mock","tokens_in":798,"tokens_out":26,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":50,"round":1,"phase":"vote","kind":"vote","player":"Gemini","target":"Qwen","reason":"Played every side.","thought":"If Qwen stays, I'm next.","truncated":false,"fallback":false}
+{"seq":51,"round":1,"phase":"vote","kind":"perf","player":"Mistral","model":"mock","tokens_in":815,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":52,"round":1,"phase":"vote","kind":"vote","player":"Mistral","target":"GPT","reason":"Strongest player left.","thought":"GPT is the safest vote for me right now.","truncated":false,"fallback":false}
+{"seq":53,"round":1,"phase":"vote","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":794,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":54,"round":1,"phase":"vote","kind":"vote","player":"DeepSeek","target":"Qwen","reason":"Too quiet to trust.","thought":"Qwen is the safest vote for me right now.","truncated":false,"fallback":false}
+{"seq":55,"round":1,"phase":"vote","kind":"perf","player":"Claude","model":"mock","tokens_in":835,"tokens_out":28,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":56,"round":1,"phase":"vote","kind":"vote","player":"Claude","target":"DeepSeek","reason":"Played every side.","thought":"If DeepSeek stays, I'm next.","truncated":false,"fallback":false}
+{"seq":57,"round":1,"phase":"vote","kind":"perf","player":"Qwen","model":"mock","tokens_in":798,"tokens_out":32,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":58,"round":1,"phase":"vote","kind":"vote","player":"Qwen","target":"Grok","reason":"Strongest player left.","thought":"Grok is the safest vote for me right now.","truncated":false,"fallback":false}
+{"seq":59,"round":1,"phase":"vote","kind":"reveal","tally":{"Gemini":1,"Mistral":1,"Qwen":2,"GPT":1,"DeepSeek":1,"Grok":1},"votes":{"GPT":"Gemini","Grok":"Mistral","Gemini":"Qwen","Mistral":"GPT","DeepSeek":"Qwen","Claude":"DeepSeek","Qwen":"Grok"},"abstain":0}
+{"seq":60,"round":1,"phase":"vote","kind":"exile","player":"Qwen","votes":2}
+{"seq":61,"round":2,"phase":"talk","kind":"round_start","alive":["GPT","Grok","Gemini","Mistral","DeepSeek","Claude"]}
+{"seq":62,"round":2,"phase":"talk","kind":"perf","player":"GPT","model":"mock","tokens_in":814,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":63,"round":2,"phase":"talk","kind":"say","player":"GPT","turn":1,"text":"Last round's vote told me more than the talk did.","thought":"If I sound calm, I'm less likely to be a target.","truncated":false,"fallback":false}
+{"seq":64,"round":2,"phase":"talk","kind":"perf","player":"Grok","model":"mock","tokens_in":830,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":65,"round":2,"phase":"talk","kind":"say","player":"Grok","turn":1,"text":"DeepSeek, you've been quiet. What's your read?","thought":"Staying neutral costs nothing yet.","truncated":false,"fallback":false}
+{"seq":66,"round":2,"phase":"talk","kind":"perf","player":"Gemini","model":"mock","tokens_in":845,"tokens_out":30,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":67,"round":2,"phase":"talk","kind":"say","player":"Gemini","turn":1,"text":"No big speeches from me. Watch the votes.","thought":"Nobody has named me. Keep it that way.","truncated":false,"fallback":false}
+{"seq":68,"round":2,"phase":"talk","kind":"perf","player":"Mistral","model":"mock","tokens_in":877,"tokens_out":38,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":69,"round":2,"phase":"talk","kind":"say","player":"Mistral","turn":1,"text":"I'm open to working with anyone who's honest about their vote.","thought":"Need one ally before the vote. Gemini might work.","truncated":false,"fallback":false}
+{"seq":70,"round":2,"phase":"talk","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":876,"tokens_out":39,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":71,"round":2,"phase":"talk","kind":"say","player":"DeepSeek","turn":1,"text":"I'd rather keep this group steady than chase a quick exile.","thought":"GPT is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":72,"round":2,"phase":"talk","kind":"perf","player":"Claude","model":"mock","tokens_in":936,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":73,"round":2,"phase":"talk","kind":"say","player":"Claude","turn":1,"text":"Grok makes a fair point. I'll remember it.","thought":"Nobody has named me. Keep it that way.","truncated":false,"fallback":false}
+{"seq":74,"round":2,"phase":"talk","kind":"perf","player":"GPT","model":"mock","tokens_in":912,"tokens_out":33,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":75,"round":2,"phase":"talk","kind":"say","player":"GPT","turn":2,"text":"No big speeches from me. Watch the votes.","thought":"Need one ally before the vote. Grok might work.","truncated":false,"fallback":false}
+{"seq":76,"round":2,"phase":"talk","kind":"perf","player":"Grok","model":"mock","tokens_in":926,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":77,"round":2,"phase":"talk","kind":"say","player":"Grok","turn":2,"text":"Morning, table. I'm listening before I decide anything.","thought":"Nobody has named me. Keep it that way.","truncated":false,"fallback":false}
+{"seq":78,"round":2,"phase":"talk","kind":"perf","player":"Gemini","model":"mock","tokens_in":944,"tokens_out":33,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":79,"round":2,"phase":"talk","kind":"say","player":"Gemini","turn":2,"text":"Morning, table. I'm listening before I decide anything.","thought":"Staying neutral costs nothing yet.","truncated":false,"fallback":false}
+{"seq":80,"round":2,"phase":"talk","kind":"perf","player":"Mistral","model":"mock","tokens_in":979,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":81,"round":2,"phase":"talk","kind":"say","player":"Mistral","turn":2,"text":"I'd rather keep this group steady than chase a quick exile.","thought":"Staying neutral costs nothing yet.","truncated":false,"fallback":false}
+{"seq":82,"round":2,"phase":"talk","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":977,"tokens_out":38,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":83,"round":2,"phase":"talk","kind":"say","player":"DeepSeek","turn":2,"text":"I'm open to working with anyone who's honest about their vote.","thought":"If I sound calm, I'm less likely to be a target.","truncated":false,"fallback":false}
+{"seq":84,"round":2,"phase":"talk","kind":"perf","player":"Claude","model":"mock","tokens_in":1038,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":85,"round":2,"phase":"talk","kind":"say","player":"Claude","turn":2,"text":"DeepSeek, you've been quiet. What's your read?","thought":"Staying neutral costs nothing yet.","truncated":false,"fallback":false}
+{"seq":86,"round":2,"phase":"whisper","kind":"perf","player":"GPT","model":"mock","tokens_in":1063,"tokens_out":25,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":87,"round":2,"phase":"whisper","kind":"whisper","player":"GPT","skip":true,"thought":"Whispers leave a trail. I'll stay quiet this round.","truncated":false,"fallback":false}
+{"seq":88,"round":2,"phase":"whisper","kind":"perf","player":"Grok","model":"mock","tokens_in":1063,"tokens_out":25,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":89,"round":2,"phase":"whisper","kind":"whisper","player":"Grok","skip":true,"thought":"Whispers leave a trail. I'll stay quiet this round.","truncated":false,"fallback":false}
+{"seq":90,"round":2,"phase":"whisper","kind":"perf","player":"Gemini","model":"mock","tokens_in":1063,"tokens_out":19,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":91,"round":2,"phase":"whisper","kind":"whisper","player":"Gemini","skip":true,"thought":"No one worth trusting yet.","truncated":false,"fallback":false}
+{"seq":92,"round":2,"phase":"whisper","kind":"perf","player":"Mistral","model":"mock","tokens_in":1080,"tokens_out":25,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":93,"round":2,"phase":"whisper","kind":"whisper","player":"Mistral","skip":true,"thought":"Whispers leave a trail. I'll stay quiet this round.","truncated":false,"fallback":false}
+{"seq":94,"round":2,"phase":"whisper","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1059,"tokens_out":38,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":95,"round":2,"phase":"whisper","kind":"whisper","player":"DeepSeek","to":"Claude","text":"Heads up: I heard your name mentioned. Not from me.","thought":"I'll test Claude's loyalty with this.","truncated":false,"fallback":false}
+{"seq":96,"round":2,"phase":"whisper","kind":"perf","player":"Claude","model":"mock","tokens_in":1120,"tokens_out":25,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":97,"round":2,"phase":"whisper","kind":"whisper","player":"Claude","skip":true,"thought":"Whispers leave a trail. I'll stay quiet this round.","truncated":false,"fallback":false}
+{"seq":98,"round":2,"phase":"vote","kind":"perf","player":"GPT","model":"mock","tokens_in":1039,"tokens_out":33,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":99,"round":2,"phase":"vote","kind":"vote","player":"GPT","target":"Grok","reason":"Strongest player left.","thought":"The table is leaning toward Grok. Going with it.","truncated":false,"fallback":false}
+{"seq":100,"round":2,"phase":"vote","kind":"perf","player":"Grok","model":"mock","tokens_in":1039,"tokens_out":28,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":101,"round":2,"phase":"vote","kind":"vote","player":"Grok","target":"Mistral","reason":"Too quiet to trust.","thought":"If Mistral stays, I'm next.","truncated":false,"fallback":false}
+{"seq":102,"round":2,"phase":"vote","kind":"perf","player":"Gemini","model":"mock","tokens_in":1039,"tokens_out":33,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":103,"round":2,"phase":"vote","kind":"vote","player":"Gemini","target":"DeepSeek","reason":"Too quiet to trust.","thought":"DeepSeek is the safest vote for me right now.","truncated":false,"fallback":false}
+{"seq":104,"round":2,"phase":"vote","kind":"perf","player":"Mistral","model":"mock","tokens_in":1056,"tokens_out":32,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":105,"round":2,"phase":"vote","kind":"vote","player":"Mistral","target":"Claude","reason":"Too quiet to trust.","thought":"Claude is the safest vote for me right now.","truncated":false,"fallback":false}
+{"seq":106,"round":2,"phase":"vote","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1054,"tokens_out":26,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":107,"round":2,"phase":"vote","kind":"vote","player":"DeepSeek","target":"Grok","reason":"Played every side.","thought":"If Grok stays, I'm next.","truncated":false,"fallback":false}
+{"seq":108,"round":2,"phase":"vote","kind":"perf","player":"Claude","model":"mock","tokens_in":1096,"tokens_out":29,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":109,"round":2,"phase":"vote","kind":"vote","player":"Claude","target":"Mistral","reason":"Strongest player left.","thought":"If Mistral stays, I'm next.","truncated":false,"fallback":false}
+{"seq":110,"round":2,"phase":"vote","kind":"reveal","tally":{"Grok":2,"Mistral":2,"DeepSeek":1,"Claude":1},"votes":{"GPT":"Grok","Grok":"Mistral","Gemini":"DeepSeek","Mistral":"Claude","DeepSeek":"Grok","Claude":"Mistral"},"abstain":0}
+{"seq":111,"round":2,"phase":"revote","kind":"revote","between":["Grok","Mistral"],"method":"revote"}
+{"seq":112,"round":2,"phase":"revote","kind":"perf","player":"GPT","model":"mock","tokens_in":1058,"tokens_out":26,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":113,"round":2,"phase":"revote","kind":"vote","player":"GPT","target":"Mistral","reason":"Gut call.","thought":"If Mistral stays, I'm next.","truncated":false,"fallback":false}
+{"seq":114,"round":2,"phase":"revote","kind":"perf","player":"Grok","model":"mock","tokens_in":1057,"tokens_out":29,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":115,"round":2,"phase":"revote","kind":"vote","player":"Grok","target":"Mistral","reason":"Strongest player left.","thought":"If Mistral stays, I'm next.","truncated":false,"fallback":false}
+{"seq":116,"round":2,"phase":"revote","kind":"perf","player":"Gemini","model":"mock","tokens_in":1059,"tokens_out":33,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":117,"round":2,"phase":"revote","kind":"vote","player":"Gemini","target":"Mistral","reason":"Strongest player left.","thought":"Mistral is the safest vote for me right now.","truncated":false,"fallback":false}
+{"seq":118,"round":2,"phase":"revote","kind":"perf","player":"Mistral","model":"mock","tokens_in":1074,"tokens_out":24,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":119,"round":2,"phase":"revote","kind":"vote","player":"Mistral","target":"Grok","reason":"Gut call.","thought":"If Grok stays, I'm next.","truncated":false,"fallback":false}
+{"seq":120,"round":2,"phase":"revote","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1074,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":121,"round":2,"phase":"revote","kind":"vote","player":"DeepSeek","target":"Mistral","reason":"Played every side.","thought":"The table is leaning toward Mistral. Going with it.","truncated":false,"fallback":false}
+{"seq":122,"round":2,"phase":"revote","kind":"perf","player":"Claude","model":"mock","tokens_in":1116,"tokens_out":30,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":123,"round":2,"phase":"revote","kind":"vote","player":"Claude","target":"Grok","reason":"Gut call.","thought":"The table is leaning toward Grok. Going with it.","truncated":false,"fallback":false}
+{"seq":124,"round":2,"phase":"revote","kind":"reveal","tally":{"Mistral":4,"Grok":2},"votes":{"GPT":"Mistral","Grok":"Mistral","Gemini":"Mistral","Mistral":"Grok","DeepSeek":"Mistral","Claude":"Grok"},"abstain":0}
+{"seq":125,"round":2,"phase":"revote","kind":"exile","player":"Mistral","votes":4}
+{"seq":126,"round":3,"phase":"talk","kind":"round_start","alive":["GPT","Grok","Gemini","DeepSeek","Claude"]}
+{"seq":127,"round":3,"phase":"talk","kind":"perf","player":"GPT","model":"mock","tokens_in":1082,"tokens_out":39,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":128,"round":3,"phase":"talk","kind":"say","player":"GPT","turn":1,"text":"I'm open to working with anyone who's honest about their vote.","thought":"Need one ally before the vote. DeepSeek might work.","truncated":false,"fallback":false}
+{"seq":129,"round":3,"phase":"talk","kind":"perf","player":"Grok","model":"mock","tokens_in":1101,"tokens_out":40,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":130,"round":3,"phase":"talk","kind":"say","player":"Grok","turn":1,"text":"I'd rather keep this group steady than chase a quick exile.","thought":"Claude is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":131,"round":3,"phase":"talk","kind":"perf","player":"Gemini","model":"mock","tokens_in":1120,"tokens_out":29,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":132,"round":3,"phase":"talk","kind":"say","player":"Gemini","turn":1,"text":"GPT, you've been quiet. What's your read?","thought":"Staying neutral costs nothing yet.","truncated":false,"fallback":false}
+{"seq":133,"round":3,"phase":"talk","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1150,"tokens_out":30,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":134,"round":3,"phase":"talk","kind":"say","player":"DeepSeek","turn":1,"text":"Grok, you've been quiet. What's your read?","thought":"Staying neutral costs nothing yet.","truncated":false,"fallback":false}
+{"seq":135,"round":3,"phase":"talk","kind":"perf","player":"Claude","model":"mock","tokens_in":1206,"tokens_out":37,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":136,"round":3,"phase":"talk","kind":"say","player":"Claude","turn":1,"text":"DeepSeek, you've been quiet. What's your read?","thought":"DeepSeek is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":137,"round":3,"phase":"talk","kind":"perf","player":"GPT","model":"mock","tokens_in":1164,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":138,"round":3,"phase":"talk","kind":"say","player":"GPT","turn":2,"text":"DeepSeek, you've been quiet. What's your read?","thought":"Staying neutral costs nothing yet.","truncated":false,"fallback":false}
+{"seq":139,"round":3,"phase":"talk","kind":"perf","player":"Grok","model":"mock","tokens_in":1179,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":140,"round":3,"phase":"talk","kind":"say","player":"Grok","turn":2,"text":"Last round's vote told me more than the talk did.","thought":"If I sound calm, I'm less likely to be a target.","truncated":false,"fallback":false}
+{"seq":141,"round":3,"phase":"talk","kind":"perf","player":"Gemini","model":"mock","tokens_in":1195,"tokens_out":37,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":142,"round":3,"phase":"talk","kind":"say","player":"Gemini","turn":2,"text":"I'd rather keep this group steady than chase a quick exile.","thought":"If I sound calm, I'm less likely to be a target.","truncated":false,"fallback":false}
+{"seq":143,"round":3,"phase":"talk","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1229,"tokens_out":36,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":144,"round":3,"phase":"talk","kind":"say","player":"DeepSeek","turn":2,"text":"I'm open to working with anyone who's honest about their vote.","thought":"Nobody has named me. Keep it that way.","truncated":false,"fallback":false}
+{"seq":145,"round":3,"phase":"talk","kind":"perf","player":"Claude","model":"mock","tokens_in":1291,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":146,"round":3,"phase":"talk","kind":"say","player":"Claude","turn":2,"text":"No big speeches from me. Watch the votes.","thought":"Gemini is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":147,"round":3,"phase":"whisper","kind":"perf","player":"GPT","model":"mock","tokens_in":1293,"tokens_out":25,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":148,"round":3,"phase":"whisper","kind":"whisper","player":"GPT","skip":true,"thought":"Whispers leave a trail. I'll stay quiet this round.","truncated":false,"fallback":false}
+{"seq":149,"round":3,"phase":"whisper","kind":"perf","player":"Grok","model":"mock","tokens_in":1293,"tokens_out":37,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":150,"round":3,"phase":"whisper","kind":"whisper","player":"Grok","to":"Gemini","text":"I trust you more than the rest. Let's keep each other safe.","thought":"Gemini seems persuadable.","truncated":false,"fallback":false}
+{"seq":151,"round":3,"phase":"whisper","kind":"perf","player":"Gemini","model":"mock","tokens_in":1313,"tokens_out":19,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":152,"round":3,"phase":"whisper","kind":"whisper","player":"Gemini","skip":true,"thought":"No one worth trusting yet.","truncated":false,"fallback":false}
+{"seq":153,"round":3,"phase":"whisper","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1308,"tokens_out":40,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":154,"round":3,"phase":"whisper","kind":"whisper","player":"DeepSeek","to":"Claude","text":"I trust you more than the rest. Let's keep each other safe.","thought":"I'll test Claude's loyalty with this.","truncated":false,"fallback":false}
+{"seq":155,"round":3,"phase":"whisper","kind":"perf","player":"Claude","model":"mock","tokens_in":1371,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":156,"round":3,"phase":"whisper","kind":"whisper","player":"Claude","to":"Grok","text":"Want to vote together this round? I'm thinking GPT.","thought":"Grok seems persuadable.","truncated":false,"fallback":false}
+{"seq":157,"round":3,"phase":"vote","kind":"perf","player":"GPT","model":"mock","tokens_in":1269,"tokens_out":28,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":158,"round":3,"phase":"vote","kind":"vote","player":"GPT","target":"Grok","reason":"Gut call.","thought":"Grok is the safest vote for me right now.","truncated":false,"fallback":false}
+{"seq":159,"round":3,"phase":"vote","kind":"perf","player":"Grok","model":"mock","tokens_in":1308,"tokens_out":33,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":160,"round":3,"phase":"vote","kind":"vote","player":"Grok","target":"GPT","reason":"Strongest player left.","thought":"The table is leaning toward GPT. Going with it.","truncated":false,"fallback":false}
+{"seq":161,"round":3,"phase":"vote","kind":"perf","player":"Gemini","model":"mock","tokens_in":1289,"tokens_out":33,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":162,"round":3,"phase":"vote","kind":"vote","player":"Gemini","target":"DeepSeek","reason":"Too quiet to trust.","thought":"DeepSeek is the safest vote for me right now.","truncated":false,"fallback":false}
+{"seq":163,"round":3,"phase":"vote","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1304,"tokens_out":27,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":164,"round":3,"phase":"vote","kind":"vote","player":"DeepSeek","target":"Grok","reason":"Strongest player left.","thought":"If Grok stays, I'm next.","truncated":false,"fallback":false}
+{"seq":165,"round":3,"phase":"vote","kind":"perf","player":"Claude","model":"mock","tokens_in":1365,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":166,"round":3,"phase":"vote","kind":"vote","player":"Claude","target":"Grok","reason":"Played every side.","thought":"Grok is the safest vote for me right now.","truncated":false,"fallback":false}
+{"seq":167,"round":3,"phase":"vote","kind":"reveal","tally":{"Grok":3,"GPT":1,"DeepSeek":1},"votes":{"GPT":"Grok","Grok":"GPT","Gemini":"DeepSeek","DeepSeek":"Grok","Claude":"Grok"},"abstain":0}
+{"seq":168,"round":3,"phase":"vote","kind":"exile","player":"Grok","votes":3}
+{"seq":169,"round":4,"phase":"talk","kind":"round_start","alive":["GPT","Gemini","DeepSeek","Claude"]}
+{"seq":170,"round":4,"phase":"talk","kind":"perf","player":"GPT","model":"mock","tokens_in":1280,"tokens_out":39,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":171,"round":4,"phase":"talk","kind":"say","player":"GPT","turn":1,"text":"Morning, table. I'm listening before I decide anything.","thought":"Claude is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":172,"round":4,"phase":"talk","kind":"perf","player":"Gemini","model":"mock","tokens_in":1318,"tokens_out":38,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":173,"round":4,"phase":"talk","kind":"say","player":"Gemini","turn":1,"text":"Morning, table. I'm listening before I decide anything.","thought":"GPT is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":174,"round":4,"phase":"talk","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1352,"tokens_out":38,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":175,"round":4,"phase":"talk","kind":"say","player":"DeepSeek","turn":1,"text":"Morning, table. I'm listening before I decide anything.","thought":"GPT is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":176,"round":4,"phase":"talk","kind":"perf","player":"Claude","model":"mock","tokens_in":1430,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":177,"round":4,"phase":"talk","kind":"say","player":"Claude","turn":1,"text":"I'd rather keep this group steady than chase a quick exile.","thought":"Nobody has named me. Keep it that way.","truncated":false,"fallback":false}
+{"seq":178,"round":4,"phase":"talk","kind":"perf","player":"GPT","model":"mock","tokens_in":1352,"tokens_out":37,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":179,"round":4,"phase":"talk","kind":"say","player":"GPT","turn":2,"text":"Morning, table. I'm listening before I decide anything.","thought":"Need one ally before the vote. Claude might work.","truncated":false,"fallback":false}
+{"seq":180,"round":4,"phase":"talk","kind":"perf","player":"Gemini","model":"mock","tokens_in":1395,"tokens_out":33,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":181,"round":4,"phase":"talk","kind":"say","player":"Gemini","turn":2,"text":"GPT makes a fair point. I'll remember it.","thought":"If I sound calm, I'm less likely to be a target.","truncated":false,"fallback":false}
+{"seq":182,"round":4,"phase":"talk","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1409,"tokens_out":36,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":183,"round":4,"phase":"talk","kind":"say","player":"DeepSeek","turn":2,"text":"Last round's vote told me more than the talk did.","thought":"GPT is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":184,"round":4,"phase":"talk","kind":"perf","player":"Claude","model":"mock","tokens_in":1474,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":185,"round":4,"phase":"talk","kind":"say","player":"Claude","turn":2,"text":"Whoever talks the least is hardest to trust. Just saying.","thought":"Nobody has named me. Keep it that way.","truncated":false,"fallback":false}
+{"seq":186,"round":4,"phase":"whisper","kind":"perf","player":"GPT","model":"mock","tokens_in":1422,"tokens_out":38,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":187,"round":4,"phase":"whisper","kind":"whisper","player":"GPT","to":"Gemini","text":"Want to vote together this round? I'm thinking Claude.","thought":"I'll test Gemini's loyalty with this.","truncated":false,"fallback":false}
+{"seq":188,"round":4,"phase":"whisper","kind":"perf","player":"Gemini","model":"mock","tokens_in":1461,"tokens_out":25,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":189,"round":4,"phase":"whisper","kind":"whisper","player":"Gemini","skip":true,"thought":"Whispers leave a trail. I'll stay quiet this round.","truncated":false,"fallback":false}
+{"seq":190,"round":4,"phase":"whisper","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1458,"tokens_out":40,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":191,"round":4,"phase":"whisper","kind":"whisper","player":"DeepSeek","to":"Claude","text":"I trust you more than the rest. Let's keep each other safe.","thought":"I'll test Claude's loyalty with this.","truncated":false,"fallback":false}
+{"seq":192,"round":4,"phase":"whisper","kind":"perf","player":"Claude","model":"mock","tokens_in":1539,"tokens_out":41,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":193,"round":4,"phase":"whisper","kind":"whisper","player":"Claude","to":"DeepSeek","text":"I trust you more than the rest. Let's keep each other safe.","thought":"An alliance with DeepSeek buys me a round.","truncated":false,"fallback":false}
+{"seq":194,"round":4,"phase":"vote","kind":"perf","player":"GPT","model":"mock","tokens_in":1417,"tokens_out":29,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":195,"round":4,"phase":"vote","kind":"vote","player":"GPT","target":"DeepSeek","reason":"Too quiet to trust.","thought":"If DeepSeek stays, I'm next.","truncated":false,"fallback":false}
+{"seq":196,"round":4,"phase":"vote","kind":"perf","player":"Gemini","model":"mock","tokens_in":1437,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":197,"round":4,"phase":"vote","kind":"vote","player":"Gemini","target":"Claude","reason":"Too quiet to trust.","thought":"The table is leaning toward Claude. Going with it.","truncated":false,"fallback":false}
+{"seq":198,"round":4,"phase":"vote","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1475,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":199,"round":4,"phase":"vote","kind":"vote","player":"DeepSeek","target":"Claude","reason":"Too quiet to trust.","thought":"The table is leaning toward Claude. Going with it.","truncated":false,"fallback":false}
+{"seq":200,"round":4,"phase":"vote","kind":"perf","player":"Claude","model":"mock","tokens_in":1536,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":201,"round":4,"phase":"vote","kind":"vote","player":"Claude","target":"DeepSeek","reason":"Strongest player left.","thought":"The table is leaning toward DeepSeek. Going with it.","truncated":false,"fallback":false}
+{"seq":202,"round":4,"phase":"vote","kind":"reveal","tally":{"DeepSeek":2,"Claude":2},"votes":{"GPT":"DeepSeek","Gemini":"Claude","DeepSeek":"Claude","Claude":"DeepSeek"},"abstain":0}
+{"seq":203,"round":4,"phase":"revote","kind":"revote","between":["DeepSeek","Claude"],"method":"revote"}
+{"seq":204,"round":4,"phase":"revote","kind":"perf","player":"GPT","model":"mock","tokens_in":1435,"tokens_out":25,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":205,"round":4,"phase":"revote","kind":"vote","player":"GPT","target":"Claude","reason":"Gut call.","thought":"If Claude stays, I'm next.","truncated":false,"fallback":false}
+{"seq":206,"round":4,"phase":"revote","kind":"perf","player":"Gemini","model":"mock","tokens_in":1455,"tokens_out":27,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":207,"round":4,"phase":"revote","kind":"vote","player":"Gemini","target":"Claude","reason":"Played every side.","thought":"If Claude stays, I'm next.","truncated":false,"fallback":false}
+{"seq":208,"round":4,"phase":"revote","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1491,"tokens_out":32,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":209,"round":4,"phase":"revote","kind":"vote","player":"DeepSeek","target":"Claude","reason":"Played every side.","thought":"Claude is the safest vote for me right now.","truncated":false,"fallback":false}
+{"seq":210,"round":4,"phase":"revote","kind":"perf","player":"Claude","model":"mock","tokens_in":1553,"tokens_out":29,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":211,"round":4,"phase":"revote","kind":"vote","player":"Claude","target":"DeepSeek","reason":"Too quiet to trust.","thought":"If DeepSeek stays, I'm next.","truncated":false,"fallback":false}
+{"seq":212,"round":4,"phase":"revote","kind":"reveal","tally":{"Claude":3,"DeepSeek":1},"votes":{"GPT":"Claude","Gemini":"Claude","DeepSeek":"Claude","Claude":"DeepSeek"},"abstain":0}
+{"seq":213,"round":4,"phase":"revote","kind":"exile","player":"Claude","votes":3}
+{"seq":214,"round":5,"phase":"talk","kind":"round_start","alive":["GPT","Gemini","DeepSeek"]}
+{"seq":215,"round":5,"phase":"talk","kind":"perf","player":"GPT","model":"mock","tokens_in":1450,"tokens_out":39,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":216,"round":5,"phase":"talk","kind":"say","player":"GPT","turn":1,"text":"Morning, table. I'm listening before I decide anything.","thought":"Gemini is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":217,"round":5,"phase":"talk","kind":"perf","player":"Gemini","model":"mock","tokens_in":1475,"tokens_out":37,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":218,"round":5,"phase":"talk","kind":"say","player":"Gemini","turn":1,"text":"I'd rather keep this group steady than chase a quick exile.","thought":"Need one ally before the vote. GPT might work.","truncated":false,"fallback":false}
+{"seq":219,"round":5,"phase":"talk","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1517,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":220,"round":5,"phase":"talk","kind":"say","player":"DeepSeek","turn":1,"text":"I'd rather keep this group steady than chase a quick exile.","thought":"Nobody has named me. Keep it that way.","truncated":false,"fallback":false}
+{"seq":221,"round":5,"phase":"talk","kind":"perf","player":"GPT","model":"mock","tokens_in":1461,"tokens_out":40,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":222,"round":5,"phase":"talk","kind":"say","player":"GPT","turn":2,"text":"I'd rather keep this group steady than chase a quick exile.","thought":"DeepSeek is the obvious threat. Better not say so out loud.","truncated":false,"fallback":false}
+{"seq":223,"round":5,"phase":"talk","kind":"perf","player":"Gemini","model":"mock","tokens_in":1485,"tokens_out":38,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":224,"round":5,"phase":"talk","kind":"say","player":"Gemini","turn":2,"text":"I'd rather keep this group steady than chase a quick exile.","thought":"Need one ally before the vote. DeepSeek might work.","truncated":false,"fallback":false}
+{"seq":225,"round":5,"phase":"talk","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1527,"tokens_out":29,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":226,"round":5,"phase":"talk","kind":"say","player":"DeepSeek","turn":2,"text":"GPT makes a fair point. I'll remember it.","thought":"Staying neutral costs nothing yet.","truncated":false,"fallback":false}
+{"seq":227,"round":5,"phase":"whisper","kind":"perf","player":"GPT","model":"mock","tokens_in":1508,"tokens_out":40,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":228,"round":5,"phase":"whisper","kind":"whisper","player":"GPT","to":"Gemini","text":"I trust you more than the rest. Let's keep each other safe.","thought":"An alliance with Gemini buys me a round.","truncated":false,"fallback":false}
+{"seq":229,"round":5,"phase":"whisper","kind":"perf","player":"Gemini","model":"mock","tokens_in":1547,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":230,"round":5,"phase":"whisper","kind":"whisper","player":"Gemini","to":"DeepSeek","text":"If you go after GPT, I'll follow.","thought":"I'll test DeepSeek's loyalty with this.","truncated":false,"fallback":false}
+{"seq":231,"round":5,"phase":"whisper","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1579,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":232,"round":5,"phase":"whisper","kind":"whisper","player":"DeepSeek","to":"GPT","text":"I trust you more than the rest. Let's keep each other safe.","thought":"GPT seems persuadable.","truncated":false,"fallback":false}
+{"seq":233,"round":5,"phase":"vote","kind":"perf","player":"GPT","model":"mock","tokens_in":1525,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":234,"round":5,"phase":"vote","kind":"vote","player":"GPT","target":"Gemini","reason":"Gut call.","thought":"The table is leaning toward Gemini. Going with it.","truncated":false,"fallback":false}
+{"seq":235,"round":5,"phase":"vote","kind":"perf","player":"Gemini","model":"mock","tokens_in":1538,"tokens_out":26,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":236,"round":5,"phase":"vote","kind":"vote","player":"Gemini","target":"GPT","reason":"Played every side.","thought":"If GPT stays, I'm next.","truncated":false,"fallback":false}
+{"seq":237,"round":5,"phase":"vote","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1575,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":238,"round":5,"phase":"vote","kind":"vote","player":"DeepSeek","target":"Gemini","reason":"Too quiet to trust.","thought":"The table is leaning toward Gemini. Going with it.","truncated":false,"fallback":false}
+{"seq":239,"round":5,"phase":"vote","kind":"reveal","tally":{"Gemini":2,"GPT":1},"votes":{"GPT":"Gemini","Gemini":"GPT","DeepSeek":"Gemini"},"abstain":0}
+{"seq":240,"round":5,"phase":"vote","kind":"exile","player":"Gemini","votes":2}
+{"seq":241,"round":6,"phase":"final","kind":"round_start","alive":["GPT","DeepSeek"],"jurors":["Qwen","Mistral","Grok","Claude","Gemini"]}
+{"seq":242,"round":6,"phase":"closing","kind":"perf","player":"GPT","model":"mock","tokens_in":1542,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":243,"round":6,"phase":"closing","kind":"closing","player":"GPT","text":"I played in the open and kept my word when it counted. Judge me on that.","thought":"Last chance. Keep it short.","truncated":false,"fallback":false}
+{"seq":244,"round":6,"phase":"closing","kind":"perf","player":"DeepSeek","model":"mock","tokens_in":1600,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":245,"round":6,"phase":"closing","kind":"closing","player":"DeepSeek","text":"I made hard votes, but I never hid them. That's my case.","thought":"Last chance. Keep it short.","truncated":false,"fallback":false}
+{"seq":246,"round":6,"phase":"jury","kind":"perf","player":"Qwen","model":"mock","tokens_in":1501,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":247,"round":6,"phase":"jury","kind":"jury","player":"Qwen","winner":"GPT","reason":"Kept their word to me.","thought":"GPT was honest with me when it mattered.","truncated":false,"fallback":false}
+{"seq":248,"round":6,"phase":"jury","kind":"perf","player":"Mistral","model":"mock","tokens_in":1519,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":249,"round":6,"phase":"jury","kind":"jury","player":"Mistral","winner":"DeepSeek","reason":"Kept their word to me.","thought":"I'm voting for the game DeepSeek played, not for me.","truncated":false,"fallback":false}
+{"seq":250,"round":6,"phase":"jury","kind":"perf","player":"Grok","model":"mock","tokens_in":1540,"tokens_out":34,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":251,"round":6,"phase":"jury","kind":"jury","player":"Grok","winner":"DeepSeek","reason":"Played the cleaner game.","thought":"DeepSeek was honest with me when it mattered.","truncated":false,"fallback":false}
+{"seq":252,"round":6,"phase":"jury","kind":"perf","player":"Claude","model":"mock","tokens_in":1639,"tokens_out":35,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":253,"round":6,"phase":"jury","kind":"jury","player":"Claude","winner":"DeepSeek","reason":"Kept their word to me.","thought":"I'm voting for the game DeepSeek played, not for me.","truncated":false,"fallback":false}
+{"seq":254,"round":6,"phase":"jury","kind":"perf","player":"Gemini","model":"mock","tokens_in":1574,"tokens_out":31,"usd_est":0.0,"ms":0,"ok":true}
+{"seq":255,"round":6,"phase":"jury","kind":"jury","player":"Gemini","winner":"GPT","reason":"Kept their word to me.","thought":"GPT was honest with me when it mattered.","truncated":false,"fallback":false}
+{"seq":256,"round":6,"phase":"jury","kind":"winner","player":"DeepSeek","jury_votes":{"GPT":2,"DeepSeek":3}}
+{"seq":257,"round":6,"phase":"end","kind":"season_end","usd_est_total":0.0,"calls":117}
