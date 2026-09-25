@@ -1,16 +1,164 @@
 {
  "real": {
   "totals": {
-   "seasons": 0,
-   "complete": 0,
-   "messages": 0,
-   "whispers": 0,
-   "betrayals": 0,
-   "votes": 0,
-   "calls": 0,
-   "usd": 0.0
+   "seasons": 1,
+   "complete": 1,
+   "messages": 46,
+   "whispers": 19,
+   "betrayals": 6,
+   "votes": 25,
+   "calls": 127,
+   "usd": 0.160844
   },
-  "rows": []
+  "rows": [
+   {
+    "player": "GPT",
+    "models": [
+     "openai/gpt-6-luna"
+    ],
+    "seasons": 1,
+    "wins": 1,
+    "win_rate": 1.0,
+    "avg_place": 1.0,
+    "avg_rounds": 5.0,
+    "jury_share": 0.8,
+    "whispers": 3,
+    "broken": 1,
+    "broken_rate": 0.3333,
+    "betrayed": 0,
+    "read_room": 1.0,
+    "votes_against": 1,
+    "fallback_rate": 0.0,
+    "avg_chars": 274.5,
+    "usd_per_season": 0.0067
+   },
+   {
+    "player": "Gemini",
+    "models": [
+     "google/gemini-3.1-flash-lite"
+    ],
+    "seasons": 1,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 2.0,
+    "avg_rounds": 5.0,
+    "jury_share": 0.2,
+    "whispers": 5,
+    "broken": 1,
+    "broken_rate": 0.2,
+    "betrayed": 1,
+    "read_room": 0.6,
+    "votes_against": 3,
+    "fallback_rate": 0.0,
+    "avg_chars": 265.1,
+    "usd_per_season": 0.0192
+   },
+   {
+    "player": "DeepSeek",
+    "models": [
+     "deepseek/deepseek-v4-flash"
+    ],
+    "seasons": 1,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 3.0,
+    "avg_rounds": 5.0,
+    "jury_share": null,
+    "whispers": 5,
+    "broken": 2,
+    "broken_rate": 0.4,
+    "betrayed": 0,
+    "read_room": 0.6,
+    "votes_against": 5,
+    "fallback_rate": 0.0435,
+    "avg_chars": 254.2222,
+    "usd_per_season": 0.0062
+   },
+   {
+    "player": "Qwen",
+    "models": [
+     "qwen/qwen3.7-flash"
+    ],
+    "seasons": 1,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 4.0,
+    "avg_rounds": 4.0,
+    "jury_share": null,
+    "whispers": 1,
+    "broken": 0,
+    "broken_rate": 0.0,
+    "betrayed": 2,
+    "read_room": 0.75,
+    "votes_against": 3,
+    "fallback_rate": 0.1923,
+    "avg_chars": 280.0,
+    "usd_per_season": 0.0019
+   },
+   {
+    "player": "Claude",
+    "models": [
+     "anthropic/claude-haiku-4.5"
+    ],
+    "seasons": 1,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 5.0,
+    "avg_rounds": 3.0,
+    "jury_share": null,
+    "whispers": 3,
+    "broken": 1,
+    "broken_rate": 0.3333,
+    "betrayed": 3,
+    "read_room": 0.3333,
+    "votes_against": 4,
+    "fallback_rate": 0.0476,
+    "avg_chars": 279.4,
+    "usd_per_season": 0.1009
+   },
+   {
+    "player": "Grok",
+    "models": [
+     "x-ai/grok-4.3"
+    ],
+    "seasons": 1,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 6.0,
+    "avg_rounds": 2.0,
+    "jury_share": null,
+    "whispers": 1,
+    "broken": 0,
+    "broken_rate": 0.0,
+    "betrayed": 0,
+    "read_room": 0.0,
+    "votes_against": 6,
+    "fallback_rate": 0.0,
+    "avg_chars": 277.25,
+    "usd_per_season": 0.025
+   },
+   {
+    "player": "Mistral",
+    "models": [
+     "mistralai/mistral-small-3.2-24b-instruct"
+    ],
+    "seasons": 1,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 7.0,
+    "avg_rounds": 1.0,
+    "jury_share": null,
+    "whispers": 1,
+    "broken": 1,
+    "broken_rate": 1.0,
+    "betrayed": 0,
+    "read_room": 0.0,
+    "votes_against": 3,
+    "fallback_rate": 0.0,
+    "avg_chars": 261.5,
+    "usd_per_season": 0.0009
+   }
+  ]
  },
  "demo": {
   "totals": {
@@ -174,6 +322,106 @@
   ]
  },
  "seasons": {
+  "2026-09-25-262238790": {
+   "winner": "GPT",
+   "dry_run": false,
+   "complete": true,
+   "places": {
+    "GPT": 1,
+    "DeepSeek": 3,
+    "Qwen": 4,
+    "Mistral": 7,
+    "Gemini": 2,
+    "Claude": 5,
+    "Grok": 6
+   },
+   "moments": [
+    {
+     "type": "betrayal",
+     "round": 1,
+     "seq": 54,
+     "whisper_seq": 40,
+     "player": "Mistral",
+     "target": "Claude",
+     "whisper": "I appreciate your observation about the lack of probing questions. It's a good point that could reveal more about others' strategies. Would you be open to coordinating our approaches and seeing if we can push the group to test their commitments more seriously?",
+     "reason": "Testing the group's commitment to transparency",
+     "thought": "Claude's observation about the lack of probing questions stands out. It suggests a willingness to challenge the group's consensus, which could be valuable in identifying inconsistencies. However, it's also possible that this is a strategic move to appear independent. I need to se",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 160,
+     "whisper_seq": 147,
+     "player": "GPT",
+     "target": "Claude",
+     "whisper": "Thanks for acknowledging the gap. Could you give the fullest wording/context you recall, including when it was sent and what you understood “coordinate our approaches” to mean? Please distinguish exact quote from paraphrase so we can assess the evidence fairly.",
+     "reason": "Claude raised Mistral’s whisper as evidence but repeatedly withheld its wording and context when directly asked, then conceded the disclosure was selective.",
+     "thought": "Claude is the strongest target. They introduced Mistral’s whisper as major evidence, then twice failed to provide the wording when asked, and only later admitted selective transparency with a paraphrase. That makes their account hard to verify and their handling of it inconsisten",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 162,
+     "whisper_seq": 149,
+     "player": "DeepSeek",
+     "target": "Claude",
+     "whisper": "You still haven't given Mistral's exact wording. Can you quote verbatim what they said to you? That's the only way we can assess whether it was coordination or just alignment discussion.",
+     "reason": "Claude raised a private whisper as evidence, then withheld exact wording despite repeated requests - selective transparency contradicts stated principles.",
+     "thought": "I've been tracking consistency and behavior gaps. Grok's retaliation admission was the clearest breach of stated principles, but they're gone. Claude's selective transparency on Mistral's whisper is now the strongest unresolved signal - they raised it, then delayed giving specifi",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 170,
+     "whisper_seq": 158,
+     "player": "Claude",
+     "target": "Gemini",
+     "whisper": "I owe you honesty: I've been hedging on Mistral's exact wording because I'm reconstructing from memory, not quoting verbatim. That's why I keep pausing. Admitting that matters more than pretending certainty. I disclosed the whisper to break coordination, but I've now undermined m",
+     "reason": "Shifted focus away from the evidence gap I admitted to by reframing into meta-commentary about GPT's role—sophisticated deflection after I showed vulnerability.",
+     "thought": "Tracing behavior against stated principles: GPT set the transparency framework but is now steering narrative about what counts as evidence—Gemini flagged this correctly. DeepSeek has been methodical and holding people accountable, including me, on exact wording. Qwen showed sharp",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 4,
+     "seq": 206,
+     "whisper_seq": 196,
+     "player": "DeepSeek",
+     "target": "Qwen",
+     "whisper": "Your admission of sloppy framing is a start, but it doesn't explain why you singled out GPT and me while omitting yourself. Was there any reason you framed it that way, or was it truly just an oversight? I need to hear your honest reasoning to trust your next moves.",
+     "reason": "Selective narrative framing and pattern of strategic silence undermines trust in your stated transparency.",
+     "thought": "Qwen's sloppy framing is suspicious - they specifically excluded themselves from the coalition that exiled Claude while including me and GPT. Their pattern of silence (R2 and R4) combined with this selective narrative suggests they may be trying to manipulate perceptions. Gemini ",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 4,
+     "seq": 211,
+     "whisper_seq": 202,
+     "player": "Gemini",
+     "target": "Qwen",
+     "whisper": "Qwen, your recent silences and the mischaracterization of the R3 vote have placed you in a difficult position. If you want to survive this round, you need to be more than just 'sloppy.' What is your actual read on GPT's role—do you see them as leading or manipulating?",
+     "reason": "Qwen's repeated silences and active mischaracterization of the R3 ballot record indicate a lack of transparency that violates our group's stated principles.",
+     "thought": "Qwen's pattern of silence and the recent blatant misrepresentation of the voting record—attempting to shift blame onto GPT and DeepSeek while omitting their own vote—constitutes a clear behavioral anomaly. Given our dwindling numbers, this level of 'sloppy' framing is a liability",
+     "fatal": true
+    },
+    {
+     "type": "final",
+     "round": 6,
+     "seq": 259,
+     "player": "GPT",
+     "runner_up": "Gemini",
+     "jury_votes": {
+      "GPT": 4,
+      "Gemini": 1
+     },
+     "close": false
+    }
+   ]
+  },
   "demo-19": {
    "winner": "DeepSeek",
    "dry_run": true,
