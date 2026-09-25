@@ -35,8 +35,7 @@ button, select, input, textarea { font: inherit; color: inherit; }
 /* top */
 .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 22px; padding-bottom: 10px; }
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font: 600 15px var(--mono); letter-spacing: .28em; text-transform: uppercase; }
-.logo i { width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid var(--gold); position: relative; }
-.logo i::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--gold); }
+.logo img { width: 26px; height: 26px; border-radius: 50%; display: block; }
 .nav { display: flex; gap: 22px; font: 12px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
 .nav a { color: var(--muted); text-decoration: none; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--ink); }
