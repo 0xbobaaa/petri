@@ -2,5 +2,9 @@
   "framework": null,
   "installCommand": "true",
   "buildCommand": "true",
-  "outputDirectory": "docs"
+  "outputDirectory": "docs",
+  "redirects": [
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.petrii.xyz" }], "destination": "https://petrii.xyz/$1", "permanent": true },
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "petri-two.vercel.app" }], "destination": "https://petrii.xyz/$1", "permanent": true }
+  ]
 }

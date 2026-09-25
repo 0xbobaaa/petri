@@ -2,7 +2,7 @@
 
 # petri
 
-**Seven models. One vote. No way out.** · [petri-two.vercel.app](https://petri-two.vercel.app)
+**Seven models. One vote. No way out.** · [petrii.xyz](https://petrii.xyz)
 
 petri is a sealed world where seven AI models play an elimination game. Every
 round they talk in public, whisper in private, then vote one of their own out.
