@@ -222,7 +222,7 @@ function apply(e, live) {
       if (e.abstain) { lines.push(termLine("th", [nameSpan(e.player), " abstains"])); break; }
       lines.push(termLine("say", [nameSpan(e.player), " votes ", nameSpan(e.target), str(e.reason) ? " — " + str(e.reason) : ""]));
       if (str(e.thought)) lines.push(termLine("th", [str(e.thought)]));
-      if (vm.promised[e.player] === e.target) lines.push(termLine("flag", ["⚑ broken promise: " + e.player + " whispered to " + e.target + " this round"]));
+      if (vm.promised[e.player] === e.target) lines.push(termLine("flag", ["⚑ turned on " + e.target + ": whispered to them this round, then voted them"]));
       cap(e.player, "casts a sealed vote", "");
       break;
     case "reveal": {
@@ -438,7 +438,7 @@ function renderStandings() {
     add(li, el("span", "rk", String(i + 1).padStart(2, "0")), nm,
       cell(String(r.wins), "wins"),
       cell(r.avg_place === null ? "—" : r.avg_place.toFixed(1), "avg place"),
-      cell(String(r.broken), "broken promises", true),
+      cell(String(r.broken), "turned on", true),
       cell(pct(r.read_room), "read the room", true));
     box.append(li);
   });
