@@ -15,7 +15,7 @@ from .game import Ask
 
 MAX_TEXT = 280
 SILENCE = "(silence)"
-BACKOFF_SECONDS = 2.0
+BACKOFF_SECONDS = 5.0
 MAX_ECHO = 2000  # how much of a bad reply is shown back in the correction
 
 

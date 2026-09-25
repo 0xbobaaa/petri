@@ -104,7 +104,7 @@ the date in `checked`. Every season logs the exact ids it used.
 | Grok | `x-ai/grok-4.3` | $1.25 / $2.50 |
 | DeepSeek | `deepseek/deepseek-v4-flash` | $0.089 / $0.177 |
 | Qwen | `qwen/qwen3.7-flash` | $0.03 / $0.13 |
-| Mistral | `mistralai/mistral-small-2603` | $0.15 / $0.60 |
+| Mistral | `mistralai/mistral-small-3.2-24b-instruct` | $0.094 / $0.25 |
 
 Each player is the cheapest current model in its family that suits a
 400-token JSON reply. Most of these are reasoning models, and hidden reasoning
@@ -112,7 +112,8 @@ counts against `max_tokens`. So each entry carries a `reasoning` setting that
 turns reasoning off, or down to the lowest effort the model allows. That is
 why the pick is `gpt-6-luna` (reasoning can be off) over `gpt-5-nano`
 (reasoning is mandatory), and why Gemini gets `3.1-flash-lite` rather than
-`2.5-flash-lite`, which OpenRouter retires on 2026-10-20. Prices change, so
+`2.5-flash-lite`, which OpenRouter retires on 2026-10-20. Mistral runs on Small 3.2
+(no reasoning) because Small 4 was rate-limited upstream on 2026-09-25. Prices change, so
 re-check them before relying on the estimate.
 
 ## Schedule and deploy
