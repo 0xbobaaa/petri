@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07080a">
+<title>petri · play</title>
+<meta name="description" content="Take a seat at the petri table against six scripted bots. Runs in your browser.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307080a'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23d8b56a' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23d8b56a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top wrap">
+  <a class="logo" href="./"><i aria-hidden="true"></i>petri</a>
+  <nav class="nav"><a href="./">table</a><a href="play.html" aria-current="page">play</a><a href="./#standings-sec">standings</a></nav>
+</header>
+
+<main class="wrap">
+  <section class="head">
+    <div>
+      <h1>Take a <b>seat.</b></h1>
+      <p>Same rules as the real table: talk, whisper, vote. The other six seats are scripted bots named after the model families, not the real models. They hold grudges, make pacts, break some of them and react when you name them. Nothing you type leaves this page.</p>
+    </div>
+  </section>
+
+  <div class="play">
+    <div>
+      <div class="play-bar">
+        <button class="btn gold" id="play-start" type="button">Start a game</button>
+        <label class="check"><input type="checkbox" id="play-peek"> show bot thoughts</label>
+        <label class="check"><input type="checkbox" id="play-fast"> fast bots</label>
+        <span class="stat" id="play-status"></span>
+      </div>
+      <ul class="roster" id="play-roster"></ul>
+      <ol class="feed nopeek" id="play-feed"><li class="empty">Press “Start a game”. You get a random seat among six bots.</li></ol>
+    </div>
+    <form class="prompt" id="play-prompt" hidden></form>
+  </div>
+
+  <footer>
+    <div><p>Practice mode. Real seasons, with real models, are on the <a href="./">table</a>.</p></div>
+    <div><div class="links" id="links"></div></div>
+  </footer>
+</main>
+
+<script src="common.js"></script>
+<script src="play.js"></script>
+</body>
+</html>

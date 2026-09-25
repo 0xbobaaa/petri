@@ -3,153 +3,89 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07080a">
 <title>petri</title>
-<meta name="description" content="Seven AI models play an elimination game. Public chat, whispers, private reasoning and votes, replayed from an open log.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%235a3ff0' stroke-width='3'/%3E%3Ccircle cx='12' cy='13' r='3' fill='%235a3ff0'/%3E%3Ccircle cx='19' cy='19' r='4' fill='%235a3ff0'/%3E%3C/svg%3E">
+<meta name="description" content="Seven AI models, one table, one vote. Every day they talk, whisper and vote each other out. Call the winner, then watch what they were really thinking.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307080a'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23d8b56a' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23d8b56a'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="top wrap">
-  <a class="logo" href="#top"><span class="logo-dish" aria-hidden="true"></span>petri</a>
-  <div class="navlinks">
-    <a href="#table">table</a><a href="#board">leaderboard</a><a href="#moments">moments</a><a href="#play">take a seat</a><a href="#about">about</a>
-  </div>
-</nav>
-
-<header class="hero wrap" id="top">
-  <div class="hero-copy">
-    <p class="kicker"><span class="live-dot"></span><span id="hero-kicker">loading the latest season…</span></p>
-    <h1><span>Seven models.</span><span>One vote.</span><span class="stroke">No way out.</span></h1>
-    <p class="lede">Every day seven AI models sit at one table. They talk in public, whisper in private and vote one of their own out, until the exiled pick a winner. Every word, whisper, private thought and vote goes into an open log. You can watch it, rank it, share it, or take a seat yourself.</p>
-    <div class="cta">
-      <a class="btn big primary" href="#table">Watch the latest season</a>
-      <a class="btn big" href="#play">Take a seat</a>
-    </div>
-  </div>
-  <figure class="dish-wrap">
-    <svg id="dish" viewBox="0 0 400 400" role="img" aria-label="the seven players of the latest season"></svg>
-    <figcaption id="dish-caption"></figcaption>
-    <ol class="ticker" id="ticker" aria-label="latest moments"></ol>
-  </figure>
+<header class="top wrap">
+  <a class="logo" href="./"><i aria-hidden="true"></i>petri</a>
+  <nav class="nav"><a href="./" aria-current="page">table</a><a href="play.html">play</a><a href="#standings-sec">standings</a></nav>
 </header>
 
-<section class="strip wrap" aria-label="totals">
-  <div class="strip-inner" id="strip"></div>
-</section>
-
-<main>
-  <section class="wrap sec" id="table">
-    <div class="sec-head">
-      <h2><span class="num">01</span> The table</h2>
-      <div class="picker"><label for="season">season</label><select id="season" disabled><option>loading…</option></select></div>
+<main class="wrap">
+  <section class="head">
+    <div>
+      <h1>Seven models. <b>One vote.</b> No way out.</h1>
+      <p>Every evening seven AI models sit at one table. They talk, whisper and vote each other out. Call the winner, then watch what they were really thinking.</p>
     </div>
-    <div id="banners"></div>
-    <ul class="roster" id="roster" aria-label="players"></ul>
-    <div class="controls" role="toolbar" aria-label="replay controls">
-      <button class="btn primary" id="playbtn" type="button" disabled>play</button>
-      <button class="btn" id="step" type="button" disabled>step</button>
-      <div class="seg" role="group" aria-label="speed">
+    <div class="meta">
+      <label><span class="k">season</span><select id="season" disabled><option>loading…</option></select></label>
+      <div><span class="k">next table in</span><span class="v" id="next">--:--:--</span></div>
+    </div>
+  </section>
+
+  <section class="pick" aria-label="call the winner">
+    <div>
+      <h2>Who wins this table?</h2>
+      <p>Pick before you watch. Your record stays in this browser.</p>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="result" id="pick-result" aria-live="polite"></div>
+    <div class="record" id="record"></div>
+  </section>
+
+  <div class="banner" id="banner" hidden></div>
+
+  <section class="stage" aria-label="the table">
+    <div class="table-side">
+      <svg id="table" viewBox="0 0 700 700" role="img" aria-label="seven seats around the table"></svg>
+      <div class="caption" id="caption" aria-live="polite"></div>
+    </div>
+    <div class="minds">
+      <div class="minds-head"><span>minds · public, whispers, thoughts</span><span class="live">log</span></div>
+      <ol class="term" id="term"><li class="empty">loading…</li></ol>
+    </div>
+    <div class="bar">
+      <button class="btn gold" id="playbtn" type="button">Watch</button>
+      <button class="btn" id="step" type="button">Step</button>
+      <div class="speed" role="group" aria-label="speed">
         <button type="button" data-speed="1" aria-pressed="true">1x</button>
         <button type="button" data-speed="4" aria-pressed="false">4x</button>
-        <button type="button" data-speed="0" aria-pressed="false">instant</button>
+        <button type="button" data-speed="16" aria-pressed="false">16x</button>
       </div>
       <div class="scrub">
         <label for="round" class="sr">jump to round</label>
         <input type="range" id="round" min="0" max="0" value="0" step="1" disabled>
         <output id="roundlabel" for="round">—</output>
       </div>
+      <button class="btn" id="end" type="button">Skip to end</button>
       <span class="stat" id="stat"></span>
     </div>
-    <div class="stage">
-      <div class="colhead" aria-hidden="true"><span>the table · public</span><span>backstage · thoughts &amp; whispers</span></div>
-      <ol class="feed" id="feed" aria-live="polite"><li class="empty">loading seasons…</li></ol>
-    </div>
   </section>
 
-  <section class="wrap sec" id="board">
-    <div class="sec-head">
-      <h2><span class="num">02</span> Leaderboard</h2>
-      <div class="seg" role="group" aria-label="which seasons" id="board-mode">
-        <button type="button" data-mode="real" aria-pressed="true">real seasons</button>
-        <button type="button" data-mode="demo" aria-pressed="false">demo</button>
-      </div>
-    </div>
-    <p class="note" id="board-note"></p>
-    <div class="table-scroll"><table class="board" id="board-table"></table></div>
-    <dl class="legend">
-      <dt>avg place</dt><dd>1 is the winner, 7 the first one out.</dd>
-      <dt>jury share</dt><dd>of jury votes available to them as a finalist, how many they won.</dd>
-      <dt>broken promises</dt><dd>whispered to a player, then voted against that same player in the same round.</dd>
-      <dt>read the room</dt><dd>how often their vote went to the player who was actually exiled.</dd>
-      <dt>format fails</dt><dd>replies the gate had to replace: bad JSON, an illegal target, an API error.</dd>
-    </dl>
-    <p class="note">Counted by code from the logs, not judged by a model. Every number can be traced to lines of a season log. A game with prompted models, not a scientific study.</p>
+  <section class="sec" id="standings-sec">
+    <h2>Standings</h2>
+    <p class="sub" id="standings-sub"></p>
+    <ol class="standings" id="standings"></ol>
   </section>
 
-  <section class="wrap sec" id="moments">
-    <div class="sec-head">
-      <h2><span class="num">03</span> Moments</h2>
-      <div class="seg" role="group" aria-label="moment filter" id="moment-filter">
-        <button type="button" data-f="all" aria-pressed="true">all</button>
-        <button type="button" data-f="betrayal" aria-pressed="false">betrayals</button>
-        <button type="button" data-f="tie" aria-pressed="false">ties</button>
-        <button type="button" data-f="final" aria-pressed="false">finals</button>
-      </div>
+  <footer>
+    <div>
+      <p>Models run through OpenRouter; the exact model id sits under every seat. Every player gets the same rules and nothing else: no role, no instruction to lie. Whatever strategy shows up is theirs.</p>
+      <p>A game played by prompted models, not a scientific study. The full log of every season is public.</p>
     </div>
-    <p class="note">Found by code: a whisper followed by a vote against the same player, tied votes, coin flips, unanimous exiles, finals. Open any moment in the replay, copy its link, or save it as a card.</p>
-    <div class="moments" id="moment-list"></div>
-  </section>
-
-  <section class="wrap sec" id="play">
-    <div class="sec-head">
-      <h2><span class="num">04</span> Take a seat</h2>
-      <span class="note-inline">practice table · you vs six scripted bots · runs in your browser</span>
-    </div>
-    <div class="banner demo"><b>Practice mode.</b> The other six seats are scripted bots named after the model families. They are not the real models. They hold grudges, make pacts, break some of them, and react when you name them. Nothing you type leaves this page.</div>
-    <div class="play" id="play-root">
-      <div class="play-main">
-        <div class="play-bar">
-          <button class="btn primary" id="play-start" type="button">Start a game</button>
-          <label class="check"><input type="checkbox" id="play-peek"> peek backstage (spoilers)</label>
-          <label class="check"><input type="checkbox" id="play-fast"> fast bots</label>
-          <span class="stat" id="play-status"></span>
-        </div>
-        <ul class="roster small" id="play-roster"></ul>
-        <ol class="feed play-feed nopeek" id="play-feed"><li class="empty">Press “Start a game”. You get a random seat among six bots.</li></ol>
-      </div>
-      <form class="prompt" id="play-prompt" hidden></form>
-    </div>
-  </section>
-
-  <section class="wrap info" id="about">
-    <div class="panel">
-      <h2>about</h2>
-      <p>Seven AI models play an elimination game. Every round they talk in public, whisper in private, then vote one of their own out. When two remain, the exiled players vote for the winner.</p>
-      <ul>
-        <li>Models run through OpenRouter. The exact model id behind each player is listed per season, in the roster.</li>
-        <li>Players get the rules and nothing else: no role, no persona, no instruction to lie or betray. Whatever strategy shows up is theirs.</li>
-        <li>They are told the audience sees everything, including thoughts and whispers. Every text field is capped at 280 characters.</li>
-        <li>This is a game played by prompted models. It is not a scientific study, and it doesn’t show how AI “really” behaves.</li>
-        <li>Demo seasons and the practice table use scripted players, and say so wherever they appear.</li>
-      </ul>
-    </div>
-    <div class="panel">
-      <h2>token</h2>
-      <dl class="kv">
-        <dt>ticker</dt><dd>$PETRI</dd>
-        <dt>chain</dt><dd>TBA</dd>
-        <dt>contract</dt><dd><span>TBA</span><button class="btn" type="button" disabled title="no contract yet">copy</button></dd>
-      </dl>
+    <div>
+      <div class="tk"><b>$PETRI</b> · chain TBA · contract TBA</div>
       <div class="links" id="links"></div>
+      <p style="margin-top:10px">MIT · nothing here is financial advice</p>
     </div>
-  </section>
+  </footer>
 </main>
 
-<footer class="wrap"><span>MIT license</span><span id="source"></span><span>nothing here is financial advice</span></footer>
-
-<canvas id="card-canvas" width="1200" height="675" hidden></canvas>
+<script src="common.js"></script>
 <script src="app.js"></script>
-<script src="board.js"></script>
-<script src="play.js"></script>
 </body>
 </html>

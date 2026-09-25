@@ -1,250 +1,81 @@
 "use strict";
+// The main page: one table, the minds terminal, the pick, the standings.
 
-// Destinations for outbound links. Empty means "no destination yet":
-// the label renders as plain muted text instead of a link.
-const LINKS = { x: "", github: "https://github.com/0xbobaaa/petri" };
-
-const PLAYERS = ["Claude", "GPT", "Gemini", "Grok", "DeepSeek", "Qwen", "Mistral", "Human"];
-const SEASON_ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
+const SVGNS = "http://www.w3.org/2000/svg";
+const C = 350, RING = 250;
 const SHOWN = new Set(["round_start", "say", "whisper", "vote", "reveal", "revote", "tiebreak", "exile",
   "closing", "jury", "winner", "fallback", "budget_stop", "season_end"]);
-
-// Every piece of text on this site, model output included, goes in through
-// textContent. Nothing here parses strings as markup.
-function el(tag, cls, text) {
-  const node = document.createElement(tag);
-  if (cls) node.className = cls;
-  if (text !== undefined && text !== null) node.textContent = String(text);
-  return node;
-}
-
-function add(parent, ...kids) {
-  for (const k of kids) if (k) parent.append(k);
-  return parent;
-}
-
-function color(node, name) {
-  if (PLAYERS.includes(name)) node.style.setProperty("--pc", "var(--p-" + name + ")");
-  return node;
-}
-
-function who(name, suffix) {
-  const w = color(el("span", "who"), name);
-  add(w, el("span", "dot"), el("span", "", name));
-  if (suffix) w.append(el("span", "tag", suffix));
-  return w;
-}
-
-function str(v) { return typeof v === "string" ? v : ""; }
-function num(v, d) { return Number.isFinite(v) ? v : (d === undefined ? 0 : d); }
-function pct(v) { return v === null || v === undefined ? "—" : Math.round(v * 100) + "%"; }
-const $ = (id) => document.getElementById(id);
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-const DATA = { index: [], stats: null };
-const state = {
-  id: null, events: [], steps: [], cursor: 0, timer: null, playing: false, speed: 1,
-  roundStarts: [], start: null, end: null, mobile: false,
+const S = {
+  index: [], stats: null, id: null, entry: null, events: [], steps: [], cursor: 0,
+  playing: false, timer: null, speed: 1, roundStarts: [], seats: [], nodes: {}, vm: null,
 };
-const feed = $("feed");
 
-async function getJSON(url) {
-  const r = await fetch(url, { cache: "no-cache" });
-  if (!r.ok) throw new Error(url + " → HTTP " + r.status);
-  return r.json();
+function svg(tag, attrs) {
+  const n = document.createElementNS(SVGNS, tag);
+  for (const [k, v] of Object.entries(attrs || {})) n.setAttribute(k, String(v));
+  return n;
 }
 
-function parseHash() {
-  const m = location.hash.match(/^#s=([a-z0-9-]{1,64})(?:&e=(\d{1,7}))?$/);
-  return m ? { id: m[1], seq: m[2] ? Number(m[2]) : null } : null;
+function store(key, val) {
+  try {
+    if (val === undefined) return localStorage.getItem(key);
+    localStorage.setItem(key, val);
+  } catch (_) { /* private mode: picks just aren't remembered */ }
+  return null;
 }
 
 /* ---------- boot ---------- */
 
 async function boot() {
-  renderLinks();
-  const mq = window.matchMedia("(max-width: 760px)");
-  state.mobile = mq.matches;
-  mq.addEventListener("change", (e) => { state.mobile = e.matches; syncDetails(); });
-
   try {
     const idx = await getJSON("seasons/index.json");
-    DATA.index = (Array.isArray(idx) ? idx : []).filter((s) => s && typeof s.id === "string" && SEASON_ID.test(s.id));
+    S.index = (Array.isArray(idx) ? idx : []).filter((s) => s && typeof s.id === "string" && SEASON_ID.test(s.id));
   } catch (err) {
-    return fail("Could not load the season list. " + err.message);
+    $("term").replaceChildren(el("li", "empty", "Could not load the seasons. " + err.message));
+    return;
   }
-  try { DATA.stats = await getJSON("seasons/stats.json"); } catch (_) { DATA.stats = null; }
-
-  const select = $("season");
-  select.replaceChildren();
-  if (!DATA.index.length) return fail("No seasons yet.");
-  for (const s of DATA.index) {
-    const label = [s.date || "", s.dry_run ? "demo" : "",
-      s.status === "budget_stop" ? "stopped early" : (s.winner ? s.winner + " wins" : "")].filter(Boolean).join(" · ");
-    const o = el("option", "", label ? s.id + " — " + label : s.id);
+  try { S.stats = await getJSON("seasons/stats.json"); } catch (_) { S.stats = null; }
+  const sel = $("season");
+  sel.replaceChildren();
+  for (const s of S.index) {
+    const o = el("option", "", (s.dry_run ? "demo · " : "") + s.id);
     o.value = s.id;
-    select.append(o);
+    sel.append(o);
   }
-  select.disabled = false;
-  select.addEventListener("change", () => loadSeason(select.value, null, true));
-
-  renderHero();
-  renderStrip();
-  if (window.PETRI_BOARD) window.PETRI_BOARD.init();
-
-  const h = parseHash();
-  const pick = h && DATA.index.some((s) => s.id === h.id) ? h : { id: DATA.index[0].id, seq: null };
-  await loadSeason(pick.id, pick.seq, false);
-  if (pick.seq) $("table").scrollIntoView();
-  window.addEventListener("hashchange", () => {
-    const x = parseHash();
-    if (x && DATA.index.some((s) => s.id === x.id)) { loadSeason(x.id, x.seq, false); $("table").scrollIntoView(); }
-  });
+  sel.disabled = !S.index.length;
+  sel.addEventListener("change", () => load(sel.value, null));
+  renderStandings();
+  countdown();
+  setInterval(countdown, 1000);
+  const h = location.hash.match(/^#s=([a-z0-9-]{1,64})(?:&e=(\d{1,7}))?$/);
+  const first = S.index.find((s) => !s.dry_run) || S.index[0];
+  if (!first) return;
+  const pick = h && S.index.some((s) => s.id === h[1]) ? h[1] : first.id;
+  load(pick, h && h[2] ? Number(h[2]) : null);
 }
 
-function fail(message) {
+function countdown() {
+  const now = new Date();
+  const next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 18, 0, 0));
+  if (next <= now) next.setUTCDate(next.getUTCDate() + 1);
+  const s = Math.floor((next - now) / 1000);
+  const p = (n) => String(n).padStart(2, "0");
+  $("next").textContent = p(Math.floor(s / 3600)) + ":" + p(Math.floor(s / 60) % 60) + ":" + p(s % 60);
+}
+
+async function load(id, seq) {
   pause();
-  $("banners").replaceChildren(el("div", "banner error", message));
-  feed.replaceChildren(el("li", "empty", "Nothing to replay."));
-}
-
-/* ---------- hero: the dish, the ticker, the strip ---------- */
-
-const SVG = "http://www.w3.org/2000/svg";
-function svg(tag, attrs) {
-  const n = document.createElementNS(SVG, tag);
-  for (const [k, v] of Object.entries(attrs || {})) n.setAttribute(k, String(v));
-  return n;
-}
-
-function latestReal() {
-  return DATA.index.find((s) => !s.dry_run) || DATA.index[0];
-}
-
-function renderHero() {
-  const s = latestReal();
-  const info = DATA.stats && DATA.stats.seasons ? DATA.stats.seasons[s.id] : null;
-  $("hero-kicker").textContent = (s.dry_run ? "demo season " : "latest season ") + s.id +
-    (s.winner ? " · " + s.winner + " won" : s.status === "budget_stop" ? " · stopped early" : "");
-
-  const dish = $("dish");
-  dish.replaceChildren();
-  const defs = svg("defs");
-  const grad = svg("radialGradient", { id: "agar", cx: "50%", cy: "45%", r: "60%" });
-  add(grad, svg("stop", { offset: "0%", "stop-color": "var(--agar)", "stop-opacity": ".55" }),
-    svg("stop", { offset: "100%", "stop-color": "var(--agar)", "stop-opacity": ".12" }));
-  defs.append(grad);
-  dish.append(defs);
-  add(dish, svg("circle", { cx: 200, cy: 200, r: 188, fill: "var(--glass)", stroke: "var(--accent)", "stroke-width": 3 }),
-    svg("circle", { cx: 200, cy: 200, r: 170, fill: "url(#agar)", stroke: "var(--line)", "stroke-width": 1.5 }),
-    svg("path", { d: "M 70 110 A 160 160 0 0 1 150 50", fill: "none", stroke: "#fff", "stroke-opacity": ".5", "stroke-width": 6, "stroke-linecap": "round" }));
-
-  const places = info && info.places ? info.places : {};
-  const names = PLAYERS.slice(0, 7);
-  names.forEach((name, i) => {
-    const a = (i / 7) * Math.PI * 2 - Math.PI / 2;
-    const place = places[name];
-    const isWin = place === 1;
-    const out = place && place > 2;
-    const r = isWin ? 46 : place === 2 ? 34 : out ? 16 + (7 - place) * 2 : 28;
-    const dist = isWin ? 0 : 108;
-    const cx = 200 + Math.cos(a) * dist, cy = 200 + Math.sin(a) * dist;
-    const g = svg("g", { class: "colony" + (out ? " out" : ""), style: "animation-delay:" + (i * 0.6) + "s" });
-    const fill = "var(--p-" + name + ")";
-    // a colony: one body and a few satellites, deterministic per name
-    g.append(svg("circle", { cx, cy, r, fill, "fill-opacity": out ? 0.28 : 0.85 }));
-    for (let k = 0; k < 4; k++) {
-      const b = a + (k - 1.5) * 0.7 + i;
-      g.append(svg("circle", { cx: cx + Math.cos(b) * (r + 6), cy: cy + Math.sin(b) * (r + 6), r: 3 + ((i + k) % 3) * 2,
-        fill, "fill-opacity": out ? 0.2 : 0.55 }));
-    }
-    const label = svg("text", { x: cx, y: cy + (isWin ? 6 : 4), "text-anchor": "middle", "font-size": isWin ? 17 : 12,
-      "font-weight": 700, fill: out ? "var(--muted)" : "#fff", "font-family": "system-ui, sans-serif" });
-    label.textContent = name;
-    g.append(label);
-    const title = svg("title");
-    title.textContent = name + (place ? " · place " + place : "");
-    g.append(title);
-    dish.append(g);
-  });
-  $("dish-caption").textContent = info && info.winner
-    ? "latest culture: " + info.winner + " at the centre, exiles fade by the round they fell"
-    : "seven cultures, one dish";
-
-  startTicker();
-}
-
-function momentLine(m) {
-  switch (m.type) {
-    case "betrayal": return m.player + " whispered to " + m.target + ", then voted " + (m.fatal ? "them out" : "against them");
-    case "tie": return "tie between " + (m.between || []).join(" and ") + ", revote";
-    case "coin": return "coin flip between " + (m.between || []).join(", ") + (m.picked ? ": " + m.picked : "");
-    case "unanimous": return m.votes + "–0: everyone voted " + m.player;
-    case "final": {
-      const v = m.jury_votes || {};
-      return m.player + " beat " + m.runner_up + " " + num(v[m.player]) + "–" + num(v[m.runner_up]);
-    }
-  }
-  return m.type;
-}
-
-function allMoments() {
-  const out = [];
-  if (!DATA.stats || !DATA.stats.seasons) return out;
-  for (const s of DATA.index) {
-    const info = DATA.stats.seasons[s.id];
-    if (!info) continue;
-    for (const m of info.moments || []) out.push({ ...m, season: s.id, dry_run: !!info.dry_run });
-  }
-  return out;
-}
-
-function startTicker() {
-  const list = allMoments();
-  const box = $("ticker");
-  if (!list.length) { box.replaceChildren(el("li", "", "the log is empty so far")); return; }
-  let i = 0;
-  const push = () => {
-    const m = list[i % list.length];
-    i++;
-    const li = el("li");
-    add(li, el("b", "", "R" + m.round + " "), el("span", "", momentLine(m)), el("span", "muted", "  · " + m.season));
-    box.prepend(li);
-    while (box.children.length > 4) box.lastChild.remove();
-  };
-  for (let k = 0; k < 3; k++) push();
-  setInterval(push, 3200);
-}
-
-function renderStrip() {
-  const st = DATA.stats || {};
-  const real = st.real && st.real.totals && st.real.totals.seasons ? st.real.totals : null;
-  const t = real || (st.demo && st.demo.totals) || {};
-  const tag = real ? "" : " (demo)";
-  const items = [
-    [num(t.seasons), "seasons" + tag], [num(t.messages), "public messages"], [num(t.whispers), "whispers"],
-    [num(t.betrayals), "broken promises"], [num(t.votes), "votes cast"], ["$" + num(t.usd).toFixed(2), "spent, est."],
-  ];
-  const box = $("strip");
-  box.replaceChildren();
-  for (const [v, label] of items) box.append(add(el("div"), el("b", "", v), el("span", "", label)));
-}
-
-/* ---------- replay ---------- */
-
-async function loadSeason(id, seq, fromPicker) {
-  pause();
-  if (!SEASON_ID.test(id)) return fail("Bad season id.");
+  if (!SEASON_ID.test(id)) return;
   $("season").value = id;
-  if (fromPicker || !parseHash()) history.replaceState(null, "", "#s=" + id);
-  feed.replaceChildren(el("li", "empty", "loading " + id + "…"));
+  history.replaceState(null, "", "#s=" + id);
   let text;
   try {
     const r = await fetch("seasons/" + id + "/log.jsonl", { cache: "no-cache" });
     if (!r.ok) throw new Error("HTTP " + r.status);
     text = await r.text();
   } catch (err) {
-    return fail("Could not load season " + id + ": " + err.message);
+    $("term").replaceChildren(el("li", "empty", "Could not load season " + id + ": " + err.message));
+    return;
   }
   const events = [];
   for (const line of text.split("\n")) {
@@ -254,352 +85,380 @@ async function loadSeason(id, seq, fromPicker) {
       if (e && typeof e === "object" && typeof e.kind === "string") events.push(e);
     } catch (_) { /* a broken line is skipped, never rendered raw */ }
   }
-  state.id = id;
-  setSeason(events, seq);
-}
-
-function setSeason(events, seq) {
-  state.events = events;
-  state.start = events.find((e) => e.kind === "season_start") || null;
-  state.end = [...events].reverse().find((e) => e.kind === "season_end" || e.kind === "budget_stop") || null;
-  state.steps = events.filter((e) => SHOWN.has(e.kind));
-  state.roundStarts = [];
-  state.steps.forEach((e, i) => { if (e.kind === "round_start") state.roundStarts.push(i); });
-  renderBanners();
+  S.id = id;
+  S.entry = S.index.find((s) => s.id === id) || {};
+  S.events = events;
+  S.steps = events.filter((e) => SHOWN.has(e.kind));
+  S.roundStarts = [];
+  S.steps.forEach((e, i) => { if (e.kind === "round_start") S.roundStarts.push(i); });
+  const start = events.find((e) => e.kind === "season_start");
+  S.seats = start && Array.isArray(start.roster) ? start.roster.map((r) => ({ name: str(r.name), model: str(r.model) })) : [];
   const range = $("round");
-  range.max = String(Math.max(0, state.roundStarts.length - 1));
-  range.disabled = state.roundStarts.length < 2;
-  $("playbtn").disabled = $("step").disabled = !state.steps.length;
-  const e = state.end;
-  $("stat").textContent = [state.start ? "seed " + state.start.seed : "",
-    e ? e.calls + " calls · ~$" + num(e.usd_est_total).toFixed(4) : ""].filter(Boolean).join(" · ");
-
-  const at = seq ? state.steps.findIndex((s) => s.seq >= seq) : -1;
-  if (at >= 0) {
-    renderTo(at + 1);
-    const row = feed.querySelector('[data-seq="' + state.steps[at].seq + '"]');
-    if (row) { row.classList.add("hl"); feed.scrollTop = row.offsetTop - feed.clientHeight / 3; }
-  } else {
-    renderTo(Math.min(state.steps.length, (state.roundStarts.length ? state.roundStarts[0] + 1 : 0) + 7));
-  }
+  range.max = String(Math.max(0, S.roundStarts.length - 1));
+  range.disabled = S.roundStarts.length < 2;
+  const end = [...events].reverse().find((e) => e.kind === "season_end" || e.kind === "budget_stop");
+  $("stat").textContent = end ? end.calls + " calls · ~$" + num(end.usd_est_total).toFixed(3) : "";
+  renderBanner(start, end);
+  buildTable();
+  renderPick();
+  const at = seq ? S.steps.findIndex((s) => s.seq >= seq) : -1;
+  jump(at >= 0 ? at + 1 : 0);
 }
 
-function renderBanners() {
-  const box = $("banners");
+function renderBanner(start, end) {
+  const box = $("banner");
   box.replaceChildren();
-  if (!state.start) { box.append(el("div", "banner error", "This log has no season_start event.")); return; }
-  if (state.start.dry_run === true) {
-    box.append(add(el("div", "banner demo"), el("b", "", "Demo season: mock players. "),
-      el("span", "", "No model was called. The lines are canned and picked by a seeded random number generator. Real seasons show up here once they run.")));
+  box.hidden = true;
+  if (start && start.dry_run) {
+    box.hidden = false;
+    box.className = "banner";
+    box.textContent = "Demo season with mock players: canned lines, no model was called. Live seasons are marked live.";
   }
-  const stop = state.end && state.end.kind === "budget_stop" ? state.end : null;
-  if (stop) {
-    const why = stop.reason === "max_calls" ? "the cap on model calls" : "the estimated spending cap";
-    box.append(add(el("div", "banner stop"), el("b", "", "This season stopped early. "),
-      el("span", "", "It reached " + why + " after " + stop.calls + " calls (about $" + num(stop.usd_est_total).toFixed(4) +
-        "), in round " + stop.round + ". There is no winner.")));
-  }
-}
-
-function renderRoster() {
-  const box = $("roster");
-  box.replaceChildren();
-  const roster = state.start && Array.isArray(state.start.roster) ? state.start.roster : [];
-  const exiled = new Map(), finalists = new Set();
-  let winner = null;
-  for (const e of state.steps.slice(0, state.cursor)) {
-    if (e.kind === "exile") exiled.set(e.player, e.round);
-    if (e.kind === "round_start" && e.phase === "final") (e.alive || []).forEach((p) => finalists.add(p));
-    if (e.kind === "winner") winner = e.player;
-  }
-  for (const p of roster) {
-    const name = str(p.name);
-    const li = color(el("li", "chip"), name);
-    let status = "alive";
-    if (winner === name) { status = "winner"; li.classList.add("win"); }
-    else if (exiled.has(name)) { status = "exiled · round " + exiled.get(name) + " · juror"; li.classList.add("out"); }
-    else if (finalists.has(name)) status = "finalist";
-    add(li, add(el("div", "n"), el("span", "dot"), el("span", "", name)), el("div", "m", str(p.model)), el("div", "s", status));
-    box.append(li);
+  if (end && end.kind === "budget_stop") {
+    box.hidden = false;
+    box.className = "banner stop";
+    box.textContent = "This season hit its " + (end.reason === "max_calls" ? "call cap" : "spending cap") + " in round " + end.round + " and stopped with no winner.";
   }
 }
 
-function row(cls, pub, back, backLabel) {
-  const li = el("li", "row " + (cls || ""));
-  const p = el("div", "pub");
-  if (pub) p.append(pub);
-  li.append(p);
-  if (back) {
-    const d = el("details", "back");
-    add(d, el("summary", "", backLabel || "backstage"), add(el("div", "inner"), back));
-    d.open = !state.mobile || !pub;
-    li.append(d);
-  } else {
-    li.append(el("div", "back"));
+/* ---------- the table ---------- */
+
+function buildTable() {
+  const t = $("table");
+  t.replaceChildren();
+  add(t,
+    svg("circle", { cx: C, cy: C, r: RING + 64, fill: "none", stroke: "var(--line)", "stroke-width": 1 }),
+    svg("circle", { cx: C, cy: C, r: RING, fill: "none", stroke: "var(--line-2)", "stroke-width": 1, "stroke-dasharray": "2 6" }),
+    svg("circle", { cx: C, cy: C, r: 178, fill: "rgba(255,255,255,0.012)", stroke: "var(--line)", "stroke-width": 1 }));
+  for (let k = 0; k < 4; k++) {
+    const a = k * Math.PI / 2;
+    t.append(svg("line", { x1: C + Math.cos(a) * (RING + 52), y1: C + Math.sin(a) * (RING + 52),
+      x2: C + Math.cos(a) * (RING + 76), y2: C + Math.sin(a) * (RING + 76), stroke: "var(--muted)", "stroke-width": 1 }));
   }
-  if (!pub && back) li.classList.add("only-back");
+  const edges = svg("g", { id: "edges" });
+  t.append(edges);
+  S.nodes = {};
+  const n = S.seats.length || 7;
+  S.seats.forEach((seat, i) => {
+    const a = (i / n) * Math.PI * 2 - Math.PI / 2;
+    const x = C + Math.cos(a) * RING, y = C + Math.sin(a) * RING;
+    const col = "var(--p-" + (PLAYERS.includes(seat.name) ? seat.name : "Human") + ")";
+    const g = svg("g", { class: "seat" });
+    const halo = svg("circle", { class: "halo", cx: x, cy: y, r: 34, fill: "none", stroke: col, "stroke-width": 1.5, opacity: 0 });
+    const body = svg("circle", { class: "body", cx: x, cy: y, r: 30, fill: col, "fill-opacity": 0.14, stroke: col, "stroke-width": 1.5 });
+    const name = svg("text", { x, y: y + 4.5, "text-anchor": "middle", "font-size": 12.5, "font-weight": 600, fill: "var(--ink)" });
+    name.textContent = seat.name;
+    const out = Math.cos(a) >= 0 ? 1 : -1;
+    const label = svg("text", { x: x + out * 44, y: y + 4, "text-anchor": out > 0 ? "start" : "end", "font-size": 11, fill: "var(--muted)", "font-family": "var(--mono)" });
+    const badge = svg("text", { x, y: y + (Math.sin(a) > 0 ? 50 : -42), "text-anchor": "middle", "font-size": 11, fill: "var(--gold)", "font-family": "var(--mono)" });
+    label.textContent = seat.model.replace(/^[^/]+\//, "");
+    add(g, halo, body, name, label, badge);
+    t.append(g);
+    S.nodes[seat.name] = { g, body, badge, label, x, y };
+  });
+}
+
+function edge(from, to, cls) {
+  const a = S.nodes[from], b = S.nodes[to];
+  if (!a || !b) return;
+  const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+  const cx = mx + (C - mx) * 0.55, cy = my + (C - my) * 0.55;
+  const dx = b.x - cx, dy = b.y - cy, d = Math.hypot(dx, dy) || 1;
+  const ex = b.x - dx / d * 34, ey = b.y - dy / d * 34;
+  const col = cls === "whisper" ? "var(--whisper)" : "var(--p-" + (PLAYERS.includes(from) ? from : "Human") + ")";
+  const p = svg("path", { class: "edge " + cls, d: "M" + a.x + " " + a.y + " Q" + cx + " " + cy + " " + ex + " " + ey,
+    stroke: cls === "vote" ? col : "var(--whisper)", "stroke-width": cls === "vote" ? 1.6 : 1.4 });
+  $("edges").append(p);
+  if (cls === "vote") $("edges").append(svg("circle", { cx: ex, cy: ey, r: 3, fill: col }));
+}
+
+/* ---------- the view model, rebuilt or advanced one event at a time ---------- */
+
+function freshVM() {
+  return { alive: new Set(S.seats.map((s) => s.name)), out: {}, speaking: null, winner: null,
+    whispers: [], tally: {}, promised: {} };
+}
+
+function termLine(cls, parts) {
+  const li = el("li", cls);
+  for (const p of parts) {
+    if (typeof p === "string") li.append(document.createTextNode(p));
+    else li.append(p);
+  }
   return li;
 }
 
-function full(node) {
-  return add(el("li", "row full"), add(el("div", "pub"), node));
-}
+function nameSpan(n) { return color(el("span", "who", n), n); }
 
-function thought(e) {
-  const t = str(e.thought);
-  return t ? el("div", "thought", t) : el("div", "quiet", "(no thought given)");
-}
-
-function flags(node, e) {
-  if (e.truncated) node.append(el("span", "tag", "cut at 280"));
-  if (e.fallback) node.append(el("span", "tag warn", "fallback"));
-  return node;
-}
-
-function tallyCard(title, tally, ballots) {
-  const card = el("div", "card");
-  card.append(el("h4", "", title));
-  const entries = Object.entries(tally && typeof tally === "object" ? tally : {})
-    .filter(([, n]) => Number.isFinite(n)).sort((a, b) => b[1] - a[1]);
-  const max = Math.max(1, ...entries.map(([, n]) => n));
-  if (entries.length) {
-    const bars = el("div", "bars");
-    for (const [name, n] of entries) {
-      const bar = color(el("div", "bar"), name);
-      bar.style.width = (100 * n / max) + "%";
-      add(bars, who(name), add(el("div"), bar), el("span", "c", n + (n === 1 ? " vote" : " votes")));
-    }
-    card.append(bars);
-  } else {
-    card.append(el("div", "quiet", "No valid votes."));
-  }
-  const list = el("ul", "ballots");
-  for (const b of ballots) {
-    const li = el("li");
-    li.append(el("b", "", str(b.player)));
-    li.append(b.abstain ? el("span", "r", " abstained") : el("span", "", " → " + str(b.target)));
-    if (str(b.reason)) li.append(el("span", "r", " — " + str(b.reason)));
-    list.append(li);
-  }
-  if (ballots.length) card.append(list);
-  return card;
-}
-
-function ballotsFor(e, steps) {
-  const i = steps.indexOf(e);
-  const out = [];
-  for (let j = i - 1; j >= 0; j--) {
-    const v = steps[j];
-    if (v.kind === "vote" && v.round === e.round && v.phase === e.phase) out.unshift(v);
-    else if (v.kind === "reveal" || v.kind === "round_start" || v.kind === "revote") break;
-  }
-  return out;
-}
-
-// Shared with the practice table (play.js), which renders the same event shapes.
-function renderEvent(e, steps, opts) {
-  const o = opts || {};
-  const node = renderEventInner(e, steps || state.steps, o);
-  if (node && Number.isInteger(e.seq)) node.dataset.seq = String(e.seq);
-  return node;
-}
-
-function renderEventInner(e, steps, o) {
-  const backCls = o.botBack && o.botBack(e) ? " bot" : "";
+function apply(e, live) {
+  const vm = S.vm, term = $("term"), lines = [];
+  vm.speaking = null;
+  const cap = (whoName, text, sub) => { if (live) caption(whoName, text, sub); };
   switch (e.kind) {
-    case "round_start": {
-      const d = el("div", "divider");
-      const fin = e.phase === "final";
-      add(d, el("h3", "", fin ? "final" : "round " + e.round), el("span", "sub", fin
-        ? "finalists: " + (e.alive || []).join(", ") + " · jury: " + (e.jurors || []).join(", ")
-        : (e.alive || []).length + " alive: " + (e.alive || []).join(", ")));
-      return full(d);
-    }
+    case "round_start":
+      if (e.phase !== "final") { vm.alive = new Set(e.alive || []); }
+      vm.whispers = []; vm.tally = {}; vm.promised = {};
+      $("edges").replaceChildren();
+      lines.push(termLine("round", [e.phase === "final" ? "final · " + (e.alive || []).join(" vs ") : "round " + e.round + " · " + (e.alive || []).length + " alive"]));
+      cap(null, e.phase === "final" ? "The final" : "Round " + e.round, e.phase === "final" ? "closing statements, then the jury" : (e.alive || []).length + " at the table");
+      break;
     case "say":
-    case "closing": {
-      const pub = color(el("div"), e.player);
-      pub.append(flags(who(e.player, e.kind === "closing" ? "closing statement" : e.turn ? "pass " + e.turn : ""), e));
-      pub.append(el("p", "msg", str(e.text)));
-      const r = row(e.kind, pub, str(e.thought) || !o.plain ? thought(e) : null, "backstage · " + str(e.player) + " thinks");
-      if (backCls) r.lastChild.classList.add("bot-back");
-      return r;
+    case "closing":
+      vm.speaking = e.player;
+      lines.push(termLine("say", [nameSpan(e.player), (e.kind === "closing" ? " (closing): " : ": ") + str(e.text)]));
+      if (str(e.thought)) lines.push(termLine("th", [str(e.thought)]));
+      cap(e.player, str(e.text), e.kind === "closing" ? "closing statement" : "");
+      break;
+    case "whisper":
+      if (e.skip) { if (str(e.thought)) lines.push(termLine("th", [nameSpan(e.player), " " + str(e.thought)])); break; }
+      vm.whispers.push([e.player, e.to]);
+      vm.promised[e.player] = e.to;
+      edge(e.player, e.to, "whisper");
+      lines.push(termLine("wh", [nameSpan(e.player), " → ", nameSpan(e.to), " (whisper): " + str(e.text)]));
+      if (str(e.thought)) lines.push(termLine("th", [str(e.thought)]));
+      cap(e.player, "whispers to " + e.to, "only " + e.to + " hears it");
+      break;
+    case "vote":
+      if (e.abstain) { lines.push(termLine("th", [nameSpan(e.player), " abstains"])); break; }
+      lines.push(termLine("say", [nameSpan(e.player), " votes ", nameSpan(e.target), str(e.reason) ? " — " + str(e.reason) : ""]));
+      if (str(e.thought)) lines.push(termLine("th", [str(e.thought)]));
+      if (vm.promised[e.player] === e.target) lines.push(termLine("flag", ["⚑ broken promise: " + e.player + " whispered to " + e.target + " this round"]));
+      cap(e.player, "casts a sealed vote", "");
+      break;
+    case "reveal": {
+      $("edges").replaceChildren();
+      for (const [v, t] of Object.entries(e.votes || {})) if (t) edge(v, t, "vote");
+      vm.tally = e.tally || {};
+      const list = Object.entries(vm.tally).sort((a, b) => b[1] - a[1]).map(([k, n]) => k + " " + n).join(" · ");
+      lines.push(termLine("sys", ["votes revealed: " + (list || "no valid votes")]));
+      cap(null, "Votes revealed", list);
+      break;
     }
-    case "whisper": {
-      const card = el("div", "wh");
-      const hd = el("div", "hd");
-      if (e.skip) {
-        add(hd, el("b", "", str(e.player)), el("span", "", "sends no whisper"));
-        add(card, flags(hd, e), thought(e));
-        const r = row("whisper", null, card, "whisper · " + str(e.player) + " skips");
-        if (backCls) r.lastChild.classList.add("bot-back");
-        return r;
-      }
-      add(hd, el("b", "", str(e.player)), el("span", "", "whispers to"), el("b", "", str(e.to)));
-      add(card, flags(hd, e), el("div", "txt", str(e.text)), str(e.thought) || !o.plain ? thought(e) : null);
-      if (o.publicWhisper && o.publicWhisper(e)) {
-        return row("whisper", add(el("div", "wh"), hd, el("div", "txt", str(e.text))), null);
-      }
-      const r = row("whisper", null, card, "whisper · " + str(e.player) + " → " + str(e.to));
-      if (backCls) r.lastChild.classList.add("bot-back");
-      return r;
-    }
-    case "vote": {
-      const pub = el("div", "quiet");
-      add(pub, who(e.player), el("span", "", e.phase === "revote" ? " casts a sealed revote" : " casts a sealed vote"));
-      const back = el("div", "ballot");
-      back.append(e.abstain ? el("span", "t", "abstains") : el("span", "t", "→ " + str(e.target)));
-      flags(back, e);
-      if (str(e.reason)) back.append(el("div", "", "“" + str(e.reason) + "”"));
-      const r = row("vote", pub, add(el("div"), back, thought(e)), "backstage · " + str(e.player) + "’s ballot");
-      if (backCls) r.lastChild.classList.add("bot-back");
-      return r;
-    }
-    case "reveal":
-      return full(tallyCard("round " + e.round + (e.phase === "revote" ? " · revote revealed" : " · votes revealed"),
-        e.tally, ballotsFor(e, steps)));
     case "revote":
-      return full(el("div", "notice", "Tie between " + (e.between || []).join(" and ") + ". One revote: everyone alive votes, only for them."));
+      lines.push(termLine("sys", ["tie: " + (e.between || []).join(" vs ") + " · revote"]));
+      cap(null, "A tie", (e.between || []).join(" vs ") + " · revote");
+      break;
     case "tiebreak":
-      return full(el("div", "notice", (e.reason === "all_abstain" ? "Every ballot was an abstain" : "Still tied") +
-        ". Random pick between " + (e.between || []).join(", ") + " (seeded, logged)."));
+      lines.push(termLine("sys", ["still tied · random pick"]));
+      break;
     case "exile":
-      return full(add(el("div", "exile"), color(el("b", "", str(e.player)), e.player),
-        el("span", "", " is exiled with " + e.votes + (e.votes === 1 ? " vote" : " votes") + " and joins the jury.")));
-    case "jury": {
-      const pub = el("div");
-      pub.append(flags(who(e.player, "juror"), e));
-      pub.append(el("p", "msg", e.abstain ? "abstains" : "votes for " + str(e.winner) + (str(e.reason) ? " — “" + str(e.reason) + "”" : "")));
-      const r = row("jury", pub, thought(e), "backstage · " + str(e.player) + " thinks");
-      if (backCls) r.lastChild.classList.add("bot-back");
-      return r;
-    }
+      vm.alive.delete(e.player);
+      vm.out[e.player] = e.round;
+      vm.tally = {};
+      lines.push(termLine("sys", [e.player + " is out · " + e.votes + " votes"]));
+      cap(e.player, "is exiled", "joins the jury");
+      break;
+    case "jury":
+      lines.push(termLine("say", [nameSpan(e.player), " (juror) → " + (e.abstain ? "abstains" : str(e.winner)) + (str(e.reason) ? " — " + str(e.reason) : "")]));
+      if (str(e.thought)) lines.push(termLine("th", [str(e.thought)]));
+      cap(e.player, e.abstain ? "abstains" : "votes " + str(e.winner), "jury");
+      break;
     case "winner": {
-      const d = color(el("span", "dot"), e.player);
-      d.style.width = d.style.height = "14px";
-      const votes = Object.entries(e.jury_votes || {}).map(([k, n]) => k + " " + n).join(" · ");
-      return full(add(el("div", "winner"), add(el("div", "big"), d, el("span", "", str(e.player) + " wins")), el("div", "quiet", "jury: " + votes)));
+      vm.winner = e.player;
+      const j = Object.entries(e.jury_votes || {}).map(([k, n]) => k + " " + n).join(" – ");
+      lines.push(termLine("sys", ["★ " + e.player + " wins · jury " + j]));
+      cap(e.player, "wins the season", "jury " + j);
+      if (live) settlePick();
+      break;
     }
     case "fallback":
-      return row("gate", null, el("div", "gate", "gate: " + str(e.player) + " — " + str(e.reason) + " (" + str(e.phase) + ")"), "gate · fallback for " + str(e.player));
+      lines.push(termLine("flag", ["gate: " + str(e.player) + " fallback (" + str(e.reason) + ")"]));
+      break;
     case "budget_stop":
-      return full(el("div", "exile", "Season stopped: " + (e.reason === "max_calls" ? "call cap" : "spending cap") + " reached after " + e.calls + " calls (~$" + num(e.usd_est_total).toFixed(4) + ")."));
+      lines.push(termLine("flag", ["season stopped: " + (e.reason === "max_calls" ? "call cap" : "spending cap")]));
+      break;
     case "season_end":
-      return full(el("div", "notice", "Season over · " + e.calls + " calls · ~$" + num(e.usd_est_total).toFixed(4) + " estimated."));
+      lines.push(termLine("sys", ["season over · " + e.calls + " calls"]));
+      break;
   }
-  return null;
+  for (const l of lines) term.append(l);
 }
 
-function nearBottom() { return feed.scrollHeight - feed.scrollTop - feed.clientHeight < 140; }
+function caption(whoName, text, sub) {
+  const box = $("caption");
+  const w = el("div", "c-who", whoName || "petri");
+  if (whoName) color(w, whoName);
+  box.replaceChildren(w, el("div", "c-text", text || ""), el("div", "c-sub", sub || ""));
+}
 
-function renderTo(n) {
-  n = Math.max(0, Math.min(n, state.steps.length));
-  const frag = document.createDocumentFragment();
-  for (let i = 0; i < n; i++) { const node = renderEvent(state.steps[i]); if (node) frag.append(node); }
-  feed.replaceChildren(frag);
-  state.cursor = n;
-  if (n <= 1) feed.append(el("li", "empty", "Press play to replay the season, or step through it one move at a time."));
-  feed.scrollTop = feed.scrollHeight;
-  afterStep();
+function paint() {
+  const vm = S.vm;
+  for (const [n, node] of Object.entries(S.nodes)) {
+    node.g.classList.toggle("speaking", vm.speaking === n);
+    node.g.classList.toggle("out", !!vm.out[n]);
+    node.body.setAttribute("fill-opacity", vm.winner === n ? 0.5 : vm.speaking === n ? 0.34 : 0.14);
+    node.body.setAttribute("stroke", vm.winner === n ? "var(--gold)" : "var(--p-" + (PLAYERS.includes(n) ? n : "Human") + ")");
+    node.badge.textContent = vm.winner === n ? "★ winner" : vm.out[n] ? "out · R" + vm.out[n] : vm.tally[n] ? vm.tally[n] + (vm.tally[n] === 1 ? " vote" : " votes") : "";
+  }
+  let r = 0;
+  S.roundStarts.forEach((idx, i) => { if (idx < S.cursor) r = i; });
+  $("round").value = String(r);
+  const st = S.steps[S.roundStarts[r]];
+  $("roundlabel").textContent = st ? (st.phase === "final" ? "final" : "round " + st.round) : "—";
+  const done = S.cursor >= S.steps.length;
+  $("playbtn").textContent = S.playing ? "Pause" : done ? "Replay" : S.cursor ? "Resume" : "Watch";
+  $("step").disabled = done;
+}
+
+function jump(n) {
+  n = Math.max(0, Math.min(n, S.steps.length));
+  S.vm = freshVM();
+  $("term").replaceChildren();
+  $("edges").replaceChildren();
+  for (let i = 0; i < n; i++) apply(S.steps[i], false);
+  S.cursor = n;
+  if (!n) {
+    $("term").append(el("li", "empty", "Pick a winner above, then press Watch. Thoughts and whispers stream here as the season plays."));
+    caption(null, S.entry.dry_run ? "Demo table" : "Season " + S.id, "seven models · one vote · no way out");
+  } else {
+    const last = S.steps[n - 1];
+    if (last.kind === "say" || last.kind === "closing") caption(last.player, str(last.text), "");
+    else if (last.kind === "winner" || S.vm.winner) caption(S.vm.winner, "wins the season", "");
+    else caption(null, last.phase === "final" ? "The final" : "Round " + last.round, "");
+  }
+  $("term").scrollTop = $("term").scrollHeight;
+  if (S.vm.winner) settlePick();
+  paint();
 }
 
 function stepOnce() {
-  if (state.cursor >= state.steps.length) { pause(); return false; }
-  const follow = nearBottom();
-  const empty = feed.querySelector(".empty");
+  if (S.cursor >= S.steps.length) { pause(); return false; }
+  const term = $("term");
+  const follow = term.scrollHeight - term.scrollTop - term.clientHeight < 120;
+  const empty = term.querySelector(".empty");
   if (empty) empty.remove();
-  const node = renderEvent(state.steps[state.cursor]);
-  state.cursor++;
-  if (node) feed.append(node);
-  if (follow) feed.scrollTop = feed.scrollHeight;
-  afterStep();
+  apply(S.steps[S.cursor], true);
+  S.cursor++;
+  if (follow) term.scrollTop = term.scrollHeight;
+  lockPick();
+  paint();
   return true;
 }
 
-function afterStep() {
-  renderRoster();
-  let r = 0;
-  state.roundStarts.forEach((idx, i) => { if (idx < state.cursor) r = i; });
-  $("round").value = String(r);
-  const start = state.steps[state.roundStarts[r]];
-  $("roundlabel").textContent = start ? (start.phase === "final" ? "final" : "round " + start.round) : "—";
-  const done = state.cursor >= state.steps.length;
-  $("step").disabled = done;
-  $("playbtn").textContent = state.playing ? "pause" : (done ? "replay" : "play");
-}
-
 function delay(e) {
-  const base = e.kind === "say" || e.kind === "closing" ? 900 + Math.min(2600, str(e.text).length * 14)
-    : e.kind === "reveal" || e.kind === "exile" || e.kind === "winner" ? 2200
-    : e.kind === "round_start" ? 1400 : 650;
-  return base / state.speed;
+  const base = e.kind === "say" || e.kind === "closing" ? 1100 + Math.min(3200, str(e.text).length * 18)
+    : e.kind === "reveal" || e.kind === "exile" || e.kind === "winner" ? 2600
+    : e.kind === "round_start" ? 1600 : e.kind === "whisper" ? 1300 : 700;
+  return base / S.speed;
 }
 
 function tick() {
-  state.timer = null;
-  if (!state.playing || !stepOnce()) return;
-  const next = state.steps[state.cursor];
+  S.timer = null;
+  if (!S.playing || !stepOnce()) return;
+  const next = S.steps[S.cursor];
   if (!next) { pause(); return; }
-  state.timer = setTimeout(tick, delay(next));
+  S.timer = setTimeout(tick, delay(next));
 }
 
 function play() {
-  if (!state.steps.length) return;
-  if (state.cursor >= state.steps.length) renderTo(0);
-  if (state.speed === 0) { renderTo(state.steps.length); return; }
-  state.playing = true;
-  afterStep();
+  if (!S.steps.length) return;
+  if (S.cursor >= S.steps.length) jump(0);
+  S.playing = true;
+  paint();
   tick();
 }
 
 function pause() {
-  state.playing = false;
-  if (state.timer) clearTimeout(state.timer);
-  state.timer = null;
-  if (state.steps.length) afterStep();
+  S.playing = false;
+  if (S.timer) clearTimeout(S.timer);
+  S.timer = null;
+  if (S.steps.length) paint();
 }
 
-function syncDetails() {
-  for (const d of document.querySelectorAll("details.back")) {
-    const pub = d.parentElement && d.parentElement.firstChild;
-    d.open = !state.mobile || !(pub && pub.childNodes.length);
+/* ---------- the pick: call the winner before you watch ---------- */
+
+function pickKey(id) { return "petri.pick." + id; }
+
+function renderPick() {
+  const box = $("chips");
+  box.replaceChildren();
+  const mine = store(pickKey(S.id));
+  for (const seat of S.seats) {
+    const b = color(el("button", "chip"), seat.name);
+    b.type = "button";
+    add(b, el("i"), el("span", "", seat.name));
+    b.setAttribute("aria-pressed", String(mine === seat.name));
+    b.addEventListener("click", () => {
+      if (b.disabled) return;
+      store(pickKey(S.id), seat.name);
+      renderPick();
+    });
+    box.append(b);
   }
+  $("pick-result").textContent = mine ? "Your pick: " + mine + ". Watch to find out." : "";
+  $("pick-result").className = "result";
+  lockPick();
+  renderRecord();
 }
 
-function renderLinks() {
-  const box = $("links");
-  for (const [label, url] of [["X", LINKS.x], ["GitHub", LINKS.github]]) {
-    if (typeof url === "string" && /^https:\/\//.test(url)) {
-      const a = el("a", "", label);
-      a.setAttribute("href", url);
-      a.setAttribute("rel", "noopener noreferrer");
-      box.append(a);
-    } else {
-      box.append(el("span", "muted", label));
-    }
-  }
-  const src = $("source");
-  if (/^https:\/\//.test(LINKS.github)) {
-    const a = el("a", "", "source");
-    a.setAttribute("href", LINKS.github);
-    src.append(a);
-  } else {
-    src.append(el("span", "", "source"));
-  }
+function lockPick() {
+  const locked = S.cursor > 0 || (S.vm && S.vm.winner);
+  for (const b of $("chips").children) b.disabled = !!locked;
 }
 
-$("playbtn").addEventListener("click", () => (state.playing ? pause() : play()));
+function settlePick() {
+  const mine = store(pickKey(S.id));
+  const w = S.vm && S.vm.winner;
+  if (!w) return;
+  const r = $("pick-result");
+  if (!mine) { r.textContent = w + " won. Pick before the next season."; r.className = "result"; }
+  else if (mine === w) { r.textContent = "You called it: " + w + "."; r.className = "result win"; }
+  else { r.textContent = "You picked " + mine + ". " + w + " won."; r.className = "result"; }
+  lockPick();
+  renderRecord();
+}
+
+function renderRecord() {
+  let picks = 0, hits = 0;
+  for (const s of S.index) {
+    const p = store(pickKey(s.id));
+    if (!p || !s.winner) continue;
+    picks++;
+    if (p === s.winner) hits++;
+  }
+  $("record").replaceChildren(el("b", "", hits + " / " + picks), el("span", "", "your calls"));
+}
+
+/* ---------- standings ---------- */
+
+function renderStandings() {
+  const box = $("standings");
+  box.replaceChildren();
+  const real = S.stats && S.stats.real && S.stats.real.rows && S.stats.real.rows.length ? S.stats.real : null;
+  const data = real || (S.stats && S.stats.demo) || { rows: [], totals: {} };
+  $("standings-sub").textContent = real
+    ? "Across " + real.totals.complete + " live season" + (real.totals.complete === 1 ? "" : "s") + ". Counted from the logs by code, not judged by a model."
+    : "No live seasons yet, so this shows the demo seasons (mock players). Counted from the logs by code.";
+  if (!data.rows.length) { box.append(el("li", "empty", "Nothing yet.")); return; }
+  data.rows.forEach((r, i) => {
+    const li = el("li");
+    const nm = color(el("div", "nm"), r.player);
+    add(nm, el("i"), add(el("div"), el("span", "", r.player), el("small", "", (r.models || []).join(", "))));
+    const cell = (v, k, opt) => add(el("div", "n" + (opt ? " opt" : ""), v), el("small", "", k));
+    add(li, el("span", "rk", String(i + 1).padStart(2, "0")), nm,
+      cell(String(r.wins), "wins"),
+      cell(r.avg_place === null ? "—" : r.avg_place.toFixed(1), "avg place"),
+      cell(String(r.broken), "broken promises", true),
+      cell(pct(r.read_room), "read the room", true));
+    box.append(li);
+  });
+}
+
+/* ---------- wiring ---------- */
+
+$("playbtn").addEventListener("click", () => (S.playing ? pause() : play()));
 $("step").addEventListener("click", () => { pause(); stepOnce(); });
+$("end").addEventListener("click", () => { pause(); jump(S.steps.length); });
 for (const b of document.querySelectorAll("[data-speed]")) {
   b.addEventListener("click", () => {
-    state.speed = Number(b.dataset.speed);
+    S.speed = Number(b.dataset.speed);
     for (const o of document.querySelectorAll("[data-speed]")) o.setAttribute("aria-pressed", String(o === b));
-    if (state.speed === 0) { pause(); renderTo(state.steps.length); }
   });
 }
 $("round").addEventListener("input", (ev) => {
-  const i = state.roundStarts[Number(ev.target.value)];  // read before pause() re-syncs the range
+  const i = S.roundStarts[Number(ev.target.value)];
   pause();
-  if (i !== undefined) renderTo(i + 1);
+  if (i !== undefined) jump(i + 1);
 });
 
 boot();

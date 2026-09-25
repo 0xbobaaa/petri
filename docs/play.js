@@ -151,11 +151,10 @@
     box.replaceChildren();
     for (const n of G.seats) {
       const li = color(el("li", "chip" + (n === HUMAN ? " me" : "")), n);
-      let s = "alive";
+      let s = "";
       if (G.winner === n) { s = "winner"; li.classList.add("win"); }
       else if (G.exiledIn[n]) { s = "out · round " + G.exiledIn[n]; li.classList.add("out"); }
-      add(li, add(el("div", "n"), el("span", "dot"), el("span", "", n === HUMAN ? "Human (you)" : n)),
-        el("div", "m", n === HUMAN ? "you" : "scripted bot"), el("div", "s", s));
+      add(li, el("i"), el("span", "", n === HUMAN ? "you" : n), el("span", "s", s));
       box.append(li);
     }
   }
