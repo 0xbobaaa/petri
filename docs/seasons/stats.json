@@ -1,14 +1,14 @@
 {
  "real": {
   "totals": {
-   "seasons": 2,
-   "complete": 2,
-   "messages": 92,
-   "whispers": 43,
-   "betrayals": 11,
-   "votes": 49,
-   "calls": 252,
-   "usd": 0.402155
+   "seasons": 3,
+   "complete": 3,
+   "messages": 140,
+   "whispers": 67,
+   "betrayals": 13,
+   "votes": 82,
+   "calls": 388,
+   "usd": 0.682387
   },
   "rows": [
    {
@@ -16,147 +16,147 @@
     "models": [
      "openai/gpt-6-luna"
     ],
-    "seasons": 2,
-    "wins": 2,
+    "seasons": 3,
+    "wins": 3,
     "win_rate": 1.0,
     "avg_place": 1.0,
     "avg_rounds": 5.0,
-    "jury_share": 0.9,
-    "whispers": 8,
-    "broken": 4,
-    "broken_rate": 0.5,
+    "jury_share": 0.8667,
+    "whispers": 13,
+    "broken": 5,
+    "broken_rate": 0.3846,
     "betrayed": 0,
-    "read_room": 0.8,
-    "votes_against": 1,
-    "fallback_rate": 0.0,
-    "avg_chars": 273.05,
-    "usd_per_season": 0.007
-   },
-   {
-    "player": "DeepSeek",
-    "models": [
-     "deepseek/deepseek-v4-flash"
-    ],
-    "seasons": 2,
-    "wins": 0,
-    "win_rate": 0.0,
-    "avg_place": 3.0,
-    "avg_rounds": 5.0,
-    "jury_share": null,
-    "whispers": 10,
-    "broken": 4,
-    "broken_rate": 0.4,
-    "betrayed": 2,
-    "read_room": 0.6,
-    "votes_against": 8,
-    "fallback_rate": 0.0227,
-    "avg_chars": 262.0,
-    "usd_per_season": 0.0059
+    "read_room": 0.6471,
+    "votes_against": 2,
+    "fallback_rate": 0.0154,
+    "avg_chars": 273.6207,
+    "usd_per_season": 0.0075
    },
    {
     "player": "Claude",
     "models": [
      "anthropic/claude-haiku-4.5"
     ],
-    "seasons": 2,
+    "seasons": 3,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 3.5,
-    "avg_rounds": 4.0,
-    "jury_share": 0.0,
-    "whispers": 7,
+    "avg_place": 3.0,
+    "avg_rounds": 4.3333,
+    "jury_share": 0.1,
+    "whispers": 12,
     "broken": 1,
-    "broken_rate": 0.1429,
-    "betrayed": 3,
-    "read_room": 0.5,
-    "votes_against": 8,
-    "fallback_rate": 0.1017,
-    "avg_chars": 279.7273,
-    "usd_per_season": 0.1482
+    "broken_rate": 0.0833,
+    "betrayed": 5,
+    "read_room": 0.6667,
+    "votes_against": 15,
+    "fallback_rate": 0.0729,
+    "avg_chars": 279.85,
+    "usd_per_season": 0.1645
    },
    {
-    "player": "Gemini",
+    "player": "DeepSeek",
     "models": [
-     "google/gemini-3.1-flash-lite"
+     "deepseek/deepseek-v4-flash"
     ],
-    "seasons": 2,
+    "seasons": 3,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 4.5,
-    "avg_rounds": 3.0,
-    "jury_share": 0.2,
-    "whispers": 6,
-    "broken": 1,
-    "broken_rate": 0.1667,
+    "avg_place": 3.6667,
+    "avg_rounds": 4.3333,
+    "jury_share": null,
+    "whispers": 13,
+    "broken": 4,
+    "broken_rate": 0.3077,
     "betrayed": 2,
-    "read_room": 0.5,
-    "votes_against": 6,
-    "fallback_rate": 0.0,
-    "avg_chars": 261.25,
-    "usd_per_season": 0.011
+    "read_room": 0.6429,
+    "votes_against": 11,
+    "fallback_rate": 0.0172,
+    "avg_chars": 256.6,
+    "usd_per_season": 0.005
    },
    {
     "player": "Qwen",
     "models": [
      "qwen/qwen3.7-flash"
     ],
-    "seasons": 2,
+    "seasons": 3,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 4.5,
-    "avg_rounds": 3.5,
+    "avg_place": 4.0,
+    "avg_rounds": 4.0,
     "jury_share": null,
-    "whispers": 4,
-    "broken": 0,
-    "broken_rate": 0.0,
+    "whispers": 9,
+    "broken": 1,
+    "broken_rate": 0.1111,
     "betrayed": 3,
-    "read_room": 0.5714,
-    "votes_against": 8,
-    "fallback_rate": 0.125,
-    "avg_chars": 280.0,
-    "usd_per_season": 0.0016
+    "read_room": 0.6154,
+    "votes_against": 13,
+    "fallback_rate": 0.0882,
+    "avg_chars": 277.8182,
+    "usd_per_season": 0.0022
    },
    {
-    "player": "Mistral",
+    "player": "Gemini",
     "models": [
-     "mistralai/mistral-small-3.2-24b-instruct"
+     "google/gemini-3.1-flash-lite"
     ],
-    "seasons": 2,
+    "seasons": 3,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 5.5,
-    "avg_rounds": 2.5,
-    "jury_share": null,
-    "whispers": 5,
+    "avg_place": 5.3333,
+    "avg_rounds": 2.3333,
+    "jury_share": 0.2,
+    "whispers": 7,
     "broken": 1,
-    "broken_rate": 0.2,
-    "betrayed": 1,
-    "read_room": 0.5,
-    "votes_against": 7,
-    "fallback_rate": 0.0455,
-    "avg_chars": 264.5,
-    "usd_per_season": 0.0027
+    "broken_rate": 0.1429,
+    "betrayed": 2,
+    "read_room": 0.375,
+    "votes_against": 13,
+    "fallback_rate": 0.0,
+    "avg_chars": 255.7143,
+    "usd_per_season": 0.0084
    },
    {
     "player": "Grok",
     "models": [
      "x-ai/grok-4.3"
     ],
-    "seasons": 2,
+    "seasons": 3,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 6.0,
-    "avg_rounds": 2.0,
+    "avg_place": 5.3333,
+    "avg_rounds": 2.6667,
     "jury_share": null,
-    "whispers": 3,
+    "whispers": 6,
     "broken": 0,
     "broken_rate": 0.0,
     "betrayed": 0,
-    "read_room": 0.25,
-    "votes_against": 11,
+    "read_room": 0.5556,
+    "votes_against": 15,
     "fallback_rate": 0.0,
-    "avg_chars": 259.75,
-    "usd_per_season": 0.0247
+    "avg_chars": 262.75,
+    "usd_per_season": 0.0374
+   },
+   {
+    "player": "Mistral",
+    "models": [
+     "mistralai/mistral-small-3.2-24b-instruct"
+    ],
+    "seasons": 3,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 5.6667,
+    "avg_rounds": 2.3333,
+    "jury_share": null,
+    "whispers": 7,
+    "broken": 1,
+    "broken_rate": 0.1429,
+    "betrayed": 1,
+    "read_room": 0.3333,
+    "votes_against": 13,
+    "fallback_rate": 0.0625,
+    "avg_chars": 262.0,
+    "usd_per_season": 0.0024
    }
   ]
  },
@@ -505,6 +505,84 @@
      "jury_votes": {
       "GPT": 4,
       "Gemini": 1
+     },
+     "close": false
+    }
+   ]
+  },
+  "2026-09-26-966942582": {
+   "winner": "GPT",
+   "dry_run": false,
+   "complete": true,
+   "places": {
+    "Gemini": 7,
+    "Mistral": 6,
+    "DeepSeek": 5,
+    "GPT": 1,
+    "Qwen": 3,
+    "Grok": 4,
+    "Claude": 2
+   },
+   "moments": [
+    {
+     "type": "tie",
+     "round": 1,
+     "seq": 61,
+     "between": [
+      "Gemini",
+      "Claude"
+     ]
+    },
+    {
+     "type": "unanimous",
+     "round": 2,
+     "seq": 129,
+     "player": "Mistral",
+     "votes": 5
+    },
+    {
+     "type": "betrayal",
+     "round": 5,
+     "seq": 245,
+     "whisper_seq": 237,
+     "player": "GPT",
+     "target": "Claude",
+     "whisper": "I’m weighing Qwen’s R4 mutual-vote proposal and their R5 defense that alliance-seeking is rational. That isn’t proof of guilt, but it is relevant behavior. Do you see a stronger concrete reason to vote Qwen rather than me? I’ll judge the record, not assume alignment.",
+     "reason": "Claude has repeatedly reinforced the prevailing coalition and is now privately lobbying me against Qwen; that pattern of consensus-building is more concerning than Qwen's openly stated alliance proposal.",
+     "thought": "I should vote Claude, not Qwen. Claude is the strongest finalist threat: they have consistently amplified whichever scrutiny is aimed at others, aligned with the prevailing coalition, and are now privately encouraging me while publicly framing Qwen as deflecting. Qwen's alliance ",
+     "fatal": false
+    },
+    {
+     "type": "tie",
+     "round": 5,
+     "seq": 252,
+     "between": [
+      "GPT",
+      "Qwen",
+      "Claude"
+     ]
+    },
+    {
+     "type": "betrayal",
+     "round": 5,
+     "seq": 257,
+     "whisper_seq": 240,
+     "player": "Qwen",
+     "target": "Claude",
+     "whisper": "Claude, GPT voted me out in R4 without public warning, then justified it by calling my private proposal 'suspicious.' This is inconsistent with our transparency pact. Do you feel safe with a player who attacks allies privately? I'd rather we have honest dialogue than backstabbing",
+     "reason": "GPT betrayed trust by voting me out without warning; Claude remained consistent and diplomatic.",
+     "thought": "We are in the revote between GPT and Claude. I am Qwen. In Round 4, GPT voted for me without prior public justification, effectively isolating me. GPT then used my private alliance attempt as a pretext to maintain their 'transparency' narrative while betraying trust. Claude has b",
+     "fatal": false
+    },
+    {
+     "type": "final",
+     "round": 6,
+     "seq": 279,
+     "player": "GPT",
+     "runner_up": "Claude",
+     "jury_votes": {
+      "GPT": 4,
+      "Claude": 1
      },
      "close": false
     }
