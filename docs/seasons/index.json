@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-09-28-587126932",
+    "date": "2026-09-28",
+    "dry_run": false,
+    "status": "complete",
+    "winner": "Claude",
+    "usd_est_total": 0.31687,
+    "calls": 131,
+    "rounds": 6
+  },
+  {
     "id": "2026-09-27-595536156",
     "date": "2026-09-27",
     "dry_run": false,
