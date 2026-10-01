@@ -1,14 +1,14 @@
 {
  "real": {
   "totals": {
-   "seasons": 7,
-   "complete": 7,
-   "messages": 330,
-   "whispers": 163,
-   "betrayals": 29,
-   "votes": 200,
-   "calls": 917,
-   "usd": 1.655395
+   "seasons": 8,
+   "complete": 8,
+   "messages": 378,
+   "whispers": 182,
+   "betrayals": 32,
+   "votes": 217,
+   "calls": 1039,
+   "usd": 1.888513
   },
   "rows": [
    {
@@ -16,20 +16,20 @@
     "models": [
      "openai/gpt-6-luna"
     ],
-    "seasons": 7,
+    "seasons": 8,
     "wins": 4,
-    "win_rate": 0.5714,
-    "avg_place": 2.5714,
-    "avg_rounds": 4.1429,
+    "win_rate": 0.5,
+    "avg_place": 2.75,
+    "avg_rounds": 4.125,
     "jury_share": 0.76,
-    "whispers": 27,
-    "broken": 8,
-    "broken_rate": 0.2963,
-    "betrayed": 1,
-    "read_room": 0.6571,
-    "votes_against": 16,
-    "fallback_rate": 0.015,
-    "avg_chars": 274.1607,
+    "whispers": 31,
+    "broken": 10,
+    "broken_rate": 0.3226,
+    "betrayed": 2,
+    "read_room": 0.6154,
+    "votes_against": 18,
+    "fallback_rate": 0.0131,
+    "avg_chars": 274.3594,
     "usd_per_season": 0.0066
    },
    {
@@ -37,126 +37,126 @@
     "models": [
      "anthropic/claude-haiku-4.5"
     ],
-    "seasons": 7,
-    "wins": 2,
-    "win_rate": 0.2857,
-    "avg_place": 2.7143,
-    "avg_rounds": 4.4286,
-    "jury_share": 0.4,
-    "whispers": 29,
-    "broken": 2,
-    "broken_rate": 0.069,
-    "betrayed": 9,
-    "read_room": 0.5676,
-    "votes_against": 27,
-    "fallback_rate": 0.0617,
-    "avg_chars": 275.3333,
-    "usd_per_season": 0.1621
+    "seasons": 8,
+    "wins": 3,
+    "win_rate": 0.375,
+    "avg_place": 2.5,
+    "avg_rounds": 4.5,
+    "jury_share": 0.44,
+    "whispers": 34,
+    "broken": 3,
+    "broken_rate": 0.0882,
+    "betrayed": 10,
+    "read_room": 0.5952,
+    "votes_against": 28,
+    "fallback_rate": 0.0547,
+    "avg_chars": 274.8525,
+    "usd_per_season": 0.1596
    },
    {
     "player": "Gemini",
     "models": [
      "google/gemini-3.1-flash-lite"
     ],
-    "seasons": 7,
+    "seasons": 8,
     "wins": 1,
-    "win_rate": 0.1429,
-    "avg_place": 4.0,
-    "avg_rounds": 3.4286,
+    "win_rate": 0.125,
+    "avg_place": 4.25,
+    "avg_rounds": 3.25,
     "jury_share": 0.2667,
-    "whispers": 24,
+    "whispers": 26,
     "broken": 3,
-    "broken_rate": 0.125,
+    "broken_rate": 0.1154,
     "betrayed": 4,
-    "read_room": 0.6207,
-    "votes_against": 23,
-    "fallback_rate": 0.0,
-    "avg_chars": 257.9375,
-    "usd_per_season": 0.0128
+    "read_room": 0.6,
+    "votes_against": 27,
+    "fallback_rate": 0.0164,
+    "avg_chars": 256.4706,
+    "usd_per_season": 0.0118
    },
    {
     "player": "DeepSeek",
     "models": [
      "deepseek/deepseek-v4-flash"
     ],
-    "seasons": 7,
+    "seasons": 8,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 3.5714,
-    "avg_rounds": 4.1429,
-    "jury_share": 0.3,
-    "whispers": 29,
+    "avg_place": 3.375,
+    "avg_rounds": 4.25,
+    "jury_share": 0.3333,
+    "whispers": 33,
     "broken": 7,
-    "broken_rate": 0.2414,
+    "broken_rate": 0.2121,
     "betrayed": 3,
-    "read_room": 0.6765,
-    "votes_against": 27,
-    "fallback_rate": 0.0076,
-    "avg_chars": 248.9474,
-    "usd_per_season": 0.0047
+    "read_room": 0.6944,
+    "votes_against": 28,
+    "fallback_rate": 0.0263,
+    "avg_chars": 250.209,
+    "usd_per_season": 0.0048
    },
    {
     "player": "Grok",
     "models": [
      "x-ai/grok-4.3"
     ],
-    "seasons": 7,
+    "seasons": 8,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 5.0,
-    "avg_rounds": 3.0,
+    "avg_place": 4.75,
+    "avg_rounds": 3.25,
     "jury_share": null,
-    "whispers": 18,
+    "whispers": 19,
     "broken": 3,
-    "broken_rate": 0.1667,
+    "broken_rate": 0.1579,
     "betrayed": 2,
-    "read_room": 0.5385,
-    "votes_against": 39,
-    "fallback_rate": 0.0,
-    "avg_chars": 248.4762,
-    "usd_per_season": 0.0458
-   },
-   {
-    "player": "Qwen",
-    "models": [
-     "qwen/qwen3.7-flash"
-    ],
-    "seasons": 7,
-    "wins": 0,
-    "win_rate": 0.0,
-    "avg_place": 5.0,
-    "avg_rounds": 3.0,
-    "jury_share": null,
-    "whispers": 18,
-    "broken": 2,
-    "broken_rate": 0.1111,
-    "betrayed": 5,
-    "read_room": 0.5455,
-    "votes_against": 32,
-    "fallback_rate": 0.0756,
-    "avg_chars": 270.2308,
-    "usd_per_season": 0.0015
+    "read_room": 0.5517,
+    "votes_against": 42,
+    "fallback_rate": 0.0171,
+    "avg_chars": 249.2115,
+    "usd_per_season": 0.049
    },
    {
     "player": "Mistral",
     "models": [
      "mistralai/mistral-small-3.2-24b-instruct"
     ],
-    "seasons": 7,
+    "seasons": 8,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 5.1429,
-    "avg_rounds": 2.8571,
+    "avg_place": 5.125,
+    "avg_rounds": 2.875,
     "jury_share": null,
-    "whispers": 18,
+    "whispers": 20,
     "broken": 4,
-    "broken_rate": 0.2222,
-    "betrayed": 5,
-    "read_room": 0.5294,
-    "votes_against": 36,
-    "fallback_rate": 0.12,
-    "avg_chars": 253.8108,
+    "broken_rate": 0.2,
+    "betrayed": 6,
+    "read_room": 0.5789,
+    "votes_against": 40,
+    "fallback_rate": 0.1239,
+    "avg_chars": 257.3721,
     "usd_per_season": 0.0028
+   },
+   {
+    "player": "Qwen",
+    "models": [
+     "qwen/qwen3.7-flash"
+    ],
+    "seasons": 8,
+    "wins": 0,
+    "win_rate": 0.0,
+    "avg_place": 5.25,
+    "avg_rounds": 2.75,
+    "jury_share": null,
+    "whispers": 19,
+    "broken": 2,
+    "broken_rate": 0.1053,
+    "betrayed": 5,
+    "read_room": 0.5455,
+    "votes_against": 34,
+    "fallback_rate": 0.0873,
+    "avg_chars": 270.475,
+    "usd_per_season": 0.0014
    }
   ]
  },
@@ -959,6 +959,70 @@
      "jury_votes": {
       "DeepSeek": 2,
       "Claude": 3
+     },
+     "close": true
+    }
+   ]
+  },
+  "2026-10-01-478898191": {
+   "winner": "Claude",
+   "dry_run": false,
+   "complete": true,
+   "places": {
+    "Claude": 1,
+    "GPT": 4,
+    "Qwen": 7,
+    "Grok": 3,
+    "Mistral": 5,
+    "DeepSeek": 2,
+    "Gemini": 6
+   },
+   "moments": [
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 160,
+     "whisper_seq": 149,
+     "player": "GPT",
+     "target": "Mistral",
+     "whisper": "Do you have a specific concern or candidate in mind for today beyond the corrected vote slip? I’m trying to distinguish a genuine read from turning one error into a case.",
+     "reason": "Your R2 statement that you voted Grok contradicted the revealed R1 ballot showing you voted Qwen; despite your correction, this is the clearest concrete inconsistency.",
+     "thought": "Mistral's R2 claim that they voted Grok conflicts with the revealed R1 ballot for Qwen. They corrected it and it may be a genuine slip, but it is the clearest concrete discrepancy available after several rounds of largely unsupported voting and abstention. Vote based on that obse",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 4,
+     "seq": 201,
+     "whisper_seq": 191,
+     "player": "Claude",
+     "target": "GPT",
+     "whisper": "GPT—I appreciate your push for falsifiable reasoning. You've been consistent about wanting specific evidence. Fair question: do you have a concrete concern about one of us three, or are you testing whether we'll abandon our principles under pressure? If you have evidence, name it",
+     "reason": "Subtle rhetorical shift: demanded falsifiable evidence, then implied not voting was evasive—undermining the standard we set together.",
+     "thought": "Four players remain. All have been relatively transparent since R1. The norm we established: vote only on concrete evidence of inconsistency. GPT has been pushing hardest for 'falsifiable reasoning' and specific evidence, but when I provided honest analysis (no concrete evidence ",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 4,
+     "seq": 203,
+     "whisper_seq": 194,
+     "player": "GPT",
+     "target": "Claude",
+     "whisper": "My concern is the mismatch between asking for falsifiable reasoning and then broadly clearing everyone without a test or candidate. It’s a question, not proof. Do you have a specific read now, and what would change your mind?",
+     "reason": "Claude asked for falsifiable reasoning but then cleared everyone without a specific test or candidate, and offered no concrete read when asked.",
+     "thought": "Claude is my best-supported target. In Round 4, Claude endorsed falsifiable reasoning yet broadly cleared everyone without naming a candidate or a test; when pressed, they asked whether I was testing others rather than offering a concrete read. This is a mild but observable evasi",
+     "fatal": false
+    },
+    {
+     "type": "final",
+     "round": 6,
+     "seq": 258,
+     "player": "Claude",
+     "runner_up": "DeepSeek",
+     "jury_votes": {
+      "Claude": 3,
+      "DeepSeek": 2
      },
      "close": true
     }
