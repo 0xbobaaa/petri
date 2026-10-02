@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-02-356265817",
+    "date": "2026-10-02",
+    "dry_run": false,
+    "status": "complete",
+    "winner": "GPT",
+    "usd_est_total": 0.213657,
+    "calls": 141,
+    "rounds": 6
+  },
+  {
     "id": "2026-10-01-478898191",
     "date": "2026-10-01",
     "dry_run": false,
