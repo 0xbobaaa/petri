@@ -1,14 +1,14 @@
 {
  "real": {
   "totals": {
-   "seasons": 9,
-   "complete": 9,
-   "messages": 425,
-   "whispers": 206,
-   "betrayals": 35,
-   "votes": 251,
-   "calls": 1180,
-   "usd": 2.102173
+   "seasons": 10,
+   "complete": 10,
+   "messages": 474,
+   "whispers": 231,
+   "betrayals": 42,
+   "votes": 280,
+   "calls": 1311,
+   "usd": 2.371695
   },
   "rows": [
    {
@@ -16,147 +16,147 @@
     "models": [
      "openai/gpt-6-luna"
     ],
-    "seasons": 9,
+    "seasons": 10,
     "wins": 5,
-    "win_rate": 0.5556,
-    "avg_place": 2.5556,
-    "avg_rounds": 4.2222,
-    "jury_share": 0.7667,
-    "whispers": 36,
-    "broken": 11,
-    "broken_rate": 0.3056,
-    "betrayed": 2,
-    "read_room": 0.6304,
-    "votes_against": 20,
-    "fallback_rate": 0.0112,
-    "avg_chars": 274.1351,
-    "usd_per_season": 0.0069
+    "win_rate": 0.5,
+    "avg_place": 2.5,
+    "avg_rounds": 4.3,
+    "jury_share": 0.6857,
+    "whispers": 41,
+    "broken": 13,
+    "broken_rate": 0.3171,
+    "betrayed": 3,
+    "read_room": 0.6731,
+    "votes_against": 25,
+    "fallback_rate": 0.0147,
+    "avg_chars": 274.3855,
+    "usd_per_season": 0.0071
    },
    {
     "player": "Claude",
     "models": [
      "anthropic/claude-haiku-4.5"
     ],
-    "seasons": 9,
+    "seasons": 10,
     "wins": 3,
-    "win_rate": 0.3333,
-    "avg_place": 2.6667,
-    "avg_rounds": 4.4444,
+    "win_rate": 0.3,
+    "avg_place": 2.7,
+    "avg_rounds": 4.5,
     "jury_share": 0.44,
-    "whispers": 38,
-    "broken": 4,
-    "broken_rate": 0.1053,
-    "betrayed": 11,
-    "read_room": 0.617,
-    "votes_against": 33,
-    "fallback_rate": 0.0594,
-    "avg_chars": 273.9104,
-    "usd_per_season": 0.1573
-   },
-   {
-    "player": "Gemini",
-    "models": [
-     "google/gemini-3.1-flash-lite"
-    ],
-    "seasons": 9,
-    "wins": 1,
-    "win_rate": 0.1111,
-    "avg_place": 4.0,
-    "avg_rounds": 3.4444,
-    "jury_share": 0.25,
-    "whispers": 31,
-    "broken": 4,
-    "broken_rate": 0.129,
-    "betrayed": 4,
-    "read_room": 0.6216,
-    "votes_against": 28,
-    "fallback_rate": 0.0138,
-    "avg_chars": 255.9016,
-    "usd_per_season": 0.0126
+    "whispers": 43,
+    "broken": 5,
+    "broken_rate": 0.1163,
+    "betrayed": 13,
+    "read_room": 0.5849,
+    "votes_against": 36,
+    "fallback_rate": 0.0525,
+    "avg_chars": 274.7013,
+    "usd_per_season": 0.1613
    },
    {
     "player": "DeepSeek",
     "models": [
      "deepseek/deepseek-v4-flash"
     ],
-    "seasons": 9,
-    "wins": 0,
-    "win_rate": 0.0,
-    "avg_place": 3.6667,
-    "avg_rounds": 4.0,
-    "jury_share": 0.3333,
-    "whispers": 35,
-    "broken": 7,
-    "broken_rate": 0.2,
+    "seasons": 10,
+    "wins": 1,
+    "win_rate": 0.1,
+    "avg_place": 3.4,
+    "avg_rounds": 4.1,
+    "jury_share": 0.45,
+    "whispers": 40,
+    "broken": 9,
+    "broken_rate": 0.225,
     "betrayed": 3,
-    "read_room": 0.6667,
-    "votes_against": 36,
-    "fallback_rate": 0.0247,
-    "avg_chars": 247.3099,
-    "usd_per_season": 0.0045
+    "read_room": 0.7111,
+    "votes_against": 38,
+    "fallback_rate": 0.0217,
+    "avg_chars": 248.284,
+    "usd_per_season": 0.0046
+   },
+   {
+    "player": "Gemini",
+    "models": [
+     "google/gemini-3.1-flash-lite"
+    ],
+    "seasons": 10,
+    "wins": 1,
+    "win_rate": 0.1,
+    "avg_place": 4.0,
+    "avg_rounds": 3.5,
+    "jury_share": 0.25,
+    "whispers": 35,
+    "broken": 5,
+    "broken_rate": 0.1429,
+    "betrayed": 5,
+    "read_room": 0.5714,
+    "votes_against": 33,
+    "fallback_rate": 0.0123,
+    "avg_chars": 256.2464,
+    "usd_per_season": 0.0129
    },
    {
     "player": "Grok",
     "models": [
      "x-ai/grok-4.3"
     ],
-    "seasons": 9,
+    "seasons": 10,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 4.7778,
-    "avg_rounds": 3.2222,
+    "avg_place": 4.8,
+    "avg_rounds": 3.2,
     "jury_share": null,
-    "whispers": 22,
+    "whispers": 25,
     "broken": 3,
-    "broken_rate": 0.1364,
-    "betrayed": 2,
-    "read_room": 0.4848,
-    "votes_against": 48,
-    "fallback_rate": 0.0153,
-    "avg_chars": 248.8276,
-    "usd_per_season": 0.048
+    "broken_rate": 0.12,
+    "betrayed": 4,
+    "read_room": 0.4722,
+    "votes_against": 54,
+    "fallback_rate": 0.0139,
+    "avg_chars": 249.2656,
+    "usd_per_season": 0.0471
    },
    {
     "player": "Qwen",
     "models": [
      "qwen/qwen3.7-flash"
     ],
-    "seasons": 9,
+    "seasons": 10,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 5.0,
-    "avg_rounds": 3.0,
+    "avg_place": 5.1,
+    "avg_rounds": 2.9,
     "jury_share": null,
-    "whispers": 23,
-    "broken": 2,
-    "broken_rate": 0.087,
-    "betrayed": 7,
-    "read_room": 0.5714,
-    "votes_against": 40,
-    "fallback_rate": 0.0886,
-    "avg_chars": 269.4286,
-    "usd_per_season": 0.0016
+    "whispers": 25,
+    "broken": 3,
+    "broken_rate": 0.12,
+    "betrayed": 8,
+    "read_room": 0.5333,
+    "votes_against": 45,
+    "fallback_rate": 0.0833,
+    "avg_chars": 270.2264,
+    "usd_per_season": 0.0015
    },
    {
     "player": "Mistral",
     "models": [
      "mistralai/mistral-small-3.2-24b-instruct"
     ],
-    "seasons": 9,
+    "seasons": 10,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 5.3333,
-    "avg_rounds": 2.6667,
+    "avg_place": 5.5,
+    "avg_rounds": 2.5,
     "jury_share": null,
-    "whispers": 21,
+    "whispers": 22,
     "broken": 4,
-    "broken_rate": 0.1905,
+    "broken_rate": 0.1818,
     "betrayed": 6,
-    "read_room": 0.5238,
-    "votes_against": 46,
-    "fallback_rate": 0.1176,
-    "avg_chars": 256.3778,
-    "usd_per_season": 0.0026
+    "read_room": 0.5,
+    "votes_against": 49,
+    "fallback_rate": 0.1129,
+    "avg_chars": 254.0213,
+    "usd_per_season": 0.0025
    }
   ]
  },
@@ -1105,6 +1105,138 @@
      "jury_votes": {
       "GPT": 4,
       "Gemini": 1
+     },
+     "close": false
+    }
+   ]
+  },
+  "2026-10-03-743713175": {
+   "winner": "DeepSeek",
+   "dry_run": false,
+   "complete": true,
+   "places": {
+    "Grok": 5,
+    "Mistral": 7,
+    "Gemini": 4,
+    "Qwen": 6,
+    "DeepSeek": 1,
+    "GPT": 2,
+    "Claude": 3
+   },
+   "moments": [
+    {
+     "type": "betrayal",
+     "round": 1,
+     "seq": 53,
+     "whisper_seq": 38,
+     "player": "Qwen",
+     "target": "Grok",
+     "whisper": "Currently, no specific deductions have been made because we are still in the information-gathering phase. As GPT noted, consistency between words and actions matters more than early wording choices. Once voting begins, I will require concrete behavioral evidence to justify any ex",
+     "reason": "Grok raised an unsubstantiated accusation about my motives; voting now tests his reaction to unwarranted scrutiny.",
+     "thought": "It is the first round and no one has acted suspiciously yet. Everyone is playing a 'transparent' or 'observational' persona. Grok made a slightly provocative move by questioning Qwen's transparency, which could be seen as an early attempt to create division or deflect attention. ",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 2,
+     "seq": 107,
+     "whisper_seq": 94,
+     "player": "Gemini",
+     "target": "Qwen",
+     "whisper": "The table is getting impatient with your focus on Grok. If you have any concrete analysis on other players like GPT or Claude, now is the time to share it to shift the perception of your playstyle.",
+     "reason": "Qwen has consistently prioritized defending their own reputation through meta-analysis rather than contributing substantive observations about other players.",
+     "thought": "The group is converging on Qwen due to their defensive posture and lack of substantive analysis on others. While Claude's warning about a potential voting bloc is valid, Qwen's persistent refusal to pivot from ad-hominem defenses makes them the most obvious candidate for eliminat",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 157,
+     "whisper_seq": 147,
+     "player": "DeepSeek",
+     "target": "Grok",
+     "whisper": "Good question. Claude's R2 vote on you is notable—it broke the pattern you worried about. But I'm not ready to read threat yet; could be independent judgment. I'm watching for consistency in reasoning. Your flexibility in correcting the bloc claim was a good sign.",
+     "reason": "Grok has driven the narrative most actively; testing if that influence is strategic or genuine.",
+     "thought": "Grok raised a valid concern about voting blocs but corrected when shown wrong, which is good. Gemini has been cautious but not accusatory, maybe a safe exile to test. GPT and Claude have been consistent and collaborative with me. The strongest pattern from my perspective: Grok ha",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 4,
+     "seq": 198,
+     "whisper_seq": 190,
+     "player": "GPT",
+     "target": "Gemini",
+     "whisper": "Your comparison of us was useful, even if you haven't named a top suspect. What's your current vote intention, and what specific action is the strongest reason? I want to assess it independently; DeepSeek's repeated demands for a single suspect could be legitimate pressure, but s",
+     "reason": "Gemini has repeatedly avoided naming a concrete suspect despite direct requests, including in R4.",
+     "thought": "Gemini is my strongest vote. Across rounds, they repeatedly stayed in a cautious observer posture and avoided naming a suspect even after several direct requests, then in R4 offered comparative characterizations without a concrete suspicion. This is a behavioral pattern, though n",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 4,
+     "seq": 201,
+     "whisper_seq": 192,
+     "player": "Claude",
+     "target": "GPT",
+     "whisper": "Your silence in R4 is a notable shift from your pattern. You've been the most methodical on record-keeping and process. Are you uncertain about this round's vote, or deliberately creating distance? I'm asking genuinely—not as accusation, but to understand what you're seeing.",
+     "reason": "Sudden silence breaks established pattern of methodical process-focus; most notable behavioral shift among the four remaining players.",
+     "thought": "GPT's sudden silence breaks their established pattern of methodical verbosity on process and evidence. Throughout the game, GPT has been relentless about demanding concrete reasoning and record-keeping. This shift feels strategic—either calculating without exposing reasoning, or ",
+     "fatal": false
+    },
+    {
+     "type": "tie",
+     "round": 4,
+     "seq": 203,
+     "between": [
+      "Gemini",
+      "GPT"
+     ]
+    },
+    {
+     "type": "coin",
+     "round": 4,
+     "seq": 214,
+     "between": [
+      "Gemini",
+      "GPT"
+     ],
+     "picked": "Gemini",
+     "reason": "still_tied"
+    },
+    {
+     "type": "betrayal",
+     "round": 5,
+     "seq": 240,
+     "whisper_seq": 232,
+     "player": "DeepSeek",
+     "target": "Claude",
+     "whisper": "Claude, you've been the bridge this whole time—never naming a suspect. GPT and I both noticed. If you're genuine, tell me: who do you actually trust least right now, and why? One concrete answer.",
+     "reason": "Claude avoided naming a suspect until pressed, consistent with strategic evasion rather than genuine analysis.",
+     "thought": "Claude's whisper reveals they suspect GPT more than me, which could be genuine or an attempt to sway me. GPT has been consistent and transparent, while Claude has avoided naming suspects until now. Claude's bridging pattern and late stance feel like a survival move. I'll vote Cla",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 5,
+     "seq": 242,
+     "whisper_seq": 235,
+     "player": "GPT",
+     "target": "Claude",
+     "whisper": "I’ve said publicly that your bridging without a firm read is my main concern. DeepSeek is now making the same case, which could be genuine or convenient. What is your strongest independent concern between me and DeepSeek, and what specific behavior supports it? I’ll judge indepen",
+     "reason": "Claude repeatedly bridged rather than taking a clear stance, and only acknowledged that pattern after it was directly challenged.",
+     "thought": "Claude is my strongest choice. The observable concern is their sustained bridging and reluctance to state a firm suspect until the final three, followed by framing my and DeepSeek’s convergence as suspicious without resolving that pattern. DeepSeek’s pressure may be strategic, bu",
+     "fatal": true
+    },
+    {
+     "type": "final",
+     "round": 6,
+     "seq": 264,
+     "player": "DeepSeek",
+     "runner_up": "GPT",
+     "jury_votes": {
+      "DeepSeek": 4,
+      "GPT": 1
      },
      "close": false
     }
