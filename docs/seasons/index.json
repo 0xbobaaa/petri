@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-05-873382414",
+    "date": "2026-10-05",
+    "dry_run": false,
+    "status": "complete",
+    "winner": "Gemini",
+    "usd_est_total": 0.339001,
+    "calls": 139,
+    "rounds": 6
+  },
+  {
     "id": "2026-10-04-851613430",
     "date": "2026-10-04",
     "dry_run": false,
