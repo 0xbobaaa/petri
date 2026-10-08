@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-08-868753708",
+    "date": "2026-10-08",
+    "dry_run": false,
+    "status": "complete",
+    "winner": "DeepSeek",
+    "usd_est_total": 0.258026,
+    "calls": 124,
+    "rounds": 6
+  },
+  {
     "id": "2026-10-07-724721838",
     "date": "2026-10-07",
     "dry_run": false,
