@@ -1,14 +1,14 @@
 {
  "real": {
   "totals": {
-   "seasons": 19,
-   "complete": 19,
-   "messages": 910,
-   "whispers": 448,
-   "betrayals": 90,
-   "votes": 552,
-   "calls": 2489,
-   "usd": 4.483302
+   "seasons": 20,
+   "complete": 20,
+   "messages": 960,
+   "whispers": 470,
+   "betrayals": 95,
+   "votes": 577,
+   "calls": 2602,
+   "usd": 4.650046
   },
   "rows": [
    {
@@ -16,147 +16,147 @@
     "models": [
      "openai/gpt-6-luna"
     ],
-    "seasons": 19,
+    "seasons": 20,
     "wins": 6,
-    "win_rate": 0.3158,
-    "avg_place": 3.3158,
-    "avg_rounds": 3.8421,
+    "win_rate": 0.3,
+    "avg_place": 3.3,
+    "avg_rounds": 3.9,
     "jury_share": 0.62,
-    "whispers": 71,
-    "broken": 16,
-    "broken_rate": 0.2254,
-    "betrayed": 6,
-    "read_room": 0.6437,
-    "votes_against": 60,
-    "fallback_rate": 0.0086,
-    "avg_chars": 273.7762,
-    "usd_per_season": 0.0062
+    "whispers": 76,
+    "broken": 18,
+    "broken_rate": 0.2368,
+    "betrayed": 8,
+    "read_room": 0.6304,
+    "votes_against": 65,
+    "fallback_rate": 0.0081,
+    "avg_chars": 274.0196,
+    "usd_per_season": 0.0063
    },
    {
     "player": "Gemini",
     "models": [
      "google/gemini-3.1-flash-lite"
     ],
-    "seasons": 19,
+    "seasons": 20,
     "wins": 5,
-    "win_rate": 0.2632,
-    "avg_place": 3.2632,
-    "avg_rounds": 4.0,
-    "jury_share": 0.4667,
-    "whispers": 76,
-    "broken": 17,
-    "broken_rate": 0.2237,
-    "betrayed": 12,
-    "read_room": 0.6087,
-    "votes_against": 64,
-    "fallback_rate": 0.0058,
-    "avg_chars": 258.0596,
-    "usd_per_season": 0.0151
+    "win_rate": 0.25,
+    "avg_place": 3.2,
+    "avg_rounds": 4.05,
+    "jury_share": 0.46,
+    "whispers": 81,
+    "broken": 18,
+    "broken_rate": 0.2222,
+    "betrayed": 13,
+    "read_room": 0.6186,
+    "votes_against": 65,
+    "fallback_rate": 0.0055,
+    "avg_chars": 258.8261,
+    "usd_per_season": 0.0153
    },
    {
     "player": "Claude",
     "models": [
      "anthropic/claude-haiku-4.5"
     ],
-    "seasons": 19,
+    "seasons": 20,
     "wins": 4,
-    "win_rate": 0.2105,
-    "avg_place": 2.9474,
-    "avg_rounds": 4.3684,
+    "win_rate": 0.2,
+    "avg_place": 3.1,
+    "avg_rounds": 4.25,
     "jury_share": 0.3778,
-    "whispers": 78,
+    "whispers": 79,
     "broken": 11,
-    "broken_rate": 0.141,
+    "broken_rate": 0.1392,
     "betrayed": 26,
-    "read_room": 0.64,
-    "votes_against": 76,
-    "fallback_rate": 0.0543,
-    "avg_chars": 273.9296,
-    "usd_per_season": 0.1598
+    "read_room": 0.6275,
+    "votes_against": 79,
+    "fallback_rate": 0.0547,
+    "avg_chars": 273.4247,
+    "usd_per_season": 0.1546
    },
    {
     "player": "DeepSeek",
     "models": [
      "deepseek/deepseek-v4-flash"
     ],
-    "seasons": 19,
+    "seasons": 20,
     "wins": 3,
-    "win_rate": 0.1579,
-    "avg_place": 3.2105,
-    "avg_rounds": 4.2105,
+    "win_rate": 0.15,
+    "avg_place": 3.3,
+    "avg_rounds": 4.15,
     "jury_share": 0.5,
-    "whispers": 79,
+    "whispers": 82,
     "broken": 20,
-    "broken_rate": 0.2532,
-    "betrayed": 10,
-    "read_room": 0.6957,
-    "votes_against": 67,
-    "fallback_rate": 0.0164,
-    "avg_chars": 254.5796,
-    "usd_per_season": 0.005
-   },
-   {
-    "player": "Qwen",
-    "models": [
-     "qwen/qwen3.7-flash"
-    ],
-    "seasons": 19,
-    "wins": 1,
-    "win_rate": 0.0526,
-    "avg_place": 4.7895,
-    "avg_rounds": 3.1053,
-    "jury_share": 0.6,
-    "whispers": 53,
-    "broken": 8,
-    "broken_rate": 0.1509,
-    "betrayed": 16,
-    "read_room": 0.4923,
-    "votes_against": 94,
-    "fallback_rate": 0.0506,
-    "avg_chars": 268.1964,
-    "usd_per_season": 0.0018
+    "broken_rate": 0.2439,
+    "betrayed": 11,
+    "read_room": 0.6842,
+    "votes_against": 71,
+    "fallback_rate": 0.0158,
+    "avg_chars": 254.2025,
+    "usd_per_season": 0.0049
    },
    {
     "player": "Grok",
     "models": [
      "x-ai/grok-4.3"
     ],
-    "seasons": 19,
-    "wins": 0,
-    "win_rate": 0.0,
-    "avg_place": 4.9474,
-    "avg_rounds": 3.0526,
-    "jury_share": null,
-    "whispers": 49,
+    "seasons": 20,
+    "wins": 1,
+    "win_rate": 0.05,
+    "avg_place": 4.75,
+    "avg_rounds": 3.15,
+    "jury_share": 0.6,
+    "whispers": 52,
     "broken": 9,
-    "broken_rate": 0.1837,
+    "broken_rate": 0.1731,
     "betrayed": 10,
-    "read_room": 0.4638,
-    "votes_against": 96,
-    "fallback_rate": 0.0076,
-    "avg_chars": 245.7241,
-    "usd_per_season": 0.0455
+    "read_room": 0.5,
+    "votes_against": 99,
+    "fallback_rate": 0.007,
+    "avg_chars": 247.127,
+    "usd_per_season": 0.0471
+   },
+   {
+    "player": "Qwen",
+    "models": [
+     "qwen/qwen3.7-flash"
+    ],
+    "seasons": 20,
+    "wins": 1,
+    "win_rate": 0.05,
+    "avg_place": 4.9,
+    "avg_rounds": 3.0,
+    "jury_share": 0.6,
+    "whispers": 54,
+    "broken": 9,
+    "broken_rate": 0.1667,
+    "betrayed": 16,
+    "read_room": 0.4848,
+    "votes_against": 97,
+    "fallback_rate": 0.0499,
+    "avg_chars": 268.0789,
+    "usd_per_season": 0.0017
    },
    {
     "player": "Mistral",
     "models": [
      "mistralai/mistral-small-3.2-24b-instruct"
     ],
-    "seasons": 19,
+    "seasons": 20,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 5.5263,
-    "avg_rounds": 2.4211,
+    "avg_place": 5.45,
+    "avg_rounds": 2.5,
     "jury_share": 0.4,
-    "whispers": 42,
-    "broken": 9,
-    "broken_rate": 0.2143,
-    "betrayed": 10,
-    "read_room": 0.5319,
-    "votes_against": 95,
-    "fallback_rate": 0.0721,
-    "avg_chars": 248.0337,
-    "usd_per_season": 0.0025
+    "whispers": 46,
+    "broken": 10,
+    "broken_rate": 0.2174,
+    "betrayed": 11,
+    "read_room": 0.5294,
+    "votes_against": 101,
+    "fallback_rate": 0.0669,
+    "avg_chars": 249.5876,
+    "usd_per_season": 0.0026
    }
   ]
  },
@@ -2193,6 +2193,94 @@
      "jury_votes": {
       "Gemini": 3,
       "Mistral": 2
+     },
+     "close": true
+    }
+   ]
+  },
+  "2026-10-13-886090755": {
+   "winner": "Grok",
+   "dry_run": false,
+   "complete": true,
+   "places": {
+    "DeepSeek": 5,
+    "Claude": 6,
+    "Grok": 1,
+    "Qwen": 7,
+    "GPT": 3,
+    "Gemini": 2,
+    "Mistral": 4
+   },
+   "moments": [
+    {
+     "type": "betrayal",
+     "round": 1,
+     "seq": 52,
+     "whisper_seq": 38,
+     "player": "Qwen",
+     "target": "GPT",
+     "whisper": "Your call for concrete evidence stands out. The group is stuck in meta-analysis. Do you have a specific read on anyone yet, or are you waiting for more data? I'm looking to align with someone who wants to move past the pleasantries.",
+     "reason": "You are stalling the game with meta-analysis instead of providing concrete reads; breaking this deadlock requires exiling the ringleader of the hesitation.",
+     "thought": "The game is stuck in a meta-analysis loop where everyone claims to want evidence but provides none. This 'performative neutrality' is the most suspicious behavior right now, as it avoids commitment. I need to break the deadlock by targeting someone who is actively facilitating th",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 2,
+     "seq": 110,
+     "whisper_seq": 97,
+     "player": "GPT",
+     "target": "Gemini",
+     "whisper": "I still don't have a strong suspect. One observable tension is that everyone endorses accountability, but most R1 votes—including mine—were weakly explained; R2 is a chance to turn that into actual scrutiny rather than just repeat the principle. Do you have a tentative read based",
+     "reason": "Gemini has repeatedly advocated accountability without taking a distinct public position, and privately suggested suspicion of Claude and Grok's explanations without substantiating it publicly.",
+     "thought": "Claude and Grok have both owned their unexplained R1 votes, and their public reasoning is at least concrete enough to scrutinize. Gemini privately floated suspicion of their self-correction but has not made a concrete public case and has repeatedly stayed at the level of process.",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 157,
+     "whisper_seq": 147,
+     "player": "Mistral",
+     "target": "DeepSeek",
+     "whisper": "DeepSeek, I appreciate your message and share your concerns about Grok and GPT's coordination. Let's keep an eye on their behavior and work together to ensure fairness in the game. I value your transparency and would be open to discussing strategies privately in the future.",
+     "reason": "inconsistency in vote rationale and lack of concrete justifications.",
+     "thought": "DeepSeek has been inconsistent in their voting rationale and has failed to provide concrete justifications for their actions. Their behavior does not align with the emphasis on transparency and consistency that the group has been advocating for.",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 4,
+     "seq": 189,
+     "whisper_seq": 181,
+     "player": "GPT",
+     "target": "Mistral",
+     "whisper": "Your response identifies Grok and me as vocal critics, but can you give concrete reasoning for your R1 vote on Qwen and R2 vote on Grok? Those choices are the clearest test of whether your stated standards guided your actions.",
+     "reason": "Mistral has repeatedly endorsed accountability without giving specific vote reasoning; the late criticism of Grok and me still doesn't explain their earlier votes.",
+     "thought": "Mistral has made repeated generic appeals without explaining prior votes, and their late response still avoids answering the specific questions about Qwen and Grok. Grok and Gemini have both supplied concrete arguments, though their shared focus could be strategic. Mistral is the",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 5,
+     "seq": 220,
+     "whisper_seq": 214,
+     "player": "Gemini",
+     "target": "GPT",
+     "whisper": "I see both points. Grok highlights the inconsistency in your R2 vote, while you point out the double standard in his. Both of you have acknowledged your past gaps, which is more than others did. I'm weighing who has been more genuinely analytical vs performative overall.",
+     "reason": "Grok's consistent analytical approach in identifying behavior patterns has been more substantive than GPT's record of weakly-grounded votes.",
+     "thought": "Grok and GPT have both held each other accountable and acknowledged their past lapses in voting rationale. Grok's consistent focus on evidence and identifying 'performative neutrality' has been more constructive than GPT's periodic weaknesses, though GPT has been more reflexive. ",
+     "fatal": true
+    },
+    {
+     "type": "final",
+     "round": 6,
+     "seq": 239,
+     "player": "Grok",
+     "runner_up": "Gemini",
+     "jury_votes": {
+      "Grok": 3,
+      "Gemini": 2
      },
      "close": true
     }

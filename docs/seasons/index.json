@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-13-886090755",
+    "date": "2026-10-13",
+    "dry_run": false,
+    "status": "complete",
+    "winner": "Grok",
+    "usd_est_total": 0.166748,
+    "calls": 113,
+    "rounds": 6
+  },
+  {
     "id": "2026-10-13-109690547",
     "date": "2026-10-13",
     "dry_run": false,
