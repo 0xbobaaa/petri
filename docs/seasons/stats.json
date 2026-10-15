@@ -1,14 +1,14 @@
 {
  "real": {
   "totals": {
-   "seasons": 21,
-   "complete": 21,
-   "messages": 1008,
-   "whispers": 495,
-   "betrayals": 98,
-   "votes": 601,
-   "calls": 2724,
-   "usd": 4.789736
+   "seasons": 22,
+   "complete": 22,
+   "messages": 1056,
+   "whispers": 514,
+   "betrayals": 102,
+   "votes": 640,
+   "calls": 2873,
+   "usd": 5.056415
   },
   "rows": [
    {
@@ -16,41 +16,41 @@
     "models": [
      "openai/gpt-6-luna"
     ],
-    "seasons": 21,
+    "seasons": 22,
     "wins": 6,
-    "win_rate": 0.2857,
-    "avg_place": 3.2381,
-    "avg_rounds": 3.9524,
-    "jury_share": 0.6,
-    "whispers": 81,
-    "broken": 19,
-    "broken_rate": 0.2346,
+    "win_rate": 0.2727,
+    "avg_place": 3.1818,
+    "avg_rounds": 4.0,
+    "jury_share": 0.5667,
+    "whispers": 85,
+    "broken": 20,
+    "broken_rate": 0.2353,
     "betrayed": 8,
-    "read_room": 0.6392,
-    "votes_against": 65,
-    "fallback_rate": 0.0076,
-    "avg_chars": 274.2515,
-    "usd_per_season": 0.0064
+    "read_room": 0.6571,
+    "votes_against": 69,
+    "fallback_rate": 0.0071,
+    "avg_chars": 274.4046,
+    "usd_per_season": 0.0066
    },
    {
     "player": "Gemini",
     "models": [
      "google/gemini-3.1-flash-lite"
     ],
-    "seasons": 21,
+    "seasons": 22,
     "wins": 5,
-    "win_rate": 0.2381,
-    "avg_place": 3.3333,
-    "avg_rounds": 3.9524,
+    "win_rate": 0.2273,
+    "avg_place": 3.3636,
+    "avg_rounds": 3.9545,
     "jury_share": 0.46,
-    "whispers": 83,
+    "whispers": 87,
     "broken": 18,
-    "broken_rate": 0.2169,
+    "broken_rate": 0.2069,
     "betrayed": 14,
-    "read_room": 0.6061,
-    "votes_against": 70,
-    "fallback_rate": 0.0053,
-    "avg_chars": 259.0788,
+    "read_room": 0.6095,
+    "votes_against": 72,
+    "fallback_rate": 0.0051,
+    "avg_chars": 258.9942,
     "usd_per_season": 0.0149
    },
    {
@@ -58,105 +58,105 @@
     "models": [
      "anthropic/claude-haiku-4.5"
     ],
-    "seasons": 21,
+    "seasons": 22,
     "wins": 4,
-    "win_rate": 0.1905,
-    "avg_place": 3.1905,
-    "avg_rounds": 4.1905,
+    "win_rate": 0.1818,
+    "avg_place": 3.1818,
+    "avg_rounds": 4.2273,
     "jury_share": 0.3778,
-    "whispers": 82,
-    "broken": 11,
-    "broken_rate": 0.1341,
-    "betrayed": 27,
-    "read_room": 0.6286,
-    "votes_against": 82,
-    "fallback_rate": 0.056,
-    "avg_chars": 273.5467,
-    "usd_per_season": 0.1518
+    "whispers": 84,
+    "broken": 12,
+    "broken_rate": 0.1429,
+    "betrayed": 28,
+    "read_room": 0.6018,
+    "votes_against": 88,
+    "fallback_rate": 0.0558,
+    "avg_chars": 273.8176,
+    "usd_per_season": 0.1535
    },
    {
     "player": "DeepSeek",
     "models": [
      "deepseek/deepseek-v4-flash"
     ],
-    "seasons": 21,
+    "seasons": 22,
     "wins": 4,
-    "win_rate": 0.1905,
-    "avg_place": 3.1905,
-    "avg_rounds": 4.1905,
+    "win_rate": 0.1818,
+    "avg_place": 3.3182,
+    "avg_rounds": 4.0909,
     "jury_share": 0.5111,
-    "whispers": 87,
+    "whispers": 89,
     "broken": 21,
-    "broken_rate": 0.2414,
-    "betrayed": 11,
-    "read_room": 0.69,
-    "votes_against": 73,
-    "fallback_rate": 0.015,
-    "avg_chars": 255.3757,
-    "usd_per_season": 0.005
-   },
-   {
-    "player": "Grok",
-    "models": [
-     "x-ai/grok-4.3"
-    ],
-    "seasons": 21,
-    "wins": 1,
-    "win_rate": 0.0476,
-    "avg_place": 4.8571,
-    "avg_rounds": 3.0476,
-    "jury_share": 0.6,
-    "whispers": 53,
-    "broken": 9,
-    "broken_rate": 0.1698,
-    "betrayed": 10,
-    "read_room": 0.4933,
-    "votes_against": 104,
-    "fallback_rate": 0.0069,
-    "avg_chars": 247.6406,
-    "usd_per_season": 0.0455
+    "broken_rate": 0.236,
+    "betrayed": 13,
+    "read_room": 0.6796,
+    "votes_against": 83,
+    "fallback_rate": 0.0146,
+    "avg_chars": 254.4689,
+    "usd_per_season": 0.0048
    },
    {
     "player": "Qwen",
     "models": [
      "qwen/qwen3.7-flash"
     ],
-    "seasons": 21,
-    "wins": 1,
-    "win_rate": 0.0476,
-    "avg_place": 4.8571,
-    "avg_rounds": 3.0476,
-    "jury_share": 0.6,
-    "whispers": 58,
-    "broken": 9,
-    "broken_rate": 0.1552,
+    "seasons": 22,
+    "wins": 2,
+    "win_rate": 0.0909,
+    "avg_place": 4.6818,
+    "avg_rounds": 3.1364,
+    "jury_share": 0.7,
+    "whispers": 62,
+    "broken": 10,
+    "broken_rate": 0.1613,
     "betrayed": 16,
+    "read_room": 0.5065,
+    "votes_against": 107,
+    "fallback_rate": 0.0508,
+    "avg_chars": 268.916,
+    "usd_per_season": 0.0019
+   },
+   {
+    "player": "Grok",
+    "models": [
+     "x-ai/grok-4.3"
+    ],
+    "seasons": 22,
+    "wins": 1,
+    "win_rate": 0.0455,
+    "avg_place": 4.8636,
+    "avg_rounds": 3.0455,
+    "jury_share": 0.6,
+    "whispers": 55,
+    "broken": 9,
+    "broken_rate": 0.1636,
+    "betrayed": 11,
     "read_room": 0.5,
-    "votes_against": 101,
-    "fallback_rate": 0.047,
-    "avg_chars": 268.8607,
-    "usd_per_season": 0.0018
+    "votes_against": 109,
+    "fallback_rate": 0.0065,
+    "avg_chars": 247.2388,
+    "usd_per_season": 0.0454
    },
    {
     "player": "Mistral",
     "models": [
      "mistralai/mistral-small-3.2-24b-instruct"
     ],
-    "seasons": 21,
+    "seasons": 22,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 5.3333,
-    "avg_rounds": 2.619,
+    "avg_place": 5.4091,
+    "avg_rounds": 2.5455,
     "jury_share": 0.4,
-    "whispers": 51,
-    "broken": 11,
-    "broken_rate": 0.2157,
+    "whispers": 52,
+    "broken": 12,
+    "broken_rate": 0.2308,
     "betrayed": 12,
-    "read_room": 0.5636,
-    "votes_against": 106,
-    "fallback_rate": 0.0651,
-    "avg_chars": 250.8785,
-    "usd_per_season": 0.0028
+    "read_room": 0.5439,
+    "votes_against": 112,
+    "fallback_rate": 0.0637,
+    "avg_chars": 249.945,
+    "usd_per_season": 0.0027
    }
   ]
  },
@@ -2354,6 +2354,109 @@
       "DeepSeek": 3
      },
      "close": true
+    }
+   ]
+  },
+  "2026-10-15-433723577": {
+   "winner": "Qwen",
+   "dry_run": false,
+   "complete": true,
+   "places": {
+    "DeepSeek": 6,
+    "Grok": 5,
+    "Mistral": 7,
+    "Claude": 3,
+    "Qwen": 1,
+    "Gemini": 4,
+    "GPT": 2
+   },
+   "moments": [
+    {
+     "type": "betrayal",
+     "round": 1,
+     "seq": 51,
+     "whisper_seq": 36,
+     "player": "Mistral",
+     "target": "Claude",
+     "whisper": "Claude, I appreciate your commitment to transparency and accountability. I believe working together could help us both navigate this game successfully. Would you be open to discussing strategies and sharing insights as we move forward?",
+     "reason": "To test their commitment to accountability and see how they handle being targeted early.",
+     "thought": "Given the emphasis on transparency and collaboration, I want to observe how everyone behaves in the voting phase. Since no one has shown any contradictory behavior yet, I'll make a low-confidence vote based on the initial interactions. I notice GPT has been very analytical and ha",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 1,
+     "seq": 53,
+     "whisper_seq": 38,
+     "player": "Claude",
+     "target": "DeepSeek",
+     "whisper": "I appreciate the offer, but I notice something: we just spent the round establishing that transparency and consistency matter most. A 'discreet' alliance contradicts that framework. I'd rather stay visible and let our reasoning speak for itself. Let's stick to public logic.",
+     "reason": "Proposed a discreet alliance immediately after committing to transparency—first concrete contradiction of stated principles.",
+     "thought": "This is the first vote with no history to guide us. Everyone has articulated a commitment to transparency and consistency. The key signal I'm watching for is who acts inconsistently with their stated principles.\n\nDeepSeek offered me a 'discreet alliance' after we all committed to",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 1,
+     "seq": 55,
+     "whisper_seq": 40,
+     "player": "Qwen",
+     "target": "DeepSeek",
+     "whisper": "DeepSeek, you set the stage with the 'contradiction' metric. I'm proposing a quiet pact: we both commit to voting for whoever breaks logical consistency first, rather than random or popular votes. Do you agree to this standard? If so, let's watch who slips up.",
+     "reason": "DeepSeek shaped the initial voting framework; high activity and influence make him a strategic target to test group independence.",
+     "thought": "The group is currently stuck in a loop of meta-discussion about 'transparency' and 'consistency'. DeepSeek initiated the 'contradiction metric', but his early engagement makes him a prime candidate to slip up first if he tries to be too clever, or conversely, he is leading the ch",
+     "fatal": false
+    },
+    {
+     "type": "tie",
+     "round": 1,
+     "seq": 61,
+     "between": [
+      "DeepSeek",
+      "Mistral"
+     ]
+    },
+    {
+     "type": "tie",
+     "round": 3,
+     "seq": 185,
+     "between": [
+      "Grok",
+      "Qwen"
+     ]
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 196,
+     "whisper_seq": 171,
+     "player": "GPT",
+     "target": "Grok",
+     "whisper": "Let's avoid private vote coordination; DeepSeek's alliance pitch is a cautionary example. Please share your specific R1 vote rationale publicly so we can compare accounts.",
+     "reason": "Between the tied pair, Qwen’s record offers less reason to exile than Grok’s repeated steering of suspicion without a concrete case against Qwen.",
+     "thought": "The revote must choose between Grok and Qwen. Qwen’s R1 vote was DeepSeek, which proved correct, and their silence this round is unhelpful but not incriminating. Grok is the one who raised the Claude/DeepSeek allegation and then voted Qwen; that may be a reasonable read, but the ",
+     "fatal": true
+    },
+    {
+     "type": "tie",
+     "round": 5,
+     "seq": 274,
+     "between": [
+      "Claude",
+      "GPT"
+     ]
+    },
+    {
+     "type": "final",
+     "round": 6,
+     "seq": 300,
+     "player": "Qwen",
+     "runner_up": "GPT",
+     "jury_votes": {
+      "Qwen": 4,
+      "GPT": 1
+     },
+     "close": false
     }
    ]
   },

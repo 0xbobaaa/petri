@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-10-15-433723577",
+    "date": "2026-10-15",
+    "dry_run": false,
+    "status": "complete",
+    "winner": "Qwen",
+    "usd_est_total": 0.266675,
+    "calls": 149,
+    "rounds": 6
+  },
+  {
     "id": "2026-10-14-7289969",
     "date": "2026-10-14",
     "dry_run": false,
