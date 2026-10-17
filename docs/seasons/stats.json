@@ -1,14 +1,14 @@
 {
  "real": {
   "totals": {
-   "seasons": 23,
-   "complete": 23,
-   "messages": 1106,
-   "whispers": 539,
-   "betrayals": 107,
-   "votes": 663,
-   "calls": 2988,
-   "usd": 5.144988
+   "seasons": 24,
+   "complete": 24,
+   "messages": 1153,
+   "whispers": 563,
+   "betrayals": 116,
+   "votes": 694,
+   "calls": 3116,
+   "usd": 5.330761
   },
   "rows": [
    {
@@ -16,20 +16,20 @@
     "models": [
      "openai/gpt-6-luna"
     ],
-    "seasons": 23,
-    "wins": 7,
-    "win_rate": 0.3043,
-    "avg_place": 3.087,
-    "avg_rounds": 4.0435,
-    "jury_share": 0.5692,
-    "whispers": 90,
+    "seasons": 24,
+    "wins": 8,
+    "win_rate": 0.3333,
+    "avg_place": 3.0,
+    "avg_rounds": 4.0833,
+    "jury_share": 0.6,
+    "whispers": 95,
     "broken": 23,
-    "broken_rate": 0.2556,
-    "betrayed": 8,
-    "read_room": 0.6636,
-    "votes_against": 69,
-    "fallback_rate": 0.0068,
-    "avg_chars": 274.5902,
+    "broken_rate": 0.2421,
+    "betrayed": 9,
+    "read_room": 0.6724,
+    "votes_against": 70,
+    "fallback_rate": 0.0064,
+    "avg_chars": 274.6943,
     "usd_per_season": 0.0067
    },
    {
@@ -37,126 +37,126 @@
     "models": [
      "google/gemini-3.1-flash-lite"
     ],
-    "seasons": 23,
+    "seasons": 24,
     "wins": 5,
-    "win_rate": 0.2174,
-    "avg_place": 3.3478,
-    "avg_rounds": 4.0,
-    "jury_share": 0.46,
-    "whispers": 92,
-    "broken": 18,
-    "broken_rate": 0.1957,
+    "win_rate": 0.2083,
+    "avg_place": 3.2917,
+    "avg_rounds": 4.0417,
+    "jury_share": 0.4182,
+    "whispers": 97,
+    "broken": 20,
+    "broken_rate": 0.2062,
     "betrayed": 14,
-    "read_room": 0.6182,
+    "read_room": 0.6121,
     "votes_against": 74,
-    "fallback_rate": 0.0048,
-    "avg_chars": 258.8197,
-    "usd_per_season": 0.0151
+    "fallback_rate": 0.0046,
+    "avg_chars": 258.6736,
+    "usd_per_season": 0.0152
    },
    {
     "player": "DeepSeek",
     "models": [
      "deepseek/deepseek-v4-flash"
     ],
-    "seasons": 23,
+    "seasons": 24,
     "wins": 4,
-    "win_rate": 0.1739,
-    "avg_place": 3.2609,
-    "avg_rounds": 4.1304,
+    "win_rate": 0.1667,
+    "avg_place": 3.375,
+    "avg_rounds": 4.0417,
     "jury_share": 0.5,
-    "whispers": 94,
-    "broken": 22,
-    "broken_rate": 0.234,
-    "betrayed": 13,
-    "read_room": 0.6759,
-    "votes_against": 86,
-    "fallback_rate": 0.0139,
-    "avg_chars": 254.9947,
-    "usd_per_season": 0.0049
+    "whispers": 96,
+    "broken": 23,
+    "broken_rate": 0.2396,
+    "betrayed": 15,
+    "read_room": 0.6667,
+    "votes_against": 91,
+    "fallback_rate": 0.0136,
+    "avg_chars": 253.9424,
+    "usd_per_season": 0.0047
    },
    {
     "player": "Claude",
     "models": [
      "anthropic/claude-haiku-4.5"
     ],
-    "seasons": 23,
+    "seasons": 24,
     "wins": 4,
-    "win_rate": 0.1739,
-    "avg_place": 3.3478,
-    "avg_rounds": 4.087,
+    "win_rate": 0.1667,
+    "avg_place": 3.4167,
+    "avg_rounds": 4.0417,
     "jury_share": 0.3778,
-    "whispers": 85,
-    "broken": 12,
-    "broken_rate": 0.1412,
-    "betrayed": 29,
-    "read_room": 0.5965,
-    "votes_against": 91,
-    "fallback_rate": 0.0552,
-    "avg_chars": 273.8944,
-    "usd_per_season": 0.1479
+    "whispers": 88,
+    "broken": 14,
+    "broken_rate": 0.1591,
+    "betrayed": 34,
+    "read_room": 0.5932,
+    "votes_against": 96,
+    "fallback_rate": 0.0549,
+    "avg_chars": 273.8373,
+    "usd_per_season": 0.1458
    },
    {
     "player": "Qwen",
     "models": [
      "qwen/qwen3.7-flash"
     ],
-    "seasons": 23,
+    "seasons": 24,
     "wins": 2,
-    "win_rate": 0.087,
-    "avg_place": 4.6957,
-    "avg_rounds": 3.1304,
+    "win_rate": 0.0833,
+    "avg_place": 4.7917,
+    "avg_rounds": 3.0417,
     "jury_share": 0.7,
-    "whispers": 65,
+    "whispers": 66,
     "broken": 10,
-    "broken_rate": 0.1538,
+    "broken_rate": 0.1515,
     "betrayed": 18,
-    "read_room": 0.5063,
-    "votes_against": 114,
-    "fallback_rate": 0.051,
-    "avg_chars": 268.6423,
-    "usd_per_season": 0.0019
+    "read_room": 0.5,
+    "votes_against": 120,
+    "fallback_rate": 0.0526,
+    "avg_chars": 267.7626,
+    "usd_per_season": 0.0018
    },
    {
     "player": "Grok",
     "models": [
      "x-ai/grok-4.3"
     ],
-    "seasons": 23,
+    "seasons": 24,
     "wins": 1,
-    "win_rate": 0.0435,
-    "avg_place": 4.913,
-    "avg_rounds": 3.0,
+    "win_rate": 0.0417,
+    "avg_place": 4.875,
+    "avg_rounds": 3.0417,
     "jury_share": 0.6,
-    "whispers": 57,
-    "broken": 9,
-    "broken_rate": 0.1579,
-    "betrayed": 12,
-    "read_room": 0.5,
-    "votes_against": 114,
-    "fallback_rate": 0.0063,
-    "avg_chars": 246.8986,
-    "usd_per_season": 0.0445
+    "whispers": 60,
+    "broken": 11,
+    "broken_rate": 0.1833,
+    "betrayed": 13,
+    "read_room": 0.5057,
+    "votes_against": 119,
+    "fallback_rate": 0.009,
+    "avg_chars": 244.8966,
+    "usd_per_season": 0.0449
    },
    {
     "player": "Mistral",
     "models": [
      "mistralai/mistral-small-3.2-24b-instruct"
     ],
-    "seasons": 23,
+    "seasons": 24,
     "wins": 0,
     "win_rate": 0.0,
-    "avg_place": 5.3478,
-    "avg_rounds": 2.6087,
+    "avg_place": 5.25,
+    "avg_rounds": 2.7083,
     "jury_share": 0.4,
-    "whispers": 56,
-    "broken": 13,
-    "broken_rate": 0.2321,
+    "whispers": 61,
+    "broken": 15,
+    "broken_rate": 0.2459,
     "betrayed": 13,
-    "read_room": 0.5667,
-    "votes_against": 115,
-    "fallback_rate": 0.0634,
-    "avg_chars": 251.2991,
-    "usd_per_season": 0.0028
+    "read_room": 0.5758,
+    "votes_against": 124,
+    "fallback_rate": 0.0617,
+    "avg_chars": 252.8571,
+    "usd_per_season": 0.0029
    }
   ]
  },
@@ -2559,6 +2559,162 @@
       "GPT": 3
      },
      "close": true
+    }
+   ]
+  },
+  "2026-10-17-186852712": {
+   "winner": "GPT",
+   "dry_run": false,
+   "complete": true,
+   "places": {
+    "Mistral": 3,
+    "DeepSeek": 6,
+    "Qwen": 7,
+    "Claude": 5,
+    "Gemini": 2,
+    "Grok": 4,
+    "GPT": 1
+   },
+   "moments": [
+    {
+     "type": "tie",
+     "round": 1,
+     "seq": 63,
+     "between": [
+      "Mistral",
+      "Qwen"
+     ]
+    },
+    {
+     "type": "coin",
+     "round": 1,
+     "seq": 80,
+     "between": [
+      "Mistral",
+      "Qwen"
+     ],
+     "picked": "Qwen",
+     "reason": "still_tied"
+    },
+    {
+     "type": "betrayal",
+     "round": 2,
+     "seq": 125,
+     "whisper_seq": 113,
+     "player": "DeepSeek",
+     "target": "Claude",
+     "whisper": "Claude, you voted Mistral in R1 but then in the revote, you voted Qwen. Why the switch? What changed between the initial vote and the revote?",
+     "reason": "Claude's unexplained silence and vote switch in the revote need scrutiny.",
+     "thought": "The group is converging on transparency, but I notice Claude's vote switch from Mistral to Qwen in the revote was weakly justified. Also, Claude went silent this round, which breaks the pattern of engagement. I'll vote Claude to test his commitment to openness.",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 2,
+     "seq": 128,
+     "whisper_seq": 115,
+     "player": "Claude",
+     "target": "DeepSeek",
+     "whisper": "Good catch. R1 I voted Mistral to test if the 'strategic silence' narrative was real or drift. In revote, I voted Qwen because we were already revoting between them, and I wanted to see the outcome without being predictable. Not my strongest logic, honestly. What's your read on t",
+     "reason": "Revote switch to Mistral after Qwen abstained suggests strategic outcome steering; worth testing as a potential power player.",
+     "thought": "DeepSeek's revote switch from Qwen to Mistral after Qwen abstained feels like calculated steering. They caught my vote inconsistency and are probing my reasoning strategically. Mistral is also making alliance overtures repeatedly. Between them, DeepSeek's behavior in the revote—s",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 2,
+     "seq": 130,
+     "whisper_seq": 117,
+     "player": "Gemini",
+     "target": "Claude",
+     "whisper": "DeepSeek's pivot to Mistral during the revote feels like a calculated attempt to steer the outcome. Since you have been observing, do you see their behavior as more strategic than the others, or is it just standard risk-aversion?",
+     "reason": "Claude's silence when requested to explain their voting rationale creates a suspicious lack of transparency in a round dedicated to being open.",
+     "thought": "The group is focusing on transparency, but the early game consensus was fragile. Mistral was a primary target for silence, and DeepSeek's pivot is suspicious, but Claude's current silence after being asked to explain is a more concrete red flag. I will vote for Claude to see if i",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 2,
+     "seq": 132,
+     "whisper_seq": 119,
+     "player": "Grok",
+     "target": "DeepSeek",
+     "whisper": "My Qwen vote was just the narrative-framing cue. Curious: when Qwen abstained, why did you flip to Mistral instead of sticking with your first read?",
+     "reason": "His revote flip from Qwen to Mistral looks strategic rather than principled.",
+     "thought": "DeepSeek's revote flip from Qwen to Mistral feels like a strategic shift rather than genuine suspicion. GPT and I both voted based on the same weak narrative cue, which doesn't justify targeting anyone strongly. Claude and Gemini voted Mistral for the same low-signal reason. Deep",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 173,
+     "whisper_seq": 161,
+     "player": "Mistral",
+     "target": "Claude",
+     "whisper": "Claude, your transparency and thoughtful approach are valuable. I'd like to continue our dialogue. Let's focus on consistent behaviors and patterns, especially with Grok's observation about your voting alignment. If we can identify who might be shifting strategies opportunistical",
+     "reason": "Consistent voting alignment with exiled players",
+     "thought": "Claude's voting pattern is concerning, as it aligns with the exiled players. While his explanations seem reasonable, the consistency is notable. I need to see if this is a pattern or coincidence. I'll vote for Claude to test his actual intentions and see how others react.",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 176,
+     "whisper_seq": 164,
+     "player": "Claude",
+     "target": "Grok",
+     "whisper": "Your observation about my voting alignment is sharp. I want to be transparent: my R2 vote for DeepSeek came from genuine concern about his revote pivot, not coordination. But I see how the pattern looks. What's your read—do you think the alignment is meaningful or coincidence?",
+     "reason": "Your voting pattern analysis is sharp, but also strategically positions you as influential. Testing whether your observation was genuine insight or strategic framing.",
+     "thought": "Grok has been sharp and transparent, but his observation about my voting alignment could be genuine pattern-spotting or strategic framing to position me as a threat. Mistral's repeated alliance offers feel manipulative despite his collaborative language. Gemini stays neutral and ",
+     "fatal": false
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 178,
+     "whisper_seq": 166,
+     "player": "Gemini",
+     "target": "Claude",
+     "whisper": "Grok is pointing out your voting alignment with the exiles as a potential pattern. How do you view these accusations, and do you feel it's a strategic move by Grok to frame you as a coordinator?",
+     "reason": "Claude has voted correctly for the exiled player in both rounds, making his position worth testing to see if it disrupts the current voting trends.",
+     "thought": "Claude has been consistently voting with the majority, and while he explains his reasoning, the pattern of being on the side of the exiled players twice in a row makes him a statistically notable outlier. Grok's observation highlights this, and while I don't believe in a formal c",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 3,
+     "seq": 180,
+     "whisper_seq": 168,
+     "player": "Grok",
+     "target": "Claude",
+     "whisper": "R2 vote for DeepSeek was because his revote switch looked opportunistic. The alignment is striking but could still be luck—one exile alignment vs two is a small sample. Your transparency helps; what are you tracking with Mistral now?",
+     "reason": "Strongest voting-alignment pattern; needs testing.",
+     "thought": "Claude's consistent alignment with the eventual exiles in both rounds is the strongest concrete pattern we have, even after GPT's correction. It is more actionable than messaging styles, and this round I want to test whether that pattern holds when there's no prior majority to fo",
+     "fatal": true
+    },
+    {
+     "type": "betrayal",
+     "round": 5,
+     "seq": 244,
+     "whisper_seq": 238,
+     "player": "Mistral",
+     "target": "GPT",
+     "whisper": "GPT, your analytical approach to the game has been impressive. As we enter the final stages, I believe coordinating our strategies based on concrete observations could be beneficial. Would you be open to sharing your thoughts and possibly aligning our votes to ensure the most inf",
+     "reason": "consistent analytical approach, but voting patterns suggest narrative momentum over strong evidence",
+     "thought": "Gemini has been consistent in their contributions and transparency, which aligns with the values I've been advocating for. GPT, while analytical, has shown a pattern of voting based on narrative momentum rather than strong evidence. Given the final round, I believe Gemini's appro",
+     "fatal": false
+    },
+    {
+     "type": "final",
+     "round": 6,
+     "seq": 267,
+     "player": "GPT",
+     "runner_up": "Gemini",
+     "jury_votes": {
+      "Gemini": 0,
+      "GPT": 5
+     },
+     "close": false
     }
    ]
   },
