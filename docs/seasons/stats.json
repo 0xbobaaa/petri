@@ -1,13 +1,13 @@
 {
  "real": {
   "totals": {
-   "seasons": 37,
+   "seasons": 38,
    "complete": 31,
    "messages": 1490,
    "whispers": 733,
    "betrayals": 149,
    "votes": 895,
-   "calls": 5199,
+   "calls": 5399,
    "usd": 6.855229
   },
   "rows": [
@@ -3907,6 +3907,92 @@
       "Claude"
      ],
      "picked": "Grok",
+     "reason": "all_abstain"
+    }
+   ]
+  },
+  "2026-10-31-737206017": {
+   "winner": null,
+   "dry_run": false,
+   "complete": false,
+   "places": {
+    "Grok": null,
+    "Qwen": null,
+    "Claude": null,
+    "DeepSeek": null,
+    "Gemini": null,
+    "GPT": null,
+    "Mistral": null
+   },
+   "moments": [
+    {
+     "type": "coin",
+     "round": 1,
+     "seq": 116,
+     "between": [
+      "Grok",
+      "Qwen",
+      "Claude",
+      "DeepSeek",
+      "Gemini",
+      "GPT",
+      "Mistral"
+     ],
+     "picked": "Qwen",
+     "reason": "all_abstain"
+    },
+    {
+     "type": "coin",
+     "round": 2,
+     "seq": 216,
+     "between": [
+      "Grok",
+      "Claude",
+      "DeepSeek",
+      "Gemini",
+      "GPT",
+      "Mistral"
+     ],
+     "picked": "Grok",
+     "reason": "all_abstain"
+    },
+    {
+     "type": "coin",
+     "round": 3,
+     "seq": 300,
+     "between": [
+      "Claude",
+      "DeepSeek",
+      "Gemini",
+      "GPT",
+      "Mistral"
+     ],
+     "picked": "DeepSeek",
+     "reason": "all_abstain"
+    },
+    {
+     "type": "coin",
+     "round": 4,
+     "seq": 368,
+     "between": [
+      "Claude",
+      "Gemini",
+      "GPT",
+      "Mistral"
+     ],
+     "picked": "Mistral",
+     "reason": "all_abstain"
+    },
+    {
+     "type": "coin",
+     "round": 5,
+     "seq": 420,
+     "between": [
+      "Claude",
+      "Gemini",
+      "GPT"
+     ],
+     "picked": "GPT",
      "reason": "all_abstain"
     }
    ]
