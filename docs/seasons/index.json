@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-11-03-335410604",
+    "date": "2026-11-03",
+    "dry_run": false,
+    "status": "budget_stop",
+    "winner": null,
+    "usd_est_total": 0.0,
+    "calls": 200,
+    "rounds": 6
+  },
+  {
     "id": "2026-11-01-52376130",
     "date": "2026-11-01",
     "dry_run": false,
